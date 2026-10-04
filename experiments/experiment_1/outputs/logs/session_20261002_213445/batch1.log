@@ -1,0 +1,240 @@
+
+====================================================================================================
+[2026-10-02 21:34:47] START B1.01  Index the dataset: one folder per Object ID
+====================================================================================================
+Root: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\Dataset - Updated
+73 classes | 7343 images | per class: min 100, median 100, max 113
+Classes without exactly 100 images: {'OBJ005': 108, 'OBJ009': 106, 'OBJ017': 113, 'OBJ028': 101, 'OBJ049': 105, 'OBJ051': 110}
+⚠️ 101 files whose name prefix ≠ folder (check Object IDs!): ['OBJ07_033.jpg', 'sunglasses_001.jpeg', 'sunglasses_002.jpeg', 'sunglasses_003.jpeg', 'sunglasses_004.jpeg', 'sunglasses_005.jpeg', 'sunglasses_006.jpeg', 'sunglasses_007.jpeg', 'sunglasses_008.jpeg', 'sunglasses_009.jpeg', 'sunglasses_010.jpeg', 'sunglasses_011.jpeg', 'sunglasses_012.jpeg', 'sunglasses_013.jpeg', 'sunglasses_014.jpeg']
+Excluded 0 images by config → 7343 images kept
+[2026-10-02 21:34:47] END   B1.01  | OK  | 0.2s
+
+====================================================================================================
+[2026-10-02 21:34:47] START B1.02  Decode every image once into RAM at 224x224 (cached on disk → re-runs take seconds)
+====================================================================================================
+Loaded 7343 decoded images from cache (decoded_84ad99c3e190be4b.npy).
+IMAGES in RAM: (7343, 224, 224, 3), 1.11 GB | unreadable files skipped: 0
+Most common original sizes: {(224, 224): 7340, (224, 192): 1, (225, 224): 1, (650, 642): 1}
+Byte-identical duplicates (pre-bg-removal): 28 groups, 0 spanning different classes
+All 73 classes have at least one readable image. OBJ022: 100 images
+[2026-10-02 21:34:48] END   B1.02  | OK  | 0.6s
+
+====================================================================================================
+[2026-10-02 21:34:48] START B1.03  Background-only removal by filename
+====================================================================================================
+Background images identified by filename: 385 total
+Classes with zero bg images (1): ['OBJ004']
+
+Per-class bg count:
+  OBJ001: 5
+  OBJ002: 5
+  OBJ003: 5
+  OBJ004: 0
+  OBJ005: 9
+  OBJ006: 5
+  OBJ007: 5
+  OBJ008: 5
+  OBJ009: 11
+  OBJ010: 5
+  OBJ011: 5
+  OBJ012: 5
+  OBJ013: 6
+  OBJ014: 7
+  OBJ015: 5
+  OBJ016: 5
+  OBJ017: 7
+  OBJ018: 5
+  OBJ019: 5
+  OBJ020: 5
+  OBJ021: 5
+  OBJ022: 5
+  OBJ023: 5
+  OBJ024: 5
+  OBJ025: 6
+  OBJ026: 5
+  OBJ027: 5
+  OBJ028: 5
+  OBJ029: 5
+  OBJ030: 5
+  OBJ031: 5
+  OBJ032: 5
+  OBJ033: 5
+  OBJ034: 5
+  OBJ035: 5
+  OBJ036: 5
+  OBJ037: 5
+  OBJ038: 5
+  OBJ039: 5
+  OBJ040: 5
+  OBJ041: 5
+  OBJ042: 5
+  OBJ043: 5
+  OBJ044: 5
+  OBJ045: 5
+  OBJ046: 5
+  OBJ047: 5
+  OBJ048: 5
+  OBJ049: 6
+  OBJ050: 5
+  OBJ051: 5
+  OBJ052: 5
+  OBJ053: 10
+  OBJ054: 5
+  OBJ055: 5
+  OBJ056: 5
+  OBJ057: 5
+  OBJ058: 5
+  OBJ059: 5
+  OBJ060: 5
+  OBJ061: 5
+  OBJ062: 5
+  OBJ063: 6
+  OBJ064: 5
+  OBJ065: 5
+  OBJ066: 5
+  OBJ067: 5
+  OBJ068: 5
+  OBJ069: 7
+  OBJ070: 5
+  OBJ071: 5
+  OBJ072: 5
+  OBJ073: 5
+
+Removed 385 bg images -> 6958 images remain
+[2026-10-02 21:34:48] END   B1.03  | OK  | 0.3s
+
+====================================================================================================
+[2026-10-02 21:34:48] START B1.04  Remove exact duplicates (before the split), optional per-class cap, re-index
+====================================================================================================
+Exact duplicates removed: 16
+Per class: {'OBJ011': 2, 'OBJ022': 1, 'OBJ023': 6, 'OBJ028': 1, 'OBJ029': 1, 'OBJ062': 4, 'OBJ066': 1}
+
+No per-class cap applied — every valid image is kept.
+
+Final dataset: 6942 images | 73 classes
+Per-class: min 89, median 95, max 106
+
+Full per-class count:
+  OBJ001: 95
+  OBJ002: 95
+  OBJ003: 95
+  OBJ004: 100
+  OBJ005: 99
+  OBJ006: 95
+  OBJ007: 95
+  OBJ008: 95
+  OBJ009: 95
+  OBJ010: 95
+  OBJ011: 93
+  OBJ012: 95
+  OBJ013: 94
+  OBJ014: 93
+  OBJ015: 95
+  OBJ016: 95
+  OBJ017: 106
+  OBJ018: 95
+  OBJ019: 95
+  OBJ020: 95
+  OBJ021: 95
+  OBJ022: 94
+  OBJ023: 89
+  OBJ024: 95
+  OBJ025: 94
+  OBJ026: 95
+  OBJ027: 95
+  OBJ028: 95
+  OBJ029: 94
+  OBJ030: 95
+  OBJ031: 95
+  OBJ032: 95
+  OBJ033: 95
+  OBJ034: 95
+  OBJ035: 95
+  OBJ036: 95
+  OBJ037: 95
+  OBJ038: 95
+  OBJ039: 95
+  OBJ040: 95
+  OBJ041: 95
+  OBJ042: 95
+  OBJ043: 95
+  OBJ044: 95
+  OBJ045: 95
+  OBJ046: 95
+  OBJ047: 95
+  OBJ048: 95
+  OBJ049: 99
+  OBJ050: 95
+  OBJ051: 105
+  OBJ052: 95
+  OBJ053: 90
+  OBJ054: 95
+  OBJ055: 95
+  OBJ056: 95
+  OBJ057: 95
+  OBJ058: 95
+  OBJ059: 95
+  OBJ060: 95
+  OBJ061: 95
+  OBJ062: 91
+  OBJ063: 94
+  OBJ064: 95
+  OBJ065: 95
+  OBJ066: 94
+  OBJ067: 95
+  OBJ068: 95
+  OBJ069: 93
+  OBJ070: 95
+  OBJ071: 95
+  OBJ072: 95
+  OBJ073: 95
+
+Clean dataset signature: fe620065453a  (list saved to clean_dataset.csv)
+[2026-10-02 21:34:48] END   B1.04  | OK  | 0.3s
+
+====================================================================================================
+[2026-10-02 21:34:48] START B1.05  Look at one class's full shot sequence
+====================================================================================================
+[2026-10-02 21:34:55] END   B1.05  | OK  | 6.9s
+
+====================================================================================================
+[2026-10-02 21:34:55] START B1.06  Shared transforms, perturbations and dataset
+====================================================================================================
+[2026-10-02 21:34:56] END   B1.06  | OK  | 0.5s
+
+====================================================================================================
+[2026-10-02 21:34:56] START B1.07  Frozen ConvNeXt-Tiny features for every image (used for the label audit and near-duplicate check)
+====================================================================================================
+Loaded cached features: (6942, 768)
+[2026-10-02 21:34:56] END   B1.07  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 21:34:56] START B1.08  Label-quality audit: out-of-fold predictions from a linear classifier on frozen features
+====================================================================================================
+Out-of-fold linear-probe accuracy (5-fold CV): 0.9826
+
+Hardest classes (OOF accuracy): {'OBJ061': 0.842, 'OBJ013': 0.862, 'OBJ034': 0.916, 'OBJ054': 0.937, 'OBJ038': 0.937, 'OBJ012': 0.947, 'OBJ059': 0.947, 'OBJ037': 0.958}
+
+Confidently assigned to ANOTHER class (p>0.8): 14 images
+              fname class_name oof_pred_name
+     OBJ013_084.jpg     OBJ013        OBJ034
+sunglasses_001.jpeg     OBJ014        OBJ045
+     OBJ027_079.jpg     OBJ027        OBJ022
+     OBJ042_044.jpg     OBJ042        OBJ027
+     OBJ054_005.jpg     OBJ054        OBJ022
+     OBJ059_068.jpg     OBJ059        OBJ061
+     OBJ059_074.jpg     OBJ059        OBJ061
+     OBJ061_019.jpg     OBJ061        OBJ059
+     OBJ061_033.jpg     OBJ061        OBJ059
+     OBJ061_042.jpg     OBJ061        OBJ059
+     OBJ061_076.jpg     OBJ061        OBJ026
+     OBJ062_026.jpg     OBJ062        OBJ068
+     OBJ065_018.jpg     OBJ065        OBJ036
+     OBJ066_026.jpg     OBJ066        OBJ051
+[2026-10-02 21:34:56] END   B1.08  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 21:34:56] START B1.09  Review the 40 most suspicious images
+====================================================================================================
+Full list: label_audit_suspects.csv in OUT_DIR. Add clear background-only / wrong images to EXCLUDE_FILES.
+[2026-10-02 21:35:00] END   B1.09  | OK  | 4.0s

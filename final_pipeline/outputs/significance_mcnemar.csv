@@ -1,0 +1,5 @@
+compared_with,only_selected_correct,only_other_correct,p_value,significant
+A2_CustomCNN_w384,110,4,0.0,yes
+C_ResNet50,11,5,0.2101,no
+D_EfficientNetB0,10,5,0.3018,no
+G_DenseNet121,9,3,0.146,no

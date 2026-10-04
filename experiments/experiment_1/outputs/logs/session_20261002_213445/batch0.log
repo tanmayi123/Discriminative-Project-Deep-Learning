@@ -1,0 +1,9 @@
+session      : 20261002_213445
+python       : 3.14.2
+platform     : Windows-11-10.0.26200-SP0
+torch        : 2.11.0+cu128 (CUDA build 12.8, cuDNN 91900)
+GPU          : NVIDIA GeForce RTX 5070 Laptop GPU, 8.5 GB
+torchvision  : 0.26.0+cu128
+
+📝 Logging to: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone1_outputs_v2\logs\session_20261002_213445
+[2026-10-02 21:34:47] END   B0.04  | OK  | 0.0s

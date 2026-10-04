@@ -1,0 +1,24 @@
+
+========== E_convnext_tiny_finetune: ConvNeXt-Tiny (ImageNet) fully fine-tuned | status: not started | 2026-10-02 20:45:38 ==========
+config: {"aug": "robust", "epochs": 20, "warmup_epochs": 1, "patience": 6, "label_smoothing": 0.1, "arch": "convnext_tiny", "lr_head": 0.001, "lr_backbone": 0.0001, "wd": 0.05, "desc": "ConvNeXt-Tiny (ImageNet) fully fine-tuned", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "a6ad45db98f9", "started": "2026-10-02 20:45:38"}
+  ep 01/20 | train loss 3.051 acc 0.473 | val loss 0.493 acc 0.929 F1 0.930 | 62s | GPU 2.5 GB
+  ep 02/20 | train loss 1.041 acc 0.944 | val loss 0.202 acc 0.980 F1 0.980 | 43s | GPU 2.5 GB
+  ep 03/20 | train loss 0.914 acc 0.975 | val loss 0.174 acc 0.984 F1 0.984 | 43s | GPU 2.5 GB
+  ep 04/20 | train loss 0.873 acc 0.981 | val loss 0.164 acc 0.984 F1 0.984 | 43s | GPU 2.5 GB
+  ep 05/20 | train loss 0.853 acc 0.985 | val loss 0.173 acc 0.986 F1 0.985 | 44s | GPU 2.5 GB
+  ep 06/20 | train loss 0.842 acc 0.984 | val loss 0.158 acc 0.980 F1 0.980 | 44s | GPU 2.5 GB
+  ep 07/20 | train loss 0.827 acc 0.988 | val loss 0.167 acc 0.988 F1 0.988 | 44s | GPU 2.5 GB
+  ep 08/20 | train loss 0.819 acc 0.989 | val loss 0.155 acc 0.986 F1 0.985 | 43s | GPU 2.5 GB
+  ep 09/20 | train loss 0.810 acc 0.989 | val loss 0.148 acc 0.988 F1 0.987 | 44s | GPU 2.5 GB
+  ep 10/20 | train loss 0.804 acc 0.989 | val loss 0.147 acc 0.988 F1 0.988 | 44s | GPU 2.5 GB
+  ep 11/20 | train loss 0.794 acc 0.992 | val loss 0.149 acc 0.988 F1 0.987 | 44s | GPU 2.5 GB
+  ep 12/20 | train loss 0.798 acc 0.990 | val loss 0.153 acc 0.989 F1 0.989 | 44s | GPU 2.5 GB
+  ep 13/20 | train loss 0.785 acc 0.993 | val loss 0.149 acc 0.988 F1 0.988 | 44s | GPU 2.5 GB
+  ep 14/20 | train loss 0.786 acc 0.992 | val loss 0.151 acc 0.987 F1 0.986 | 45s | GPU 2.5 GB
+  ep 15/20 | train loss 0.783 acc 0.993 | val loss 0.148 acc 0.989 F1 0.989 | 44s | GPU 2.5 GB
+  ep 16/20 | train loss 0.778 acc 0.994 | val loss 0.149 acc 0.990 F1 0.990 | 44s | GPU 2.5 GB
+  ep 17/20 | train loss 0.775 acc 0.994 | val loss 0.147 acc 0.990 F1 0.990 | 44s | GPU 2.5 GB
+  ep 18/20 | train loss 0.770 acc 0.996 | val loss 0.147 acc 0.990 F1 0.990 | 44s | GPU 2.5 GB
+  ep 19/20 | train loss 0.776 acc 0.995 | val loss 0.148 acc 0.990 F1 0.990 | 43s | GPU 2.5 GB
+  ep 20/20 | train loss 0.773 acc 0.996 | val loss 0.148 acc 0.990 F1 0.990 | 44s | GPU 2.5 GB
+→ E_convnext_tiny_finetune: test acc 0.9942 | macro-F1 0.9942 | TTA 0.9933 | trained 14.9 min

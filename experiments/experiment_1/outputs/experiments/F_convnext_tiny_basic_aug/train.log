@@ -1,0 +1,16 @@
+
+========== F_convnext_tiny_basic_aug: Ablation: ConvNeXt-Tiny fine-tuned with basic augmentation only | status: not started | 2026-10-02 21:01:15 ==========
+config: {"aug": "basic", "epochs": 20, "warmup_epochs": 1, "patience": 6, "label_smoothing": 0.1, "arch": "convnext_tiny", "lr_head": 0.001, "lr_backbone": 0.0001, "wd": 0.05, "desc": "Ablation: ConvNeXt-Tiny fine-tuned with basic augmentation only", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "c8732477e0b6", "started": "2026-10-02 21:01:15"}
+  ep 01/20 | train loss 2.793 acc 0.558 | val loss 0.365 acc 0.952 F1 0.953 | 34s | GPU 2.5 GB
+  ep 02/20 | train loss 0.883 acc 0.984 | val loss 0.201 acc 0.987 F1 0.986 | 34s | GPU 2.5 GB
+  ep 03/20 | train loss 0.804 acc 0.998 | val loss 0.187 acc 0.987 F1 0.987 | 34s | GPU 2.5 GB
+  ep 04/20 | train loss 0.784 acc 0.999 | val loss 0.187 acc 0.987 F1 0.986 | 34s | GPU 2.5 GB
+  ep 05/20 | train loss 0.773 acc 1.000 | val loss 0.162 acc 0.988 F1 0.988 | 34s | GPU 2.5 GB
+  ep 06/20 | train loss 0.764 acc 1.000 | val loss 0.162 acc 0.986 F1 0.985 | 34s | GPU 2.5 GB
+  ep 07/20 | train loss 0.758 acc 1.000 | val loss 0.158 acc 0.988 F1 0.987 | 34s | GPU 2.5 GB
+  ep 08/20 | train loss 0.754 acc 1.000 | val loss 0.162 acc 0.986 F1 0.986 | 34s | GPU 2.5 GB
+  ep 09/20 | train loss 0.753 acc 1.000 | val loss 0.155 acc 0.987 F1 0.986 | 34s | GPU 2.5 GB
+  ep 10/20 | train loss 0.750 acc 1.000 | val loss 0.159 acc 0.987 F1 0.987 | 34s | GPU 2.5 GB
+  ep 11/20 | train loss 0.749 acc 1.000 | val loss 0.154 acc 0.987 F1 0.986 | 34s | GPU 2.5 GB
+  early stop (no val-F1 gain for 6 epochs)
+→ F_convnext_tiny_basic_aug: test acc 0.9866 | macro-F1 0.9865 | TTA 0.9875 | trained 6.2 min

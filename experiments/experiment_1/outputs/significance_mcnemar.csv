@@ -1,0 +1,6 @@
+vs,only_best_right,only_other_right,p_value,significant (p<0.05)
+A_custom_cnn_scratch,114,1,5.585196838722984e-33,True
+B_convnext_linear_probe,24,3,4.9233436584472656e-05,True
+C_resnet50_finetune,8,0,0.0078125,True
+D_efficientnet_b0_finetune,13,0,0.000244140625,True
+F_convnext_tiny_basic_aug,9,1,0.021484375,True

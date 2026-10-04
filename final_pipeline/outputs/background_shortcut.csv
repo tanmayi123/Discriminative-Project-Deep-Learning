@@ -1,0 +1,6 @@
+model,n_bg_images,own_id_predicted_pct,chance_pct,mean_conf_on_bg,mean_conf_on_test_objects
+A2_CustomCNN_w384,378,33.069,1.37,0.377,0.799
+C_ResNet50,378,36.508,1.37,0.346,0.867
+D_EfficientNetB0,378,38.095,1.37,0.376,0.886
+E_ConvNeXtT,378,35.714,1.37,0.356,0.89
+G_DenseNet121,378,34.656,1.37,0.332,0.867

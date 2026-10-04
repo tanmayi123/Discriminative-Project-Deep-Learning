@@ -1,0 +1,13 @@
+{
+  "fit": {
+    "best_val_macro_f1": 0.9914013484738949,
+    "best_val_loss": 0.15851891040802002,
+    "best_epoch": 14,
+    "epochs_run": 20,
+    "train_min": 26.309715358416238
+  },
+  "batch_size": 32,
+  "data_sig": "6ed2c1673798",
+  "cfg_sig": "df3f2c1f40b5",
+  "finished": "2026-10-02 20:17:41"
+}

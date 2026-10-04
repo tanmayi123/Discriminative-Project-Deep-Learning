@@ -1,0 +1,16 @@
+{
+  "data_sig": "fe620065453a",
+  "split_sig": "6ed2c1673798",
+  "images": 6942,
+  "classes": 73,
+  "train": 4859,
+  "val": 1041,
+  "test": 1042,
+  "removed": {
+    "unreadable": 0,
+    "background": 385,
+    "duplicates": 16,
+    "capped": 0
+  },
+  "created": "2026-10-02 21:35:00"
+}

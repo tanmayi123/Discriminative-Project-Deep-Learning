@@ -1,0 +1,20 @@
+{
+  "aug": "robust",
+  "epochs": 60,
+  "warmup_epochs": 3,
+  "patience": 15,
+  "label_smoothing": 0.1,
+  "arch": "custom_cnn",
+  "lr_head": 0.002,
+  "lr_backbone": 0.002,
+  "wd": 0.05,
+  "desc": "Plain 10-layer CNN trained from scratch",
+  "class_weighted_loss": true,
+  "batch_size": 32,
+  "img_size": 224,
+  "seed": 42,
+  "session": "20261002_184630",
+  "data_sig": "6ed2c1673798",
+  "cfg_sig": "a8af1f276180",
+  "started": "2026-10-02 18:47:49"
+}

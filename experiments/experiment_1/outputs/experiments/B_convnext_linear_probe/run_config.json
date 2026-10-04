@@ -1,0 +1,20 @@
+{
+  "aug": "robust",
+  "epochs": 12,
+  "warmup_epochs": 1,
+  "patience": 5,
+  "label_smoothing": 0.1,
+  "arch": "linear_probe",
+  "lr_head": 0.002,
+  "lr_backbone": 0.0,
+  "wd": 0.0001,
+  "desc": "Frozen ImageNet ConvNeXt-Tiny + linear head",
+  "class_weighted_loss": true,
+  "batch_size": 32,
+  "img_size": 224,
+  "seed": 42,
+  "session": "20261002_184630",
+  "data_sig": "6ed2c1673798",
+  "cfg_sig": "20414ad3c7b3",
+  "started": "2026-10-02 19:45:39"
+}

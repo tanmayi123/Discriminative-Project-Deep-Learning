@@ -1,0 +1,8 @@
+{
+  "epoch": 20,
+  "max_epochs": 20,
+  "best_val_macro_f1": 0.9902922267116883,
+  "best_epoch": 16,
+  "batch_size": 32,
+  "updated": "2026-10-02 21:00:48"
+}

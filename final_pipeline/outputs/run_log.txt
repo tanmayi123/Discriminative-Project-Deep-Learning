@@ -1,0 +1,149 @@
+2026-10-04 01:43:22  [E_ConvNeXtT] ConvNeXt-Tiny fine-tuned | up to 20 epochs | cuda | signature 3d6b1ce58bb9
+2026-10-04 01:44:12  [E_ConvNeXtT] ep  1 | train loss 2.852 acc 0.538 | val loss 1.078 acc 0.934 F1 0.933 | 43s  *best*
+2026-10-04 01:45:00  [E_ConvNeXtT] ep  2 | train loss 1.034 acc 0.947 | val loss 0.897 acc 0.981 F1 0.981 | 43s  *best*
+2026-10-04 01:45:51  [E_ConvNeXtT] ep  3 | train loss 0.921 acc 0.971 | val loss 0.851 acc 0.986 F1 0.986 | 41s  *best*
+2026-10-04 01:46:39  [E_ConvNeXtT] ep  4 | train loss 0.867 acc 0.983 | val loss 0.840 acc 0.988 F1 0.987 | 39s  *best*
+2026-10-04 01:47:27  [E_ConvNeXtT] ep  5 | train loss 0.850 acc 0.983 | val loss 0.819 acc 0.990 F1 0.990 | 39s  *best*
+2026-10-04 01:48:16  [E_ConvNeXtT] ep  6 | train loss 0.835 acc 0.987 | val loss 0.818 acc 0.989 F1 0.989 | 40s
+2026-10-04 01:48:58  [E_ConvNeXtT] ep  7 | train loss 0.823 acc 0.988 | val loss 0.810 acc 0.986 F1 0.985 | 40s
+2026-10-04 01:49:42  [E_ConvNeXtT] ep  8 | train loss 0.815 acc 0.988 | val loss 0.803 acc 0.987 F1 0.986 | 41s
+2026-10-04 01:50:25  [E_ConvNeXtT] ep  9 | train loss 0.804 acc 0.991 | val loss 0.797 acc 0.989 F1 0.989 | 41s
+2026-10-04 01:51:09  [E_ConvNeXtT] ep 10 | train loss 0.796 acc 0.991 | val loss 0.791 acc 0.988 F1 0.988 | 41s
+2026-10-04 01:52:00  [E_ConvNeXtT] ep 11 | train loss 0.788 acc 0.993 | val loss 0.782 acc 0.993 F1 0.993 | 40s  *best*
+2026-10-04 01:52:48  [E_ConvNeXtT] ep 12 | train loss 0.785 acc 0.992 | val loss 0.784 acc 0.990 F1 0.990 | 41s
+2026-10-04 01:53:31  [E_ConvNeXtT] ep 13 | train loss 0.780 acc 0.994 | val loss 0.782 acc 0.990 F1 0.990 | 41s
+2026-10-04 01:54:15  [E_ConvNeXtT] ep 14 | train loss 0.783 acc 0.993 | val loss 0.778 acc 0.993 F1 0.993 | 41s  *best*
+2026-10-04 01:55:03  [E_ConvNeXtT] ep 15 | train loss 0.783 acc 0.991 | val loss 0.775 acc 0.993 F1 0.993 | 39s  *best*
+2026-10-04 01:55:50  [E_ConvNeXtT] ep 16 | train loss 0.772 acc 0.995 | val loss 0.774 acc 0.993 F1 0.993 | 40s  *best*
+2026-10-04 01:56:37  [E_ConvNeXtT] ep 17 | train loss 0.774 acc 0.994 | val loss 0.774 acc 0.994 F1 0.994 | 38s  *best*
+2026-10-04 01:57:24  [E_ConvNeXtT] ep 18 | train loss 0.773 acc 0.994 | val loss 0.772 acc 0.996 F1 0.996 | 38s  *best*
+2026-10-04 01:58:11  [E_ConvNeXtT] ep 19 | train loss 0.774 acc 0.993 | val loss 0.772 acc 0.996 F1 0.996 | 39s
+2026-10-04 01:58:54  [E_ConvNeXtT] ep 20 | train loss 0.779 acc 0.994 | val loss 0.772 acc 0.996 F1 0.996 | 41s  *best*
+2026-10-04 01:58:55  [E_ConvNeXtT] DONE | best val F1 0.9961 at epoch 20 | 13.4 min
+2026-10-04 01:58:56  [C_ResNet50] ResNet-50 fine-tuned | up to 20 epochs | cuda | signature 1fa1d934ad41
+2026-10-04 01:59:41  [C_ResNet50] ep  1 | train loss 2.914 acc 0.498 | val loss 1.215 acc 0.903 F1 0.903 | 37s  *best*
+2026-10-04 02:00:15  [C_ResNet50] ep  2 | train loss 1.152 acc 0.910 | val loss 0.957 acc 0.964 F1 0.965 | 33s  *best*
+2026-10-04 02:00:54  [C_ResNet50] ep  3 | train loss 0.996 acc 0.954 | val loss 0.894 acc 0.981 F1 0.981 | 37s  *best*
+2026-10-04 02:01:37  [C_ResNet50] ep  4 | train loss 0.920 acc 0.968 | val loss 0.871 acc 0.982 F1 0.981 | 40s  *best*
+2026-10-04 02:02:19  [C_ResNet50] ep  5 | train loss 0.900 acc 0.970 | val loss 0.855 acc 0.988 F1 0.988 | 39s  *best*
+2026-10-04 02:03:01  [C_ResNet50] ep  6 | train loss 0.873 acc 0.979 | val loss 0.840 acc 0.988 F1 0.987 | 38s
+2026-10-04 02:03:39  [C_ResNet50] ep  7 | train loss 0.867 acc 0.978 | val loss 0.834 acc 0.988 F1 0.989 | 37s  *best*
+2026-10-04 02:04:21  [C_ResNet50] ep  8 | train loss 0.846 acc 0.984 | val loss 0.822 acc 0.988 F1 0.989 | 40s  *best*
+2026-10-04 02:05:03  [C_ResNet50] ep  9 | train loss 0.829 acc 0.985 | val loss 0.818 acc 0.988 F1 0.988 | 40s
+2026-10-04 02:05:42  [C_ResNet50] ep 10 | train loss 0.820 acc 0.985 | val loss 0.807 acc 0.989 F1 0.989 | 36s  *best*
+2026-10-04 02:06:25  [C_ResNet50] ep 11 | train loss 0.814 acc 0.988 | val loss 0.807 acc 0.991 F1 0.991 | 39s  *best*
+2026-10-04 02:07:07  [C_ResNet50] ep 12 | train loss 0.807 acc 0.989 | val loss 0.799 acc 0.992 F1 0.992 | 40s  *best*
+2026-10-04 02:07:50  [C_ResNet50] ep 13 | train loss 0.795 acc 0.993 | val loss 0.794 acc 0.991 F1 0.991 | 38s
+2026-10-04 02:08:29  [C_ResNet50] ep 14 | train loss 0.797 acc 0.990 | val loss 0.792 acc 0.990 F1 0.990 | 38s
+2026-10-04 02:09:08  [C_ResNet50] ep 15 | train loss 0.799 acc 0.988 | val loss 0.790 acc 0.991 F1 0.991 | 38s
+2026-10-04 02:09:48  [C_ResNet50] ep 16 | train loss 0.788 acc 0.993 | val loss 0.788 acc 0.991 F1 0.991 | 39s
+2026-10-04 02:10:27  [C_ResNet50] ep 17 | train loss 0.787 acc 0.994 | val loss 0.787 acc 0.991 F1 0.991 | 38s
+2026-10-04 02:11:07  [C_ResNet50] ep 18 | train loss 0.790 acc 0.991 | val loss 0.787 acc 0.991 F1 0.991 | 39s
+2026-10-04 02:11:07  [C_ResNet50] early stop: no val-F1 gain for 6 epochs
+2026-10-04 02:11:08  [C_ResNet50] DONE | best val F1 0.9922 at epoch 12 | 11.4 min
+2026-10-04 02:11:08  [D_EfficientNetB0] EfficientNet-B0 fine-tuned | up to 20 epochs | cuda | signature dc340a4a16aa
+2026-10-04 02:11:54  [D_EfficientNetB0] ep  1 | train loss 3.090 acc 0.465 | val loss 1.263 acc 0.900 F1 0.899 | 46s  *best*
+2026-10-04 02:12:29  [D_EfficientNetB0] ep  2 | train loss 1.284 acc 0.875 | val loss 0.999 acc 0.961 F1 0.961 | 34s  *best*
+2026-10-04 02:13:04  [D_EfficientNetB0] ep  3 | train loss 1.117 acc 0.923 | val loss 0.962 acc 0.967 F1 0.967 | 34s  *best*
+2026-10-04 02:13:38  [D_EfficientNetB0] ep  4 | train loss 1.031 acc 0.945 | val loss 0.924 acc 0.968 F1 0.968 | 34s  *best*
+2026-10-04 02:14:14  [D_EfficientNetB0] ep  5 | train loss 0.994 acc 0.953 | val loss 0.906 acc 0.977 F1 0.977 | 35s  *best*
+2026-10-04 02:14:48  [D_EfficientNetB0] ep  6 | train loss 0.968 acc 0.963 | val loss 0.910 acc 0.974 F1 0.974 | 34s
+2026-10-04 02:15:22  [D_EfficientNetB0] ep  7 | train loss 0.956 acc 0.961 | val loss 0.878 acc 0.984 F1 0.984 | 33s  *best*
+2026-10-04 02:15:57  [D_EfficientNetB0] ep  8 | train loss 0.929 acc 0.970 | val loss 0.871 acc 0.983 F1 0.983 | 34s
+2026-10-04 02:16:32  [D_EfficientNetB0] ep  9 | train loss 0.913 acc 0.974 | val loss 0.860 acc 0.990 F1 0.990 | 35s  *best*
+2026-10-04 02:17:06  [D_EfficientNetB0] ep 10 | train loss 0.895 acc 0.977 | val loss 0.849 acc 0.990 F1 0.990 | 34s  *best*
+2026-10-04 02:17:40  [D_EfficientNetB0] ep 11 | train loss 0.884 acc 0.981 | val loss 0.845 acc 0.991 F1 0.991 | 34s  *best*
+2026-10-04 02:18:15  [D_EfficientNetB0] ep 12 | train loss 0.872 acc 0.981 | val loss 0.837 acc 0.989 F1 0.989 | 35s
+2026-10-04 02:18:49  [D_EfficientNetB0] ep 13 | train loss 0.866 acc 0.982 | val loss 0.830 acc 0.988 F1 0.988 | 34s
+2026-10-04 02:19:23  [D_EfficientNetB0] ep 14 | train loss 0.855 acc 0.984 | val loss 0.823 acc 0.992 F1 0.992 | 34s  *best*
+2026-10-04 02:20:00  [D_EfficientNetB0] ep 15 | train loss 0.861 acc 0.981 | val loss 0.819 acc 0.991 F1 0.991 | 36s
+2026-10-04 02:20:35  [D_EfficientNetB0] ep 16 | train loss 0.844 acc 0.986 | val loss 0.816 acc 0.992 F1 0.992 | 35s
+2026-10-04 02:21:11  [D_EfficientNetB0] ep 17 | train loss 0.841 acc 0.988 | val loss 0.815 acc 0.992 F1 0.992 | 35s  *best*
+2026-10-04 02:21:47  [D_EfficientNetB0] ep 18 | train loss 0.840 acc 0.987 | val loss 0.814 acc 0.993 F1 0.993 | 36s  *best*
+2026-10-04 02:22:22  [D_EfficientNetB0] ep 19 | train loss 0.845 acc 0.985 | val loss 0.814 acc 0.993 F1 0.993 | 34s  *best*
+2026-10-04 02:22:59  [D_EfficientNetB0] ep 20 | train loss 0.844 acc 0.985 | val loss 0.812 acc 0.994 F1 0.994 | 37s  *best*
+2026-10-04 02:22:59  [D_EfficientNetB0] DONE | best val F1 0.9941 at epoch 20 | 11.7 min
+2026-10-04 02:22:59  [G_DenseNet121] DenseNet-121 fine-tuned | up to 20 epochs | cuda | signature 1563da5f731d
+2026-10-04 02:23:44  [G_DenseNet121] ep  1 | train loss 3.316 acc 0.388 | val loss 1.492 acc 0.856 F1 0.853 | 44s  *best*
+2026-10-04 02:24:23  [G_DenseNet121] ep  2 | train loss 1.440 acc 0.847 | val loss 1.088 acc 0.933 F1 0.934 | 39s  *best*
+2026-10-04 02:25:07  [G_DenseNet121] ep  3 | train loss 1.178 acc 0.905 | val loss 0.990 acc 0.957 F1 0.956 | 43s  *best*
+2026-10-04 02:25:51  [G_DenseNet121] ep  4 | train loss 1.076 acc 0.937 | val loss 0.972 acc 0.959 F1 0.959 | 43s  *best*
+2026-10-04 02:26:35  [G_DenseNet121] ep  5 | train loss 1.038 acc 0.939 | val loss 0.939 acc 0.965 F1 0.966 | 44s  *best*
+2026-10-04 02:27:19  [G_DenseNet121] ep  6 | train loss 1.009 acc 0.951 | val loss 0.934 acc 0.974 F1 0.974 | 43s  *best*
+2026-10-04 02:28:02  [G_DenseNet121] ep  7 | train loss 0.990 acc 0.958 | val loss 0.906 acc 0.983 F1 0.983 | 42s  *best*
+2026-10-04 02:28:45  [G_DenseNet121] ep  8 | train loss 0.964 acc 0.964 | val loss 0.899 acc 0.983 F1 0.983 | 43s  *best*
+2026-10-04 02:29:29  [G_DenseNet121] ep  9 | train loss 0.944 acc 0.966 | val loss 0.888 acc 0.979 F1 0.979 | 43s
+2026-10-04 02:30:11  [G_DenseNet121] ep 10 | train loss 0.919 acc 0.971 | val loss 0.868 acc 0.982 F1 0.982 | 42s
+2026-10-04 02:30:53  [G_DenseNet121] ep 11 | train loss 0.910 acc 0.974 | val loss 0.871 acc 0.984 F1 0.984 | 41s  *best*
+2026-10-04 02:31:37  [G_DenseNet121] ep 12 | train loss 0.911 acc 0.971 | val loss 0.859 acc 0.983 F1 0.983 | 43s
+2026-10-04 02:32:20  [G_DenseNet121] ep 13 | train loss 0.887 acc 0.979 | val loss 0.848 acc 0.988 F1 0.987 | 43s  *best*
+2026-10-04 02:33:04  [G_DenseNet121] ep 14 | train loss 0.872 acc 0.983 | val loss 0.843 acc 0.989 F1 0.989 | 43s  *best*
+2026-10-04 02:33:48  [G_DenseNet121] ep 15 | train loss 0.877 acc 0.978 | val loss 0.841 acc 0.988 F1 0.988 | 43s
+2026-10-04 02:34:30  [G_DenseNet121] ep 16 | train loss 0.863 acc 0.983 | val loss 0.833 acc 0.990 F1 0.990 | 42s  *best*
+2026-10-04 02:35:13  [G_DenseNet121] ep 17 | train loss 0.858 acc 0.985 | val loss 0.832 acc 0.989 F1 0.989 | 42s
+2026-10-04 02:35:55  [G_DenseNet121] ep 18 | train loss 0.856 acc 0.985 | val loss 0.830 acc 0.991 F1 0.991 | 41s  *best*
+2026-10-04 02:36:37  [G_DenseNet121] ep 19 | train loss 0.859 acc 0.984 | val loss 0.830 acc 0.990 F1 0.990 | 42s
+2026-10-04 02:37:19  [G_DenseNet121] ep 20 | train loss 0.857 acc 0.985 | val loss 0.831 acc 0.991 F1 0.991 | 41s
+2026-10-04 02:37:19  [G_DenseNet121] DONE | best val F1 0.9913 at epoch 18 | 14.1 min
+2026-10-04 02:37:19  [A2_CustomCNN_w384] Custom CNN (Santhosh): w384, Kaiming, 60 ep, bs32 | up to 60 epochs | cuda | signature 5f5a4a1e634f
+2026-10-04 02:37:51  [A2_CustomCNN_w384] ep  1 | train loss 4.149 acc 0.048 | val loss 4.160 acc 0.060 F1 0.032 | 31s  *best*
+2026-10-04 02:38:20  [A2_CustomCNN_w384] ep  2 | train loss 3.971 acc 0.089 | val loss 4.298 acc 0.097 F1 0.059 | 29s  *best*
+2026-10-04 02:38:51  [A2_CustomCNN_w384] ep  3 | train loss 3.919 acc 0.098 | val loss 3.679 acc 0.152 F1 0.118 | 31s  *best*
+2026-10-04 02:39:22  [A2_CustomCNN_w384] ep  4 | train loss 3.792 acc 0.129 | val loss 3.653 acc 0.132 F1 0.099 | 30s
+2026-10-04 02:39:52  [A2_CustomCNN_w384] ep  5 | train loss 3.705 acc 0.157 | val loss 3.444 acc 0.215 F1 0.184 | 30s  *best*
+2026-10-04 02:40:23  [A2_CustomCNN_w384] ep  6 | train loss 3.570 acc 0.190 | val loss 4.098 acc 0.147 F1 0.141 | 31s
+2026-10-04 02:40:53  [A2_CustomCNN_w384] ep  7 | train loss 3.471 acc 0.214 | val loss 3.310 acc 0.263 F1 0.235 | 30s  *best*
+2026-10-04 02:41:24  [A2_CustomCNN_w384] ep  8 | train loss 3.373 acc 0.242 | val loss 3.151 acc 0.300 F1 0.256 | 31s  *best*
+2026-10-04 02:41:55  [A2_CustomCNN_w384] ep  9 | train loss 3.253 acc 0.271 | val loss 3.421 acc 0.264 F1 0.219 | 31s
+2026-10-04 02:42:25  [A2_CustomCNN_w384] ep 10 | train loss 3.206 acc 0.284 | val loss 2.964 acc 0.353 F1 0.317 | 30s  *best*
+2026-10-04 02:42:55  [A2_CustomCNN_w384] ep 11 | train loss 3.105 acc 0.317 | val loss 2.757 acc 0.414 F1 0.389 | 30s  *best*
+2026-10-04 02:43:25  [A2_CustomCNN_w384] ep 12 | train loss 3.018 acc 0.344 | val loss 2.808 acc 0.396 F1 0.373 | 30s
+2026-10-04 02:43:55  [A2_CustomCNN_w384] ep 13 | train loss 2.960 acc 0.357 | val loss 2.859 acc 0.411 F1 0.375 | 30s
+2026-10-04 02:44:25  [A2_CustomCNN_w384] ep 14 | train loss 2.903 acc 0.376 | val loss 2.423 acc 0.529 F1 0.506 | 30s  *best*
+2026-10-04 02:44:56  [A2_CustomCNN_w384] ep 15 | train loss 2.819 acc 0.393 | val loss 2.579 acc 0.488 F1 0.460 | 30s
+2026-10-04 02:45:27  [A2_CustomCNN_w384] ep 16 | train loss 2.778 acc 0.417 | val loss 2.294 acc 0.552 F1 0.531 | 31s  *best*
+2026-10-04 02:45:58  [A2_CustomCNN_w384] ep 17 | train loss 2.714 acc 0.429 | val loss 2.550 acc 0.481 F1 0.467 | 31s
+2026-10-04 02:46:28  [A2_CustomCNN_w384] ep 18 | train loss 2.658 acc 0.449 | val loss 2.505 acc 0.503 F1 0.498 | 30s
+2026-10-04 02:46:59  [A2_CustomCNN_w384] ep 19 | train loss 2.607 acc 0.465 | val loss 2.276 acc 0.575 F1 0.568 | 30s  *best*
+2026-10-04 02:47:30  [A2_CustomCNN_w384] ep 20 | train loss 2.543 acc 0.485 | val loss 2.162 acc 0.612 F1 0.601 | 31s  *best*
+2026-10-04 02:48:01  [A2_CustomCNN_w384] ep 21 | train loss 2.495 acc 0.508 | val loss 2.030 acc 0.668 F1 0.653 | 31s  *best*
+2026-10-04 02:48:32  [A2_CustomCNN_w384] ep 22 | train loss 2.485 acc 0.514 | val loss 2.100 acc 0.629 F1 0.624 | 31s
+2026-10-04 02:49:03  [A2_CustomCNN_w384] ep 23 | train loss 2.398 acc 0.534 | val loss 2.087 acc 0.676 F1 0.664 | 31s  *best*
+2026-10-04 02:49:34  [A2_CustomCNN_w384] ep 24 | train loss 2.349 acc 0.541 | val loss 2.197 acc 0.610 F1 0.607 | 31s
+2026-10-04 02:50:04  [A2_CustomCNN_w384] ep 25 | train loss 2.295 acc 0.561 | val loss 1.996 acc 0.662 F1 0.650 | 30s
+2026-10-04 02:50:36  [A2_CustomCNN_w384] ep 26 | train loss 2.283 acc 0.573 | val loss 1.837 acc 0.717 F1 0.707 | 31s  *best*
+2026-10-04 02:51:06  [A2_CustomCNN_w384] ep 27 | train loss 2.271 acc 0.574 | val loss 1.880 acc 0.710 F1 0.704 | 30s
+2026-10-04 02:51:37  [A2_CustomCNN_w384] ep 28 | train loss 2.161 acc 0.608 | val loss 1.857 acc 0.711 F1 0.711 | 31s  *best*
+2026-10-04 02:52:08  [A2_CustomCNN_w384] ep 29 | train loss 2.158 acc 0.612 | val loss 1.687 acc 0.764 F1 0.757 | 31s  *best*
+2026-10-04 02:52:39  [A2_CustomCNN_w384] ep 30 | train loss 2.099 acc 0.630 | val loss 1.718 acc 0.762 F1 0.758 | 31s  *best*
+2026-10-04 02:53:10  [A2_CustomCNN_w384] ep 31 | train loss 2.043 acc 0.656 | val loss 1.686 acc 0.767 F1 0.766 | 31s  *best*
+2026-10-04 02:53:41  [A2_CustomCNN_w384] ep 32 | train loss 2.046 acc 0.658 | val loss 1.647 acc 0.773 F1 0.768 | 31s  *best*
+2026-10-04 02:54:12  [A2_CustomCNN_w384] ep 33 | train loss 1.992 acc 0.663 | val loss 1.667 acc 0.759 F1 0.756 | 31s
+2026-10-04 02:54:43  [A2_CustomCNN_w384] ep 34 | train loss 1.958 acc 0.678 | val loss 1.570 acc 0.788 F1 0.784 | 31s  *best*
+2026-10-04 02:55:14  [A2_CustomCNN_w384] ep 35 | train loss 1.940 acc 0.685 | val loss 1.690 acc 0.758 F1 0.754 | 31s
+2026-10-04 02:55:45  [A2_CustomCNN_w384] ep 36 | train loss 1.914 acc 0.693 | val loss 1.541 acc 0.815 F1 0.810 | 31s  *best*
+2026-10-04 02:56:16  [A2_CustomCNN_w384] ep 37 | train loss 1.886 acc 0.704 | val loss 1.540 acc 0.820 F1 0.813 | 31s  *best*
+2026-10-04 02:56:47  [A2_CustomCNN_w384] ep 38 | train loss 1.866 acc 0.710 | val loss 1.502 acc 0.816 F1 0.815 | 31s  *best*
+2026-10-04 02:57:18  [A2_CustomCNN_w384] ep 39 | train loss 1.802 acc 0.724 | val loss 1.550 acc 0.814 F1 0.812 | 30s
+2026-10-04 02:57:49  [A2_CustomCNN_w384] ep 40 | train loss 1.798 acc 0.732 | val loss 1.469 acc 0.831 F1 0.829 | 30s  *best*
+2026-10-04 02:58:20  [A2_CustomCNN_w384] ep 41 | train loss 1.757 acc 0.744 | val loss 1.402 acc 0.859 F1 0.857 | 31s  *best*
+2026-10-04 02:58:51  [A2_CustomCNN_w384] ep 42 | train loss 1.730 acc 0.752 | val loss 1.401 acc 0.859 F1 0.856 | 31s
+2026-10-04 02:59:21  [A2_CustomCNN_w384] ep 43 | train loss 1.721 acc 0.758 | val loss 1.399 acc 0.853 F1 0.851 | 30s
+2026-10-04 02:59:52  [A2_CustomCNN_w384] ep 44 | train loss 1.682 acc 0.769 | val loss 1.400 acc 0.851 F1 0.849 | 30s
+2026-10-04 03:00:22  [A2_CustomCNN_w384] ep 45 | train loss 1.702 acc 0.761 | val loss 1.383 acc 0.870 F1 0.867 | 30s  *best*
+2026-10-04 03:00:53  [A2_CustomCNN_w384] ep 46 | train loss 1.655 acc 0.780 | val loss 1.382 acc 0.863 F1 0.861 | 31s
+2026-10-04 03:01:24  [A2_CustomCNN_w384] ep 47 | train loss 1.651 acc 0.786 | val loss 1.374 acc 0.877 F1 0.875 | 31s  *best*
+2026-10-04 03:01:55  [A2_CustomCNN_w384] ep 48 | train loss 1.638 acc 0.788 | val loss 1.347 acc 0.880 F1 0.878 | 31s  *best*
+2026-10-04 03:02:26  [A2_CustomCNN_w384] ep 49 | train loss 1.630 acc 0.793 | val loss 1.336 acc 0.888 F1 0.886 | 31s  *best*
+2026-10-04 03:02:57  [A2_CustomCNN_w384] ep 50 | train loss 1.625 acc 0.789 | val loss 1.311 acc 0.885 F1 0.882 | 31s
+2026-10-04 03:03:27  [A2_CustomCNN_w384] ep 51 | train loss 1.574 acc 0.801 | val loss 1.308 acc 0.886 F1 0.884 | 30s
+2026-10-04 03:03:57  [A2_CustomCNN_w384] ep 52 | train loss 1.598 acc 0.796 | val loss 1.311 acc 0.896 F1 0.896 | 30s  *best*
+2026-10-04 03:04:28  [A2_CustomCNN_w384] ep 53 | train loss 1.575 acc 0.804 | val loss 1.291 acc 0.896 F1 0.895 | 31s
+2026-10-04 03:05:00  [A2_CustomCNN_w384] ep 54 | train loss 1.578 acc 0.802 | val loss 1.305 acc 0.893 F1 0.891 | 31s
+2026-10-04 03:05:30  [A2_CustomCNN_w384] ep 55 | train loss 1.569 acc 0.810 | val loss 1.311 acc 0.888 F1 0.886 | 31s
+2026-10-04 03:06:01  [A2_CustomCNN_w384] ep 56 | train loss 1.570 acc 0.804 | val loss 1.311 acc 0.893 F1 0.891 | 31s
+2026-10-04 03:06:33  [A2_CustomCNN_w384] ep 57 | train loss 1.546 acc 0.812 | val loss 1.301 acc 0.897 F1 0.895 | 31s
+2026-10-04 03:07:03  [A2_CustomCNN_w384] ep 58 | train loss 1.561 acc 0.807 | val loss 1.294 acc 0.898 F1 0.896 | 30s  *best*
+2026-10-04 03:07:34  [A2_CustomCNN_w384] ep 59 | train loss 1.563 acc 0.808 | val loss 1.291 acc 0.897 F1 0.895 | 31s
+2026-10-04 03:08:04  [A2_CustomCNN_w384] ep 60 | train loss 1.547 acc 0.820 | val loss 1.303 acc 0.891 F1 0.889 | 30s
+2026-10-04 03:08:04  [A2_CustomCNN_w384] DONE | best val F1 0.8956 at epoch 58 | 30.6 min

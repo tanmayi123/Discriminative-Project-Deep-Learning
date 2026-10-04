@@ -1,0 +1,6 @@
+,clean,small_object,cropped,occluded,low_quality,robust_mean,mean_drop
+A2_CustomCNN_w384,89.06,76.68,90.12,74.95,26.1,66.96,22.1
+C_ResNet50,98.66,95.2,98.08,89.64,32.92,78.96,19.7
+D_EfficientNetB0,98.75,94.82,97.98,89.44,45.01,81.81,16.94
+E_ConvNeXtT,99.23,97.6,98.46,91.17,51.73,84.74,14.49
+G_DenseNet121,98.66,93.47,98.18,82.82,19.87,73.59,25.07

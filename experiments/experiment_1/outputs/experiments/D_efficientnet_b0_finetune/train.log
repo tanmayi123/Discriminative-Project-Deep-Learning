@@ -1,0 +1,24 @@
+
+========== D_efficientnet_b0_finetune: EfficientNet-B0 (ImageNet) fully fine-tuned | status: not started | 2026-10-02 20:18:13 ==========
+config: {"aug": "robust", "epochs": 20, "warmup_epochs": 1, "patience": 6, "label_smoothing": 0.1, "arch": "efficientnet_b0", "lr_head": 0.001, "lr_backbone": 0.0003, "wd": 0.01, "desc": "EfficientNet-B0 (ImageNet) fully fine-tuned", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "ff7f6bcb856b", "started": "2026-10-02 20:18:13"}
+  ep 01/20 | train loss 3.285 acc 0.409 | val loss 0.729 acc 0.886 F1 0.883 | 145s | GPU 1.5 GB
+  ep 02/20 | train loss 1.310 acc 0.869 | val loss 0.299 acc 0.957 F1 0.957 | 56s | GPU 1.5 GB
+  ep 03/20 | train loss 1.114 acc 0.923 | val loss 0.222 acc 0.970 F1 0.970 | 57s | GPU 1.5 GB
+  ep 04/20 | train loss 1.049 acc 0.942 | val loss 0.212 acc 0.975 F1 0.975 | 57s | GPU 1.5 GB
+  ep 05/20 | train loss 0.991 acc 0.957 | val loss 0.208 acc 0.981 F1 0.981 | 57s | GPU 1.5 GB
+  ep 06/20 | train loss 0.976 acc 0.960 | val loss 0.173 acc 0.981 F1 0.980 | 65s | GPU 1.5 GB
+  ep 07/20 | train loss 0.951 acc 0.966 | val loss 0.200 acc 0.983 F1 0.982 | 81s | GPU 1.5 GB
+  ep 08/20 | train loss 0.932 acc 0.968 | val loss 0.182 acc 0.985 F1 0.984 | 81s | GPU 1.5 GB
+  ep 09/20 | train loss 0.919 acc 0.971 | val loss 0.165 acc 0.987 F1 0.986 | 81s | GPU 1.5 GB
+  ep 10/20 | train loss 0.910 acc 0.972 | val loss 0.198 acc 0.986 F1 0.985 | 82s | GPU 1.5 GB
+  ep 11/20 | train loss 0.898 acc 0.976 | val loss 0.170 acc 0.988 F1 0.987 | 81s | GPU 1.5 GB
+  ep 12/20 | train loss 0.878 acc 0.979 | val loss 0.171 acc 0.988 F1 0.987 | 82s | GPU 1.5 GB
+  ep 13/20 | train loss 0.865 acc 0.981 | val loss 0.150 acc 0.989 F1 0.989 | 81s | GPU 1.5 GB
+  ep 14/20 | train loss 0.864 acc 0.981 | val loss 0.163 acc 0.987 F1 0.986 | 81s | GPU 1.5 GB
+  ep 15/20 | train loss 0.865 acc 0.980 | val loss 0.162 acc 0.992 F1 0.992 | 82s | GPU 1.5 GB
+  ep 16/20 | train loss 0.844 acc 0.987 | val loss 0.160 acc 0.991 F1 0.991 | 81s | GPU 1.5 GB
+  ep 17/20 | train loss 0.835 acc 0.989 | val loss 0.152 acc 0.990 F1 0.990 | 81s | GPU 1.5 GB
+  ep 18/20 | train loss 0.837 acc 0.988 | val loss 0.146 acc 0.990 F1 0.990 | 81s | GPU 1.5 GB
+  ep 19/20 | train loss 0.847 acc 0.984 | val loss 0.147 acc 0.991 F1 0.991 | 80s | GPU 1.5 GB
+  ep 20/20 | train loss 0.837 acc 0.989 | val loss 0.148 acc 0.991 F1 0.991 | 81s | GPU 1.5 GB
+→ D_efficientnet_b0_finetune: test acc 0.9818 | macro-F1 0.9815 | TTA 0.9856 | trained 26.2 min

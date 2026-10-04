@@ -1,0 +1,20 @@
+{
+  "aug": "robust",
+  "epochs": 20,
+  "warmup_epochs": 1,
+  "patience": 6,
+  "label_smoothing": 0.1,
+  "arch": "convnext_tiny",
+  "lr_head": 0.001,
+  "lr_backbone": 0.0001,
+  "wd": 0.05,
+  "desc": "ConvNeXt-Tiny (ImageNet) fully fine-tuned",
+  "class_weighted_loss": true,
+  "batch_size": 32,
+  "img_size": 224,
+  "seed": 42,
+  "session": "20261002_184630",
+  "data_sig": "6ed2c1673798",
+  "cfg_sig": "a6ad45db98f9",
+  "started": "2026-10-02 20:45:38"
+}

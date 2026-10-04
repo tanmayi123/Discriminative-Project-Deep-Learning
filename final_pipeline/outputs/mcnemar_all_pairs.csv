@@ -1,0 +1,6 @@
+,A2_CustomCNN_w384,C_ResNet50,D_EfficientNetB0,E_ConvNeXtT,G_DenseNet121
+A2_CustomCNN_w384,1.0,0.0,0.0,0.0,0.0
+C_ResNet50,0.0,1.0,1.0,0.2101,1.0
+D_EfficientNetB0,0.0,1.0,1.0,0.3018,1.0
+E_ConvNeXtT,0.0,0.2101,0.3018,1.0,0.146
+G_DenseNet121,0.0,1.0,1.0,0.146,1.0

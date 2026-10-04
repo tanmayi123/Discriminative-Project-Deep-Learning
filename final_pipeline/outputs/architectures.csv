@@ -1,0 +1,6 @@
+model,description,params_M,trainable_M,epochs,batch,lr_head,lr_backbone,weight_decay,aug
+A2_CustomCNN_w384,"Custom CNN (Santhosh): w384, Kaiming, 60 ep, bs32",3.41,3.415,60,32,0.002,0.002,0.05,robust
+C_ResNet50,ResNet-50 fine-tuned,23.66,23.658,20,32,0.001,0.0001,0.01,robust
+D_EfficientNetB0,EfficientNet-B0 fine-tuned,4.1,4.101,20,32,0.001,0.0003,0.01,robust
+E_ConvNeXtT,ConvNeXt-Tiny fine-tuned,27.88,27.876,20,32,0.001,0.0001,0.05,robust
+G_DenseNet121,DenseNet-121 fine-tuned,7.03,7.029,20,32,0.001,0.0001,0.01,robust

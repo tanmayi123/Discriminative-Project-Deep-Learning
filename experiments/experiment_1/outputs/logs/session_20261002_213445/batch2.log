@@ -1,0 +1,48 @@
+
+====================================================================================================
+[2026-10-02 21:35:00] START B2.01  Stratified 70/15/15 split, fixed seed, identical for every model
+====================================================================================================
+train 4859 | val 1041 | test 1042 | classes 73
+Split signature: 6ed2c1673798 | manifest saved to data_manifest.json
+[2026-10-02 21:35:00] END   B2.01  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 21:35:00] START B2.02  Verify every Object ID is split in the same 70/15/15 proportion; handle unequal class sizes
+====================================================================================================
+Per-class split (first 10 shown, full table in split_per_class.csv):
+train % per class: 69.5–70.5 | val %: 14.7–15.8 | test %: 14.3–15.8
+Training images per class: min 62, max 74 (ratio 1.19) → class-weighted loss ENABLED (smaller classes count more, so no object dominates).
+[2026-10-02 21:35:00] END   B2.02  | OK  | 0.2s
+
+====================================================================================================
+[2026-10-02 21:35:00] START B2.03  Near-duplicate leakage check
+====================================================================================================
+Near-duplicate test images (sim ≥ 0.92): 99 / 1042 (9.5%) → 'hard' subset = 943 images
+[2026-10-02 21:35:01] END   B2.03  | OK  | 1.0s
+
+====================================================================================================
+[2026-10-02 21:35:01] START B2.04  Models
+====================================================================================================
+[2026-10-02 21:35:01] END   B2.04  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 21:35:01] START B2.05  Architecture check: layer shapes, normalisation and pooling of every model (for the report)
+====================================================================================================
+Custom CNN — shape after each stage (padding keeps size inside a stage, max-pool halves it):
+  input                     (1, 3, 224, 224)      
+  stage 1 (2×[conv-BN-ReLU] + pool)(1, 32, 112, 112)         10,208 params
+  stage 2 (2×[conv-BN-ReLU] + pool)(1, 64, 56, 56)           55,552 params
+  stage 3 (2×[conv-BN-ReLU] + pool)(1, 128, 28, 28)         221,696 params
+  stage 4 (2×[conv-BN-ReLU] + pool)(1, 256, 14, 14)         885,760 params
+  stage 5 (2×[conv-BN-ReLU] + pool)(1, 384, 7, 7)         2,213,376 params
+  global avg pool           (1, 384, 1, 1)        
+  dropout + linear          (1, 73)                   28,105 params
+
+Note: ResNet-50 and EfficientNet-B0 use BatchNorm; ConvNeXt uses LayerNorm by design. Pretrained architectures are kept exactly as designed — changing their layers would break the pretrained weights.
+[2026-10-02 21:35:03] END   B2.05  | OK  | 2.1s
+
+====================================================================================================
+[2026-10-02 21:35:03] START B2.06  Training engine — checkpointed every epoch, resumable, fault-tolerant
+====================================================================================================
+Experiments: ['A_custom_cnn_scratch', 'B_convnext_linear_probe', 'C_resnet50_finetune', 'D_efficientnet_b0_finetune', 'E_convnext_tiny_finetune', 'F_convnext_tiny_basic_aug']
+[2026-10-02 21:35:03] END   B2.06  | OK  | 0.0s

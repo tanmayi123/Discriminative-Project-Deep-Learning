@@ -1,0 +1,21 @@
+# Dataset: course data provided by the TAs, not redistributed
+data/
+IE7615 Deep Learning for AI/
+images_OBJ*/
+*.zip
+
+# Model weights: published as GitHub Release assets (files over 100 MB are rejected by GitHub)
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+
+# Large caches
+cache/
+images_224.npy
+
+# System and notebook clutter
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+.claude/

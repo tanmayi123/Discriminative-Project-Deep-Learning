@@ -1,0 +1,16 @@
+
+========== B_convnext_linear_probe: Frozen ImageNet ConvNeXt-Tiny + linear head | status: not started | 2026-10-02 19:45:39 ==========
+config: {"aug": "robust", "epochs": 12, "warmup_epochs": 1, "patience": 5, "label_smoothing": 0.1, "arch": "linear_probe", "lr_head": 0.002, "lr_backbone": 0.0, "wd": 0.0001, "desc": "Frozen ImageNet ConvNeXt-Tiny + linear head", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "20414ad3c7b3", "started": "2026-10-02 19:45:39"}
+  ep 01/12 | train loss 3.108 acc 0.479 | val loss 0.853 acc 0.855 F1 0.858 | 33s | GPU 0.4 GB
+  ep 02/12 | train loss 1.347 acc 0.891 | val loss 0.332 acc 0.940 F1 0.940 | 24s | GPU 0.4 GB
+  ep 03/12 | train loss 1.183 acc 0.931 | val loss 0.260 acc 0.957 F1 0.956 | 24s | GPU 0.4 GB
+  ep 04/12 | train loss 1.118 acc 0.951 | val loss 0.241 acc 0.958 F1 0.958 | 24s | GPU 0.4 GB
+  ep 05/12 | train loss 1.096 acc 0.957 | val loss 0.231 acc 0.966 F1 0.967 | 24s | GPU 0.4 GB
+  ep 06/12 | train loss 1.073 acc 0.965 | val loss 0.216 acc 0.971 F1 0.971 | 24s | GPU 0.4 GB
+  ep 07/12 | train loss 1.046 acc 0.972 | val loss 0.215 acc 0.971 F1 0.971 | 24s | GPU 0.4 GB
+  ep 08/12 | train loss 1.038 acc 0.972 | val loss 0.217 acc 0.972 F1 0.972 | 24s | GPU 0.4 GB
+  ep 09/12 | train loss 1.029 acc 0.974 | val loss 0.216 acc 0.970 F1 0.970 | 24s | GPU 0.4 GB
+  ep 10/12 | train loss 1.023 acc 0.980 | val loss 0.215 acc 0.974 F1 0.974 | 23s | GPU 0.4 GB
+  ep 11/12 | train loss 1.023 acc 0.976 | val loss 0.215 acc 0.975 F1 0.975 | 24s | GPU 0.4 GB
+  ep 12/12 | train loss 1.024 acc 0.978 | val loss 0.214 acc 0.975 F1 0.975 | 24s | GPU 0.4 GB
+→ B_convnext_linear_probe: test acc 0.9741 | macro-F1 0.9740 | TTA 0.9818 | trained 4.9 min

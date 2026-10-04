@@ -1,0 +1,25 @@
+
+========== C_resnet50_finetune: ResNet-50 (ImageNet) fully fine-tuned | status: not started | 2026-10-02 19:51:08 ==========
+config: {"aug": "robust", "epochs": 20, "warmup_epochs": 1, "patience": 6, "label_smoothing": 0.1, "arch": "resnet50", "lr_head": 0.001, "lr_backbone": 0.0001, "wd": 0.01, "desc": "ResNet-50 (ImageNet) fully fine-tuned", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "df3f2c1f40b5", "started": "2026-10-02 19:51:08"}
+  ep 01/20 | train loss 3.107 acc 0.437 | val loss 0.560 acc 0.878 F1 0.874 | 116s | GPU 1.9 GB
+  ep 02/20 | train loss 1.174 acc 0.908 | val loss 0.309 acc 0.960 F1 0.960 | 76s | GPU 1.9 GB
+  ep 03/20 | train loss 0.998 acc 0.953 | val loss 0.247 acc 0.974 F1 0.973 | 79s | GPU 1.9 GB
+  ep 04/20 | train loss 0.931 acc 0.969 | val loss 0.224 acc 0.981 F1 0.981 | 75s | GPU 1.9 GB
+  ep 05/20 | train loss 0.898 acc 0.973 | val loss 0.201 acc 0.987 F1 0.987 | 76s | GPU 1.9 GB
+  ep 06/20 | train loss 0.877 acc 0.977 | val loss 0.205 acc 0.987 F1 0.987 | 77s | GPU 1.9 GB
+  ep 07/20 | train loss 0.865 acc 0.978 | val loss 0.172 acc 0.987 F1 0.986 | 78s | GPU 1.9 GB
+  ep 08/20 | train loss 0.840 acc 0.985 | val loss 0.189 acc 0.987 F1 0.986 | 76s | GPU 1.9 GB
+  ep 09/20 | train loss 0.831 acc 0.987 | val loss 0.169 acc 0.988 F1 0.987 | 75s | GPU 1.9 GB
+  ep 10/20 | train loss 0.826 acc 0.986 | val loss 0.166 acc 0.986 F1 0.985 | 77s | GPU 1.9 GB
+  ep 11/20 | train loss 0.818 acc 0.986 | val loss 0.168 acc 0.988 F1 0.988 | 77s | GPU 1.9 GB
+  ep 12/20 | train loss 0.814 acc 0.986 | val loss 0.166 acc 0.988 F1 0.987 | 78s | GPU 1.9 GB
+  ep 13/20 | train loss 0.806 acc 0.989 | val loss 0.164 acc 0.991 F1 0.991 | 77s | GPU 1.9 GB
+  ep 14/20 | train loss 0.805 acc 0.989 | val loss 0.159 acc 0.991 F1 0.991 | 78s | GPU 1.9 GB
+  ep 15/20 | train loss 0.803 acc 0.989 | val loss 0.151 acc 0.990 F1 0.990 | 76s | GPU 1.9 GB
+  ep 16/20 | train loss 0.796 acc 0.991 | val loss 0.161 acc 0.991 F1 0.991 | 77s | GPU 1.9 GB
+  ep 17/20 | train loss 0.788 acc 0.993 | val loss 0.160 acc 0.990 F1 0.990 | 77s | GPU 1.9 GB
+  ep 18/20 | train loss 0.782 acc 0.993 | val loss 0.157 acc 0.990 F1 0.990 | 79s | GPU 1.9 GB
+  ep 19/20 | train loss 0.791 acc 0.990 | val loss 0.160 acc 0.989 F1 0.989 | 78s | GPU 1.9 GB
+  ep 20/20 | train loss 0.781 acc 0.995 | val loss 0.158 acc 0.990 F1 0.990 | 78s | GPU 1.9 GB
+  early stop (no val-F1 gain for 6 epochs)
+→ C_resnet50_finetune: test acc 0.9866 | macro-F1 0.9863 | TTA 0.9885 | trained 26.3 min

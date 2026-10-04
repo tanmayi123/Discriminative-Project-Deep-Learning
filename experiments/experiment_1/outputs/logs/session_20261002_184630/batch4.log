@@ -1,0 +1,76 @@
+
+====================================================================================================
+[2026-10-02 21:08:04] START B4.01  Main comparison table with 95% bootstrap confidence intervals
+====================================================================================================
+
+🏆 Selected model (by validation macro-F1): D_efficientnet_b0_finetune
+[2026-10-02 21:08:04] END   B4.01  | OK  | 0.1s
+
+====================================================================================================
+[2026-10-02 21:08:04] START B4.02  Is the winner significantly better? McNemar's exact test on paired test predictions
+====================================================================================================
+[2026-10-02 21:08:04] END   B4.02  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 21:08:04] START B4.03  Robustness: accuracy under simulated small / cut-off / occluded / low-quality conditions
+====================================================================================================
+C:\Users\csk23\AppData\Local\Temp\ipykernel_45788\447562752.py:4: Pandas4Warning: Starting with pandas version 4.0 all arguments of mean will be keyword-only.
+  rob["mean_drop"] = rob["clean"] - rob[ROBUSTNESS_KINDS].mean(1)
+[2026-10-02 21:08:05] END   B4.03  | OK  | 0.7s
+
+====================================================================================================
+[2026-10-02 21:08:05] START B4.04  Training curves
+====================================================================================================
+[2026-10-02 21:08:08] END   B4.04  | OK  | 2.8s
+
+====================================================================================================
+[2026-10-02 21:08:08] START B4.05  Error analysis of the selected model
+====================================================================================================
+Most confused (true → predicted):
+  OBJ061 → OBJ059: 2
+  OBJ034 → OBJ013: 2
+  OBJ014 → OBJ045: 2
+  OBJ052 → OBJ061: 1
+  OBJ054 → OBJ032: 1
+  OBJ063 → OBJ026: 1
+  OBJ042 → OBJ027: 1
+  OBJ052 → OBJ025: 1
+  OBJ036 → OBJ060: 1
+  OBJ034 → OBJ047: 1
+
+Weakest classes:
+[2026-10-02 21:08:13] END   B4.05  | OK  | 5.8s
+
+====================================================================================================
+[2026-10-02 21:08:13] START B4.06  Grad-CAM: does the model look at the object or at the background?
+====================================================================================================
+[2026-10-02 21:09:18] END   B4.06  | OK  | 64.8s
+
+====================================================================================================
+[2026-10-02 21:09:18] START B4.07  Background-shortcut test: what does the model predict on images that contain NO object?
+====================================================================================================
+On 385 excluded background-only images (no object visible), the selected model predicted the photographer's own Object ID 34.8% of the time (chance = 1.4%), mean confidence 0.37. This indicates substantial reliance on background cues.
+[2026-10-02 21:10:38] END   B4.07  | OK  | 80.0s
+<>:11: SyntaxWarning: 'str' object is not callable; perhaps you missed a comma?
+<>:11: SyntaxWarning: 'str' object is not callable; perhaps you missed a comma?
+
+====================================================================================================
+[2026-10-02 21:10:38] START B4.08  Write a results summary (tables + key facts) to paste into the report
+====================================================================================================
+C:\Users\csk23\AppData\Local\Temp\ipykernel_45788\2798065694.py:11: SyntaxWarning: 'str' object is not callable; perhaps you missed a comma?
+  f"- Removed: {N_BG} background-only (filename tag), {N_DUP} byte-identical duplicates, "
+
+!!! EXCEPTION — full traceback:
+Traceback (most recent call last):
+  File "C:\Users\csk23\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\IPython\core\interactiveshell.py", line 3823, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csk23\AppData\Local\Temp\ipykernel_45788\2798065694.py", line 11, in <module>
+    f"- Removed: {N_BG} background-only (filename tag), {N_DUP} byte-identical duplicates, "
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    (f"{N_CAP} by the {CAP_PER_CLASS}-per-class cap, " if N_CAP else "") + f"{N_UNREADABLE} unreadable.",
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object is not callable
+[2026-10-02 21:10:39] END   B4.08  | ERROR TypeError: 'str' object is not callable | 0.6s
+C:\Users\csk23\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:146: UserWarning: resource_tracker: process died unexpectedly, relaunching. Some folders/semaphores might leak.
+  warnings.warn(

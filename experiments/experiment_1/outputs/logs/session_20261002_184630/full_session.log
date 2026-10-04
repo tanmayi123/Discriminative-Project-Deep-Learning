@@ -1,0 +1,578 @@
+session      : 20261002_184630
+python       : 3.14.2
+platform     : Windows-11-10.0.26200-SP0
+torch        : 2.11.0+cu128 (CUDA build 12.8, cuDNN 91900)
+GPU          : NVIDIA GeForce RTX 5070 Laptop GPU, 8.5 GB
+torchvision  : 0.26.0+cu128
+
+📝 Logging to: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone1_outputs_v2\logs\session_20261002_184630
+[2026-10-02 18:46:33] END   B0.04  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 18:46:33] START B1.01  Index the dataset: one folder per Object ID
+====================================================================================================
+Root: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\Dataset - Updated
+73 classes | 7343 images | per class: min 100, median 100, max 113
+Classes without exactly 100 images: {'OBJ005': 108, 'OBJ009': 106, 'OBJ017': 113, 'OBJ028': 101, 'OBJ049': 105, 'OBJ051': 110}
+⚠️ 101 files whose name prefix ≠ folder (check Object IDs!): ['OBJ07_033.jpg', 'sunglasses_001.jpeg', 'sunglasses_002.jpeg', 'sunglasses_003.jpeg', 'sunglasses_004.jpeg', 'sunglasses_005.jpeg', 'sunglasses_006.jpeg', 'sunglasses_007.jpeg', 'sunglasses_008.jpeg', 'sunglasses_009.jpeg', 'sunglasses_010.jpeg', 'sunglasses_011.jpeg', 'sunglasses_012.jpeg', 'sunglasses_013.jpeg', 'sunglasses_014.jpeg']
+Excluded 0 images by config → 7343 images kept
+[2026-10-02 18:46:33] END   B1.01  | OK  | 0.2s
+
+====================================================================================================
+[2026-10-02 18:46:34] START B1.02  Decode every image once into RAM at 224x224 (cached on disk → re-runs take seconds)
+====================================================================================================
+Decoded images cached → C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone1_outputs_v2\cache\decoded_84ad99c3e190be4b.npy
+IMAGES in RAM: (7343, 224, 224, 3), 1.11 GB | unreadable files skipped: 0
+Most common original sizes: {(224, 224): 7340, (224, 192): 1, (225, 224): 1, (650, 642): 1}
+Byte-identical duplicates (pre-bg-removal): 28 groups, 0 spanning different classes
+All 73 classes have at least one readable image. OBJ022: 100 images
+[2026-10-02 18:46:50] END   B1.02  | OK  | 16.8s
+
+====================================================================================================
+[2026-10-02 18:46:50] START B1.03  Background-only removal by filename
+====================================================================================================
+Background images identified by filename: 385 total
+Classes with zero bg images (1): ['OBJ004']
+
+Per-class bg count:
+  OBJ001: 5
+  OBJ002: 5
+  OBJ003: 5
+  OBJ004: 0
+  OBJ005: 9
+  OBJ006: 5
+  OBJ007: 5
+  OBJ008: 5
+  OBJ009: 11
+  OBJ010: 5
+  OBJ011: 5
+  OBJ012: 5
+  OBJ013: 6
+  OBJ014: 7
+  OBJ015: 5
+  OBJ016: 5
+  OBJ017: 7
+  OBJ018: 5
+  OBJ019: 5
+  OBJ020: 5
+  OBJ021: 5
+  OBJ022: 5
+  OBJ023: 5
+  OBJ024: 5
+  OBJ025: 6
+  OBJ026: 5
+  OBJ027: 5
+  OBJ028: 5
+  OBJ029: 5
+  OBJ030: 5
+  OBJ031: 5
+  OBJ032: 5
+  OBJ033: 5
+  OBJ034: 5
+  OBJ035: 5
+  OBJ036: 5
+  OBJ037: 5
+  OBJ038: 5
+  OBJ039: 5
+  OBJ040: 5
+  OBJ041: 5
+  OBJ042: 5
+  OBJ043: 5
+  OBJ044: 5
+  OBJ045: 5
+  OBJ046: 5
+  OBJ047: 5
+  OBJ048: 5
+  OBJ049: 6
+  OBJ050: 5
+  OBJ051: 5
+  OBJ052: 5
+  OBJ053: 10
+  OBJ054: 5
+  OBJ055: 5
+  OBJ056: 5
+  OBJ057: 5
+  OBJ058: 5
+  OBJ059: 5
+  OBJ060: 5
+  OBJ061: 5
+  OBJ062: 5
+  OBJ063: 6
+  OBJ064: 5
+  OBJ065: 5
+  OBJ066: 5
+  OBJ067: 5
+  OBJ068: 5
+  OBJ069: 7
+  OBJ070: 5
+  OBJ071: 5
+  OBJ072: 5
+  OBJ073: 5
+
+Removed 385 bg images -> 6958 images remain
+[2026-10-02 18:46:51] END   B1.03  | OK  | 0.6s
+
+====================================================================================================
+[2026-10-02 18:46:51] START B1.04  Remove exact duplicates (before the split), optional per-class cap, re-index
+====================================================================================================
+Exact duplicates removed: 16
+Per class: {'OBJ011': 2, 'OBJ022': 1, 'OBJ023': 6, 'OBJ028': 1, 'OBJ029': 1, 'OBJ062': 4, 'OBJ066': 1}
+
+No per-class cap applied — every valid image is kept.
+
+Final dataset: 6942 images | 73 classes
+Per-class: min 89, median 95, max 106
+
+Full per-class count:
+  OBJ001: 95
+  OBJ002: 95
+  OBJ003: 95
+  OBJ004: 100
+  OBJ005: 99
+  OBJ006: 95
+  OBJ007: 95
+  OBJ008: 95
+  OBJ009: 95
+  OBJ010: 95
+  OBJ011: 93
+  OBJ012: 95
+  OBJ013: 94
+  OBJ014: 93
+  OBJ015: 95
+  OBJ016: 95
+  OBJ017: 106
+  OBJ018: 95
+  OBJ019: 95
+  OBJ020: 95
+  OBJ021: 95
+  OBJ022: 94
+  OBJ023: 89
+  OBJ024: 95
+  OBJ025: 94
+  OBJ026: 95
+  OBJ027: 95
+  OBJ028: 95
+  OBJ029: 94
+  OBJ030: 95
+  OBJ031: 95
+  OBJ032: 95
+  OBJ033: 95
+  OBJ034: 95
+  OBJ035: 95
+  OBJ036: 95
+  OBJ037: 95
+  OBJ038: 95
+  OBJ039: 95
+  OBJ040: 95
+  OBJ041: 95
+  OBJ042: 95
+  OBJ043: 95
+  OBJ044: 95
+  OBJ045: 95
+  OBJ046: 95
+  OBJ047: 95
+  OBJ048: 95
+  OBJ049: 99
+  OBJ050: 95
+  OBJ051: 105
+  OBJ052: 95
+  OBJ053: 90
+  OBJ054: 95
+  OBJ055: 95
+  OBJ056: 95
+  OBJ057: 95
+  OBJ058: 95
+  OBJ059: 95
+  OBJ060: 95
+  OBJ061: 95
+  OBJ062: 91
+  OBJ063: 94
+  OBJ064: 95
+  OBJ065: 95
+  OBJ066: 94
+  OBJ067: 95
+  OBJ068: 95
+  OBJ069: 93
+  OBJ070: 95
+  OBJ071: 95
+  OBJ072: 95
+  OBJ073: 95
+
+Clean dataset signature: fe620065453a  (list saved to clean_dataset.csv)
+[2026-10-02 18:46:51] END   B1.04  | OK  | 0.5s
+
+====================================================================================================
+[2026-10-02 18:46:51] START B1.05  Look at one class's full shot sequence
+====================================================================================================
+[2026-10-02 18:46:59] END   B1.05  | OK  | 7.9s
+
+====================================================================================================
+[2026-10-02 18:46:59] START B1.06  Shared transforms, perturbations and dataset
+====================================================================================================
+[2026-10-02 18:47:00] END   B1.06  | OK  | 0.6s
+
+====================================================================================================
+[2026-10-02 18:47:00] START B1.07  Frozen ConvNeXt-Tiny features for every image (used for the label audit and near-duplicate check)
+====================================================================================================
+Extracted features: (6942, 768)
+[2026-10-02 18:47:33] END   B1.07  | OK  | 33.4s
+
+====================================================================================================
+[2026-10-02 18:47:33] START B1.08  Label-quality audit: out-of-fold predictions from a linear classifier on frozen features
+====================================================================================================
+Out-of-fold linear-probe accuracy (5-fold CV): 0.9826
+
+Hardest classes (OOF accuracy): {'OBJ061': 0.842, 'OBJ013': 0.862, 'OBJ034': 0.916, 'OBJ054': 0.937, 'OBJ038': 0.937, 'OBJ012': 0.947, 'OBJ059': 0.947, 'OBJ037': 0.958}
+
+Confidently assigned to ANOTHER class (p>0.8): 14 images
+              fname class_name oof_pred_name
+     OBJ013_084.jpg     OBJ013        OBJ034
+sunglasses_001.jpeg     OBJ014        OBJ045
+     OBJ027_079.jpg     OBJ027        OBJ022
+     OBJ042_044.jpg     OBJ042        OBJ027
+     OBJ054_005.jpg     OBJ054        OBJ022
+     OBJ059_068.jpg     OBJ059        OBJ061
+     OBJ059_074.jpg     OBJ059        OBJ061
+     OBJ061_019.jpg     OBJ061        OBJ059
+     OBJ061_033.jpg     OBJ061        OBJ059
+     OBJ061_042.jpg     OBJ061        OBJ059
+     OBJ061_076.jpg     OBJ061        OBJ026
+     OBJ062_026.jpg     OBJ062        OBJ068
+     OBJ065_018.jpg     OBJ065        OBJ036
+     OBJ066_026.jpg     OBJ066        OBJ051
+[2026-10-02 18:47:41] END   B1.08  | OK  | 7.9s
+
+====================================================================================================
+[2026-10-02 18:47:41] START B1.09  Review the 40 most suspicious images
+====================================================================================================
+Full list: label_audit_suspects.csv in OUT_DIR. Add clear background-only / wrong images to EXCLUDE_FILES.
+[2026-10-02 18:47:45] END   B1.09  | OK  | 4.2s
+
+====================================================================================================
+[2026-10-02 18:47:46] START B2.01  Stratified 70/15/15 split, fixed seed, identical for every model
+====================================================================================================
+train 4859 | val 1041 | test 1042 | classes 73
+Split signature: 6ed2c1673798 | manifest saved to data_manifest.json
+[2026-10-02 18:47:46] END   B2.01  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 18:47:46] START B2.02  Verify every Object ID is split in the same 70/15/15 proportion; handle unequal class sizes
+====================================================================================================
+Per-class split (first 10 shown, full table in split_per_class.csv):
+train % per class: 69.5–70.5 | val %: 14.7–15.8 | test %: 14.3–15.8
+Training images per class: min 62, max 74 (ratio 1.19) → class-weighted loss ENABLED (smaller classes count more, so no object dominates).
+[2026-10-02 18:47:46] END   B2.02  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 18:47:46] START B2.03  Near-duplicate leakage check
+====================================================================================================
+Near-duplicate test images (sim ≥ 0.92): 99 / 1042 (9.5%) → 'hard' subset = 943 images
+[2026-10-02 18:47:47] END   B2.03  | OK  | 1.0s
+
+====================================================================================================
+[2026-10-02 18:47:47] START B2.04  Models
+====================================================================================================
+[2026-10-02 18:47:47] END   B2.04  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 18:47:47] START B2.05  Architecture check: layer shapes, normalisation and pooling of every model (for the report)
+====================================================================================================
+Custom CNN — shape after each stage (padding keeps size inside a stage, max-pool halves it):
+  input                     (1, 3, 224, 224)      
+  stage 1 (2×[conv-BN-ReLU] + pool)(1, 32, 112, 112)         10,208 params
+  stage 2 (2×[conv-BN-ReLU] + pool)(1, 64, 56, 56)           55,552 params
+  stage 3 (2×[conv-BN-ReLU] + pool)(1, 128, 28, 28)         221,696 params
+  stage 4 (2×[conv-BN-ReLU] + pool)(1, 256, 14, 14)         885,760 params
+  stage 5 (2×[conv-BN-ReLU] + pool)(1, 384, 7, 7)         2,213,376 params
+  global avg pool           (1, 384, 1, 1)        
+  dropout + linear          (1, 73)                   28,105 params
+
+Note: ResNet-50 and EfficientNet-B0 use BatchNorm; ConvNeXt uses LayerNorm by design. Pretrained architectures are kept exactly as designed — changing their layers would break the pretrained weights.
+[2026-10-02 18:47:48] END   B2.05  | OK  | 1.9s
+
+====================================================================================================
+[2026-10-02 18:47:49] START B2.06  Training engine — checkpointed every epoch, resumable, fault-tolerant
+====================================================================================================
+Experiments: ['A_custom_cnn_scratch', 'B_convnext_linear_probe', 'C_resnet50_finetune', 'D_efficientnet_b0_finetune', 'E_convnext_tiny_finetune', 'F_convnext_tiny_basic_aug']
+[2026-10-02 18:47:49] END   B2.06  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 18:47:49] START B3.01  Experiment A_custom_cnn_scratch
+====================================================================================================
+
+========== A_custom_cnn_scratch: Plain 10-layer CNN trained from scratch | status: not started | 2026-10-02 18:47:49 ==========
+config: {"aug": "robust", "epochs": 60, "warmup_epochs": 3, "patience": 15, "label_smoothing": 0.1, "arch": "custom_cnn", "lr_head": 0.002, "lr_backbone": 0.002, "wd": 0.05, "desc": "Plain 10-layer CNN trained from scratch", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "a8af1f276180", "started": "2026-10-02 18:47:49"}
+  ep 01/60 | train loss 4.204 acc 0.046 | val loss 3.922 acc 0.086 F1 0.049 | 74s | GPU 1.6 GB
+  ep 02/60 | train loss 3.995 acc 0.074 | val loss 4.002 acc 0.063 F1 0.031 | 55s | GPU 1.2 GB
+  ep 03/60 | train loss 3.947 acc 0.087 | val loss 4.125 acc 0.086 F1 0.056 | 53s | GPU 1.2 GB
+  ep 04/60 | train loss 3.870 acc 0.112 | val loss 3.564 acc 0.137 F1 0.101 | 52s | GPU 1.2 GB
+  ep 05/60 | train loss 3.746 acc 0.133 | val loss 3.480 acc 0.176 F1 0.124 | 53s | GPU 1.2 GB
+  ep 06/60 | train loss 3.628 acc 0.163 | val loss 3.301 acc 0.211 F1 0.177 | 55s | GPU 1.2 GB
+  ep 07/60 | train loss 3.548 acc 0.195 | val loss 3.192 acc 0.204 F1 0.170 | 53s | GPU 1.2 GB
+  ep 08/60 | train loss 3.472 acc 0.212 | val loss 3.082 acc 0.221 F1 0.185 | 52s | GPU 1.2 GB
+  ep 09/60 | train loss 3.370 acc 0.232 | val loss 2.740 acc 0.334 F1 0.297 | 52s | GPU 1.2 GB
+  ep 10/60 | train loss 3.305 acc 0.251 | val loss 2.962 acc 0.280 F1 0.234 | 53s | GPU 1.2 GB
+  ep 11/60 | train loss 3.175 acc 0.289 | val loss 2.562 acc 0.393 F1 0.374 | 54s | GPU 1.2 GB
+  ep 12/60 | train loss 3.109 acc 0.313 | val loss 2.728 acc 0.324 F1 0.271 | 54s | GPU 1.2 GB
+  ep 13/60 | train loss 3.046 acc 0.333 | val loss 2.247 acc 0.447 F1 0.418 | 52s | GPU 1.2 GB
+  ep 14/60 | train loss 2.989 acc 0.351 | val loss 2.189 acc 0.467 F1 0.442 | 53s | GPU 1.2 GB
+  ep 15/60 | train loss 2.909 acc 0.368 | val loss 2.099 acc 0.466 F1 0.446 | 53s | GPU 1.2 GB
+  ep 16/60 | train loss 2.854 acc 0.391 | val loss 2.160 acc 0.450 F1 0.429 | 52s | GPU 1.2 GB
+  ep 17/60 | train loss 2.773 acc 0.413 | val loss 2.046 acc 0.484 F1 0.466 | 53s | GPU 1.2 GB
+  ep 18/60 | train loss 2.735 acc 0.426 | val loss 1.936 acc 0.531 F1 0.516 | 67s | GPU 1.2 GB
+  ep 19/60 | train loss 2.669 acc 0.445 | val loss 1.774 acc 0.560 F1 0.552 | 76s | GPU 1.2 GB
+  ep 20/60 | train loss 2.625 acc 0.458 | val loss 1.634 acc 0.602 F1 0.588 | 76s | GPU 1.2 GB
+  ep 21/60 | train loss 2.578 acc 0.477 | val loss 1.874 acc 0.523 F1 0.520 | 66s | GPU 1.2 GB
+  ep 22/60 | train loss 2.531 acc 0.500 | val loss 1.515 acc 0.617 F1 0.602 | 54s | GPU 1.2 GB
+  ep 23/60 | train loss 2.464 acc 0.513 | val loss 1.453 acc 0.659 F1 0.647 | 54s | GPU 1.2 GB
+  ep 24/60 | train loss 2.421 acc 0.526 | val loss 1.503 acc 0.646 F1 0.630 | 52s | GPU 1.2 GB
+  ep 25/60 | train loss 2.389 acc 0.534 | val loss 1.374 acc 0.671 F1 0.662 | 55s | GPU 1.2 GB
+  ep 26/60 | train loss 2.351 acc 0.548 | val loss 1.212 acc 0.724 F1 0.709 | 53s | GPU 1.2 GB
+  ep 27/60 | train loss 2.268 acc 0.572 | val loss 1.159 acc 0.719 F1 0.710 | 52s | GPU 1.2 GB
+  ep 28/60 | train loss 2.243 acc 0.578 | val loss 1.261 acc 0.710 F1 0.700 | 52s | GPU 1.2 GB
+  ep 29/60 | train loss 2.237 acc 0.579 | val loss 1.257 acc 0.688 F1 0.683 | 52s | GPU 1.2 GB
+  ep 30/60 | train loss 2.172 acc 0.607 | val loss 1.132 acc 0.758 F1 0.746 | 52s | GPU 1.2 GB
+  ep 31/60 | train loss 2.142 acc 0.617 | val loss 1.091 acc 0.731 F1 0.728 | 52s | GPU 1.2 GB
+  ep 32/60 | train loss 2.081 acc 0.632 | val loss 1.018 acc 0.749 F1 0.742 | 60s | GPU 1.2 GB
+  ep 33/60 | train loss 2.065 acc 0.640 | val loss 1.013 acc 0.745 F1 0.736 | 74s | GPU 1.2 GB
+  ep 34/60 | train loss 2.024 acc 0.656 | val loss 1.324 acc 0.683 F1 0.685 | 70s | GPU 1.2 GB
+  ep 35/60 | train loss 1.996 acc 0.660 | val loss 0.828 acc 0.816 F1 0.812 | 54s | GPU 1.2 GB
+  ep 36/60 | train loss 1.978 acc 0.678 | val loss 0.966 acc 0.765 F1 0.766 | 53s | GPU 1.2 GB
+  ep 37/60 | train loss 1.975 acc 0.676 | val loss 0.851 acc 0.803 F1 0.796 | 52s | GPU 1.2 GB
+  ep 38/60 | train loss 1.936 acc 0.682 | val loss 0.783 acc 0.826 F1 0.821 | 52s | GPU 1.2 GB
+  ep 39/60 | train loss 1.891 acc 0.704 | val loss 0.752 acc 0.829 F1 0.822 | 52s | GPU 1.2 GB
+  ep 40/60 | train loss 1.856 acc 0.708 | val loss 0.824 acc 0.815 F1 0.812 | 52s | GPU 1.2 GB
+  ep 41/60 | train loss 1.861 acc 0.711 | val loss 0.675 acc 0.847 F1 0.844 | 52s | GPU 1.2 GB
+  ep 42/60 | train loss 1.824 acc 0.719 | val loss 0.691 acc 0.839 F1 0.835 | 67s | GPU 1.2 GB
+  ep 43/60 | train loss 1.791 acc 0.730 | val loss 0.703 acc 0.840 F1 0.837 | 75s | GPU 1.2 GB
+  ep 44/60 | train loss 1.777 acc 0.733 | val loss 0.669 acc 0.841 F1 0.838 | 75s | GPU 1.2 GB
+  ep 45/60 | train loss 1.746 acc 0.754 | val loss 0.624 acc 0.860 F1 0.857 | 75s | GPU 1.2 GB
+  ep 46/60 | train loss 1.729 acc 0.754 | val loss 0.645 acc 0.845 F1 0.841 | 69s | GPU 1.2 GB
+  ep 47/60 | train loss 1.749 acc 0.751 | val loss 0.574 acc 0.869 F1 0.866 | 55s | GPU 1.2 GB
+  ep 48/60 | train loss 1.722 acc 0.754 | val loss 0.577 acc 0.869 F1 0.867 | 54s | GPU 1.2 GB
+  ep 49/60 | train loss 1.667 acc 0.772 | val loss 0.554 acc 0.880 F1 0.877 | 53s | GPU 1.2 GB
+  ep 50/60 | train loss 1.676 acc 0.773 | val loss 0.589 acc 0.869 F1 0.867 | 54s | GPU 1.2 GB
+  ep 51/60 | train loss 1.663 acc 0.773 | val loss 0.559 acc 0.887 F1 0.884 | 54s | GPU 1.2 GB
+  ep 52/60 | train loss 1.656 acc 0.778 | val loss 0.566 acc 0.868 F1 0.865 | 56s | GPU 1.2 GB
+  ep 53/60 | train loss 1.652 acc 0.782 | val loss 0.540 acc 0.879 F1 0.877 | 55s | GPU 1.2 GB
+  ep 54/60 | train loss 1.655 acc 0.783 | val loss 0.546 acc 0.881 F1 0.877 | 54s | GPU 1.2 GB
+  ep 55/60 | train loss 1.657 acc 0.776 | val loss 0.514 acc 0.883 F1 0.879 | 58s | GPU 1.2 GB
+  ep 56/60 | train loss 1.633 acc 0.789 | val loss 0.527 acc 0.880 F1 0.877 | 53s | GPU 1.2 GB
+  ep 57/60 | train loss 1.629 acc 0.787 | val loss 0.523 acc 0.890 F1 0.888 | 58s | GPU 1.2 GB
+  ep 58/60 | train loss 1.627 acc 0.791 | val loss 0.523 acc 0.886 F1 0.884 | 56s | GPU 1.2 GB
+  ep 59/60 | train loss 1.629 acc 0.790 | val loss 0.522 acc 0.888 F1 0.885 | 54s | GPU 1.2 GB
+  ep 60/60 | train loss 1.623 acc 0.792 | val loss 0.524 acc 0.886 F1 0.883 | 53s | GPU 1.2 GB
+→ A_custom_cnn_scratch: test acc 0.8858 | macro-F1 0.8827 | TTA 0.9050 | trained 57.3 min
+[2026-10-02 19:45:39] END   B3.01  | OK  | 3470.1s
+
+====================================================================================================
+[2026-10-02 19:45:39] START B3.02  Experiment B_convnext_linear_probe
+====================================================================================================
+
+========== B_convnext_linear_probe: Frozen ImageNet ConvNeXt-Tiny + linear head | status: not started | 2026-10-02 19:45:39 ==========
+config: {"aug": "robust", "epochs": 12, "warmup_epochs": 1, "patience": 5, "label_smoothing": 0.1, "arch": "linear_probe", "lr_head": 0.002, "lr_backbone": 0.0, "wd": 0.0001, "desc": "Frozen ImageNet ConvNeXt-Tiny + linear head", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "20414ad3c7b3", "started": "2026-10-02 19:45:39"}
+  ep 01/12 | train loss 3.108 acc 0.479 | val loss 0.853 acc 0.855 F1 0.858 | 33s | GPU 0.4 GB
+  ep 02/12 | train loss 1.347 acc 0.891 | val loss 0.332 acc 0.940 F1 0.940 | 24s | GPU 0.4 GB
+  ep 03/12 | train loss 1.183 acc 0.931 | val loss 0.260 acc 0.957 F1 0.956 | 24s | GPU 0.4 GB
+  ep 04/12 | train loss 1.118 acc 0.951 | val loss 0.241 acc 0.958 F1 0.958 | 24s | GPU 0.4 GB
+  ep 05/12 | train loss 1.096 acc 0.957 | val loss 0.231 acc 0.966 F1 0.967 | 24s | GPU 0.4 GB
+  ep 06/12 | train loss 1.073 acc 0.965 | val loss 0.216 acc 0.971 F1 0.971 | 24s | GPU 0.4 GB
+  ep 07/12 | train loss 1.046 acc 0.972 | val loss 0.215 acc 0.971 F1 0.971 | 24s | GPU 0.4 GB
+  ep 08/12 | train loss 1.038 acc 0.972 | val loss 0.217 acc 0.972 F1 0.972 | 24s | GPU 0.4 GB
+  ep 09/12 | train loss 1.029 acc 0.974 | val loss 0.216 acc 0.970 F1 0.970 | 24s | GPU 0.4 GB
+  ep 10/12 | train loss 1.023 acc 0.980 | val loss 0.215 acc 0.974 F1 0.974 | 23s | GPU 0.4 GB
+  ep 11/12 | train loss 1.023 acc 0.976 | val loss 0.215 acc 0.975 F1 0.975 | 24s | GPU 0.4 GB
+  ep 12/12 | train loss 1.024 acc 0.978 | val loss 0.214 acc 0.975 F1 0.975 | 24s | GPU 0.4 GB
+→ B_convnext_linear_probe: test acc 0.9741 | macro-F1 0.9740 | TTA 0.9818 | trained 4.9 min
+[2026-10-02 19:51:08] END   B3.02  | OK  | 329.3s
+
+====================================================================================================
+[2026-10-02 19:51:08] START B3.03  Experiment C_resnet50_finetune
+====================================================================================================
+
+========== C_resnet50_finetune: ResNet-50 (ImageNet) fully fine-tuned | status: not started | 2026-10-02 19:51:08 ==========
+config: {"aug": "robust", "epochs": 20, "warmup_epochs": 1, "patience": 6, "label_smoothing": 0.1, "arch": "resnet50", "lr_head": 0.001, "lr_backbone": 0.0001, "wd": 0.01, "desc": "ResNet-50 (ImageNet) fully fine-tuned", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "df3f2c1f40b5", "started": "2026-10-02 19:51:08"}
+  ep 01/20 | train loss 3.107 acc 0.437 | val loss 0.560 acc 0.878 F1 0.874 | 116s | GPU 1.9 GB
+  ep 02/20 | train loss 1.174 acc 0.908 | val loss 0.309 acc 0.960 F1 0.960 | 76s | GPU 1.9 GB
+  ep 03/20 | train loss 0.998 acc 0.953 | val loss 0.247 acc 0.974 F1 0.973 | 79s | GPU 1.9 GB
+  ep 04/20 | train loss 0.931 acc 0.969 | val loss 0.224 acc 0.981 F1 0.981 | 75s | GPU 1.9 GB
+  ep 05/20 | train loss 0.898 acc 0.973 | val loss 0.201 acc 0.987 F1 0.987 | 76s | GPU 1.9 GB
+  ep 06/20 | train loss 0.877 acc 0.977 | val loss 0.205 acc 0.987 F1 0.987 | 77s | GPU 1.9 GB
+  ep 07/20 | train loss 0.865 acc 0.978 | val loss 0.172 acc 0.987 F1 0.986 | 78s | GPU 1.9 GB
+  ep 08/20 | train loss 0.840 acc 0.985 | val loss 0.189 acc 0.987 F1 0.986 | 76s | GPU 1.9 GB
+  ep 09/20 | train loss 0.831 acc 0.987 | val loss 0.169 acc 0.988 F1 0.987 | 75s | GPU 1.9 GB
+  ep 10/20 | train loss 0.826 acc 0.986 | val loss 0.166 acc 0.986 F1 0.985 | 77s | GPU 1.9 GB
+  ep 11/20 | train loss 0.818 acc 0.986 | val loss 0.168 acc 0.988 F1 0.988 | 77s | GPU 1.9 GB
+  ep 12/20 | train loss 0.814 acc 0.986 | val loss 0.166 acc 0.988 F1 0.987 | 78s | GPU 1.9 GB
+  ep 13/20 | train loss 0.806 acc 0.989 | val loss 0.164 acc 0.991 F1 0.991 | 77s | GPU 1.9 GB
+  ep 14/20 | train loss 0.805 acc 0.989 | val loss 0.159 acc 0.991 F1 0.991 | 78s | GPU 1.9 GB
+  ep 15/20 | train loss 0.803 acc 0.989 | val loss 0.151 acc 0.990 F1 0.990 | 76s | GPU 1.9 GB
+  ep 16/20 | train loss 0.796 acc 0.991 | val loss 0.161 acc 0.991 F1 0.991 | 77s | GPU 1.9 GB
+  ep 17/20 | train loss 0.788 acc 0.993 | val loss 0.160 acc 0.990 F1 0.990 | 77s | GPU 1.9 GB
+  ep 18/20 | train loss 0.782 acc 0.993 | val loss 0.157 acc 0.990 F1 0.990 | 79s | GPU 1.9 GB
+  ep 19/20 | train loss 0.791 acc 0.990 | val loss 0.160 acc 0.989 F1 0.989 | 78s | GPU 1.9 GB
+  ep 20/20 | train loss 0.781 acc 0.995 | val loss 0.158 acc 0.990 F1 0.990 | 78s | GPU 1.9 GB
+  early stop (no val-F1 gain for 6 epochs)
+→ C_resnet50_finetune: test acc 0.9866 | macro-F1 0.9863 | TTA 0.9885 | trained 26.3 min
+[2026-10-02 20:18:13] END   B3.03  | OK  | 1625.4s
+
+====================================================================================================
+[2026-10-02 20:18:13] START B3.04  Experiment D_efficientnet_b0_finetune
+====================================================================================================
+
+========== D_efficientnet_b0_finetune: EfficientNet-B0 (ImageNet) fully fine-tuned | status: not started | 2026-10-02 20:18:13 ==========
+config: {"aug": "robust", "epochs": 20, "warmup_epochs": 1, "patience": 6, "label_smoothing": 0.1, "arch": "efficientnet_b0", "lr_head": 0.001, "lr_backbone": 0.0003, "wd": 0.01, "desc": "EfficientNet-B0 (ImageNet) fully fine-tuned", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "ff7f6bcb856b", "started": "2026-10-02 20:18:13"}
+  ep 01/20 | train loss 3.285 acc 0.409 | val loss 0.729 acc 0.886 F1 0.883 | 145s | GPU 1.5 GB
+  ep 02/20 | train loss 1.310 acc 0.869 | val loss 0.299 acc 0.957 F1 0.957 | 56s | GPU 1.5 GB
+  ep 03/20 | train loss 1.114 acc 0.923 | val loss 0.222 acc 0.970 F1 0.970 | 57s | GPU 1.5 GB
+  ep 04/20 | train loss 1.049 acc 0.942 | val loss 0.212 acc 0.975 F1 0.975 | 57s | GPU 1.5 GB
+  ep 05/20 | train loss 0.991 acc 0.957 | val loss 0.208 acc 0.981 F1 0.981 | 57s | GPU 1.5 GB
+  ep 06/20 | train loss 0.976 acc 0.960 | val loss 0.173 acc 0.981 F1 0.980 | 65s | GPU 1.5 GB
+  ep 07/20 | train loss 0.951 acc 0.966 | val loss 0.200 acc 0.983 F1 0.982 | 81s | GPU 1.5 GB
+  ep 08/20 | train loss 0.932 acc 0.968 | val loss 0.182 acc 0.985 F1 0.984 | 81s | GPU 1.5 GB
+  ep 09/20 | train loss 0.919 acc 0.971 | val loss 0.165 acc 0.987 F1 0.986 | 81s | GPU 1.5 GB
+  ep 10/20 | train loss 0.910 acc 0.972 | val loss 0.198 acc 0.986 F1 0.985 | 82s | GPU 1.5 GB
+  ep 11/20 | train loss 0.898 acc 0.976 | val loss 0.170 acc 0.988 F1 0.987 | 81s | GPU 1.5 GB
+  ep 12/20 | train loss 0.878 acc 0.979 | val loss 0.171 acc 0.988 F1 0.987 | 82s | GPU 1.5 GB
+  ep 13/20 | train loss 0.865 acc 0.981 | val loss 0.150 acc 0.989 F1 0.989 | 81s | GPU 1.5 GB
+  ep 14/20 | train loss 0.864 acc 0.981 | val loss 0.163 acc 0.987 F1 0.986 | 81s | GPU 1.5 GB
+  ep 15/20 | train loss 0.865 acc 0.980 | val loss 0.162 acc 0.992 F1 0.992 | 82s | GPU 1.5 GB
+  ep 16/20 | train loss 0.844 acc 0.987 | val loss 0.160 acc 0.991 F1 0.991 | 81s | GPU 1.5 GB
+  ep 17/20 | train loss 0.835 acc 0.989 | val loss 0.152 acc 0.990 F1 0.990 | 81s | GPU 1.5 GB
+  ep 18/20 | train loss 0.837 acc 0.988 | val loss 0.146 acc 0.990 F1 0.990 | 81s | GPU 1.5 GB
+  ep 19/20 | train loss 0.847 acc 0.984 | val loss 0.147 acc 0.991 F1 0.991 | 80s | GPU 1.5 GB
+  ep 20/20 | train loss 0.837 acc 0.989 | val loss 0.148 acc 0.991 F1 0.991 | 81s | GPU 1.5 GB
+→ D_efficientnet_b0_finetune: test acc 0.9818 | macro-F1 0.9815 | TTA 0.9856 | trained 26.2 min
+[2026-10-02 20:45:38] END   B3.04  | OK  | 1645.0s
+
+====================================================================================================
+[2026-10-02 20:45:38] START B3.05  Experiment E_convnext_tiny_finetune
+====================================================================================================
+
+========== E_convnext_tiny_finetune: ConvNeXt-Tiny (ImageNet) fully fine-tuned | status: not started | 2026-10-02 20:45:38 ==========
+config: {"aug": "robust", "epochs": 20, "warmup_epochs": 1, "patience": 6, "label_smoothing": 0.1, "arch": "convnext_tiny", "lr_head": 0.001, "lr_backbone": 0.0001, "wd": 0.05, "desc": "ConvNeXt-Tiny (ImageNet) fully fine-tuned", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "a6ad45db98f9", "started": "2026-10-02 20:45:38"}
+  ep 01/20 | train loss 3.051 acc 0.473 | val loss 0.493 acc 0.929 F1 0.930 | 62s | GPU 2.5 GB
+  ep 02/20 | train loss 1.041 acc 0.944 | val loss 0.202 acc 0.980 F1 0.980 | 43s | GPU 2.5 GB
+  ep 03/20 | train loss 0.914 acc 0.975 | val loss 0.174 acc 0.984 F1 0.984 | 43s | GPU 2.5 GB
+  ep 04/20 | train loss 0.873 acc 0.981 | val loss 0.164 acc 0.984 F1 0.984 | 43s | GPU 2.5 GB
+  ep 05/20 | train loss 0.853 acc 0.985 | val loss 0.173 acc 0.986 F1 0.985 | 44s | GPU 2.5 GB
+  ep 06/20 | train loss 0.842 acc 0.984 | val loss 0.158 acc 0.980 F1 0.980 | 44s | GPU 2.5 GB
+  ep 07/20 | train loss 0.827 acc 0.988 | val loss 0.167 acc 0.988 F1 0.988 | 44s | GPU 2.5 GB
+  ep 08/20 | train loss 0.819 acc 0.989 | val loss 0.155 acc 0.986 F1 0.985 | 43s | GPU 2.5 GB
+  ep 09/20 | train loss 0.810 acc 0.989 | val loss 0.148 acc 0.988 F1 0.987 | 44s | GPU 2.5 GB
+  ep 10/20 | train loss 0.804 acc 0.989 | val loss 0.147 acc 0.988 F1 0.988 | 44s | GPU 2.5 GB
+  ep 11/20 | train loss 0.794 acc 0.992 | val loss 0.149 acc 0.988 F1 0.987 | 44s | GPU 2.5 GB
+  ep 12/20 | train loss 0.798 acc 0.990 | val loss 0.153 acc 0.989 F1 0.989 | 44s | GPU 2.5 GB
+  ep 13/20 | train loss 0.785 acc 0.993 | val loss 0.149 acc 0.988 F1 0.988 | 44s | GPU 2.5 GB
+  ep 14/20 | train loss 0.786 acc 0.992 | val loss 0.151 acc 0.987 F1 0.986 | 45s | GPU 2.5 GB
+  ep 15/20 | train loss 0.783 acc 0.993 | val loss 0.148 acc 0.989 F1 0.989 | 44s | GPU 2.5 GB
+  ep 16/20 | train loss 0.778 acc 0.994 | val loss 0.149 acc 0.990 F1 0.990 | 44s | GPU 2.5 GB
+  ep 17/20 | train loss 0.775 acc 0.994 | val loss 0.147 acc 0.990 F1 0.990 | 44s | GPU 2.5 GB
+  ep 18/20 | train loss 0.770 acc 0.996 | val loss 0.147 acc 0.990 F1 0.990 | 44s | GPU 2.5 GB
+  ep 19/20 | train loss 0.776 acc 0.995 | val loss 0.148 acc 0.990 F1 0.990 | 43s | GPU 2.5 GB
+  ep 20/20 | train loss 0.773 acc 0.996 | val loss 0.148 acc 0.990 F1 0.990 | 44s | GPU 2.5 GB
+→ E_convnext_tiny_finetune: test acc 0.9942 | macro-F1 0.9942 | TTA 0.9933 | trained 14.9 min
+[2026-10-02 21:01:15] END   B3.05  | OK  | 936.4s
+
+====================================================================================================
+[2026-10-02 21:01:15] START B3.06  Experiment F_convnext_tiny_basic_aug
+====================================================================================================
+
+========== F_convnext_tiny_basic_aug: Ablation: ConvNeXt-Tiny fine-tuned with basic augmentation only | status: not started | 2026-10-02 21:01:15 ==========
+config: {"aug": "basic", "epochs": 20, "warmup_epochs": 1, "patience": 6, "label_smoothing": 0.1, "arch": "convnext_tiny", "lr_head": 0.001, "lr_backbone": 0.0001, "wd": 0.05, "desc": "Ablation: ConvNeXt-Tiny fine-tuned with basic augmentation only", "class_weighted_loss": true, "batch_size": 32, "img_size": 224, "seed": 42, "session": "20261002_184630", "data_sig": "6ed2c1673798", "cfg_sig": "c8732477e0b6", "started": "2026-10-02 21:01:15"}
+  ep 01/20 | train loss 2.793 acc 0.558 | val loss 0.365 acc 0.952 F1 0.953 | 34s | GPU 2.5 GB
+  ep 02/20 | train loss 0.883 acc 0.984 | val loss 0.201 acc 0.987 F1 0.986 | 34s | GPU 2.5 GB
+  ep 03/20 | train loss 0.804 acc 0.998 | val loss 0.187 acc 0.987 F1 0.987 | 34s | GPU 2.5 GB
+  ep 04/20 | train loss 0.784 acc 0.999 | val loss 0.187 acc 0.987 F1 0.986 | 34s | GPU 2.5 GB
+  ep 05/20 | train loss 0.773 acc 1.000 | val loss 0.162 acc 0.988 F1 0.988 | 34s | GPU 2.5 GB
+  ep 06/20 | train loss 0.764 acc 1.000 | val loss 0.162 acc 0.986 F1 0.985 | 34s | GPU 2.5 GB
+  ep 07/20 | train loss 0.758 acc 1.000 | val loss 0.158 acc 0.988 F1 0.987 | 34s | GPU 2.5 GB
+  ep 08/20 | train loss 0.754 acc 1.000 | val loss 0.162 acc 0.986 F1 0.986 | 34s | GPU 2.5 GB
+  ep 09/20 | train loss 0.753 acc 1.000 | val loss 0.155 acc 0.987 F1 0.986 | 34s | GPU 2.5 GB
+  ep 10/20 | train loss 0.750 acc 1.000 | val loss 0.159 acc 0.987 F1 0.987 | 34s | GPU 2.5 GB
+  ep 11/20 | train loss 0.749 acc 1.000 | val loss 0.154 acc 0.987 F1 0.986 | 34s | GPU 2.5 GB
+  early stop (no val-F1 gain for 6 epochs)
+→ F_convnext_tiny_basic_aug: test acc 0.9866 | macro-F1 0.9865 | TTA 0.9875 | trained 6.2 min
+[2026-10-02 21:08:04] END   B3.06  | OK  | 408.9s
+
+====================================================================================================
+[2026-10-02 21:08:04] START B3.07  Experiment status
+====================================================================================================
+✅ All experiments finished.
+[2026-10-02 21:08:04] END   B3.07  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 21:08:04] START B4.01  Main comparison table with 95% bootstrap confidence intervals
+====================================================================================================
+
+🏆 Selected model (by validation macro-F1): D_efficientnet_b0_finetune
+[2026-10-02 21:08:04] END   B4.01  | OK  | 0.1s
+
+====================================================================================================
+[2026-10-02 21:08:04] START B4.02  Is the winner significantly better? McNemar's exact test on paired test predictions
+====================================================================================================
+[2026-10-02 21:08:04] END   B4.02  | OK  | 0.0s
+
+====================================================================================================
+[2026-10-02 21:08:04] START B4.03  Robustness: accuracy under simulated small / cut-off / occluded / low-quality conditions
+====================================================================================================
+C:\Users\csk23\AppData\Local\Temp\ipykernel_45788\447562752.py:4: Pandas4Warning: Starting with pandas version 4.0 all arguments of mean will be keyword-only.
+  rob["mean_drop"] = rob["clean"] - rob[ROBUSTNESS_KINDS].mean(1)
+[2026-10-02 21:08:05] END   B4.03  | OK  | 0.7s
+
+====================================================================================================
+[2026-10-02 21:08:05] START B4.04  Training curves
+====================================================================================================
+[2026-10-02 21:08:08] END   B4.04  | OK  | 2.8s
+
+====================================================================================================
+[2026-10-02 21:08:08] START B4.05  Error analysis of the selected model
+====================================================================================================
+Most confused (true → predicted):
+  OBJ061 → OBJ059: 2
+  OBJ034 → OBJ013: 2
+  OBJ014 → OBJ045: 2
+  OBJ052 → OBJ061: 1
+  OBJ054 → OBJ032: 1
+  OBJ063 → OBJ026: 1
+  OBJ042 → OBJ027: 1
+  OBJ052 → OBJ025: 1
+  OBJ036 → OBJ060: 1
+  OBJ034 → OBJ047: 1
+
+Weakest classes:
+[2026-10-02 21:08:13] END   B4.05  | OK  | 5.8s
+
+====================================================================================================
+[2026-10-02 21:08:13] START B4.06  Grad-CAM: does the model look at the object or at the background?
+====================================================================================================
+[2026-10-02 21:09:18] END   B4.06  | OK  | 64.8s
+
+====================================================================================================
+[2026-10-02 21:09:18] START B4.07  Background-shortcut test: what does the model predict on images that contain NO object?
+====================================================================================================
+On 385 excluded background-only images (no object visible), the selected model predicted the photographer's own Object ID 34.8% of the time (chance = 1.4%), mean confidence 0.37. This indicates substantial reliance on background cues.
+[2026-10-02 21:10:38] END   B4.07  | OK  | 80.0s
+<>:11: SyntaxWarning: 'str' object is not callable; perhaps you missed a comma?
+<>:11: SyntaxWarning: 'str' object is not callable; perhaps you missed a comma?
+
+====================================================================================================
+[2026-10-02 21:10:38] START B4.08  Write a results summary (tables + key facts) to paste into the report
+====================================================================================================
+C:\Users\csk23\AppData\Local\Temp\ipykernel_45788\2798065694.py:11: SyntaxWarning: 'str' object is not callable; perhaps you missed a comma?
+  f"- Removed: {N_BG} background-only (filename tag), {N_DUP} byte-identical duplicates, "
+
+!!! EXCEPTION — full traceback:
+Traceback (most recent call last):
+  File "C:\Users\csk23\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\IPython\core\interactiveshell.py", line 3823, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csk23\AppData\Local\Temp\ipykernel_45788\2798065694.py", line 11, in <module>
+    f"- Removed: {N_BG} background-only (filename tag), {N_DUP} byte-identical duplicates, "
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    (f"{N_CAP} by the {CAP_PER_CLASS}-per-class cap, " if N_CAP else "") + f"{N_UNREADABLE} unreadable.",
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object is not callable
+[2026-10-02 21:10:39] END   B4.08  | ERROR TypeError: 'str' object is not callable | 0.6s
+C:\Users\csk23\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\joblib\externals\loky\backend\resource_tracker.py:146: UserWarning: resource_tracker: process died unexpectedly, relaunching. Some folders/semaphores might leak.
+  warnings.warn(

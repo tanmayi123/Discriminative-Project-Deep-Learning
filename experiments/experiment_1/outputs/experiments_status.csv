@@ -1,0 +1,7 @@
+experiment,status,test_acc,macro_f1,train_min,epochs,batch_size
+A_custom_cnn_scratch,done,0.8858,0.8827,57.3,60,32
+B_convnext_linear_probe,done,0.9741,0.974,4.9,12,32
+C_resnet50_finetune,done,0.9866,0.9863,26.3,20,32
+D_efficientnet_b0_finetune,done,0.9818,0.9815,26.2,20,32
+E_convnext_tiny_finetune,done,0.9942,0.9942,14.9,20,32
+F_convnext_tiny_basic_aug,done,0.9866,0.9865,6.2,11,32

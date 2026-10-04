@@ -1,0 +1,11 @@
+torch>=2.3
+torchvision>=0.18
+numpy
+pandas
+scikit-learn
+scipy
+matplotlib
+Pillow
+tqdm
+transformers   # only for the optional screenshot privacy scan in the final notebook
+tabulate       # only for writing results_summary.md
