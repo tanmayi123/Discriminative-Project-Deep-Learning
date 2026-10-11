@@ -1,4 +1,4 @@
-# Experiment 4 (Mukul): YOLO11s on the 38 SECTION-01 objects
+# Experiment 4 (Mukul, run C in the report): YOLO11s on the 38 SECTION-01 objects
 
 `mukul_milestone2_yolo11.py` is a single local script (CUDA, Apple MPS or CPU) with five resumable steps. `m2_log.txt` is the full log of the reported run.
 

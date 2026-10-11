@@ -1,4 +1,4 @@
-# Experiment 1 (Tanmayi): YOLOv8s on all 73 objects, two detectors checked by the Milestone 1 classifier
+# Experiment 1 (Tanmayi, run A in the report): YOLOv8s on all 73 objects, two detectors checked by the Milestone 1 classifier
 
 `Group7_IE7615_Milestone2_YOLOv8.ipynb` runs end to end in **Google Colab** (T4 GPU), with every output saved in the notebook.
 
@@ -9,7 +9,7 @@
 3. **Boxes:** every photo is searched with **Grounding DINO** (tiny) and **YOLO-World** (v2 s), prompted with the object's name from the course Object List (brand names and typos replaced by plain words, e.g. "Marshall Speaker" to "speaker").
    * both boxes overlap (IoU ≥ 0.5): the average box is used (2,903 photos);
    * otherwise the **Milestone 1 ConvNeXt-Tiny classifier** scores a crop of each box and keeps the one it is at least 40% sure shows the right object (Grounding DINO 3,319, YOLO-World 166);
-   * otherwise the photo is left out, with the reason. **548 of 6,936 left out (7.9%)**; per Object ID in `outputs/excluded_per_object.csv`.
+   * otherwise the photo is left out, with the reason. **548 of 6,936 left out (7.9%)**; per Object ID in `outputs/excluded_per_object.csv`. Nine Object IDs lose more than 20% of their photos (worst: OBJ036 pencil case, 43%).
    * When both detectors found a box they agreed on 88.5% of photos. A random sample of 48 accepted boxes is in `outputs/figures/label_check_accepted.png`.
 4. **Grids:** 2x2, 3x3, 4x4, 5x4, 5x5 tiles of 224x224; 300 grid images per member (1,200 in total: 800 train, 200 val, 200 test); no Object ID twice in a grid; about 10% background tiles; train-only tile augmentation (flip, colour, blur or low resolution).
 5. **Training:** YOLOv8s, imgsz 1120, batch 8, 80 epochs, checkpoints on Google Drive with automatic resume.

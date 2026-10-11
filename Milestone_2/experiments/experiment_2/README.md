@@ -1,4 +1,4 @@
-# Experiment 2 (Santhosh): model comparison behind the final pipeline
+# Experiment 2 (Santhosh, runs 1 to 4 in the report): model comparison behind the final pipeline
 
 These are the training runs that the final pipeline compared before choosing its model. The code that produced them is the final pipeline itself ([`../../final_pipeline/`](../../final_pipeline/)); this folder keeps the runs that were **not** selected, so the final pipeline folder only holds the chosen model. The order of the runs is in [`RUN_HISTORY.md`](../../final_pipeline/RUN_HISTORY.md).
 

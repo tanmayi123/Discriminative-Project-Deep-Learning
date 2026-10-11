@@ -1,4 +1,4 @@
-# Experiment 3 (Praniti): YOLOE-26s fine-tuned on 72 objects
+# Experiment 3 (Praniti, run B in the report): YOLOE-26s fine-tuned on 72 objects
 
 `Milestone2_YOLOE2026s.ipynb` runs in **Google Colab**, with its outputs saved in the notebook.
 

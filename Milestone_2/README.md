@@ -11,7 +11,7 @@
 | **YOLO26-s, final (`yolo26s_ft2`)** | **0.947** | **0.875** | **0.931** | **0.918** |
 | YOLOv8-s, fine-tuned once (`yolov8s_ft`) | 0.932 | 0.859 | 0.925 | 0.894 |
 
-Single photos (1x1): 14 of 14 test images fully correct. Full method and results: see the report.
+Single photos (1x1): 14 of 14 test images fully correct. Full method and results: [the report](report/IE7615_Milestone2_Report_Group7.pdf).
 
 ---
 
@@ -40,13 +40,14 @@ Milestone_2/
 │   ├── experiment_3/                        # YOLOE-26s fine-tuned, 72 objects (Colab)
 │   └── experiment_4/                        # YOLO11s, the 38 SECTION-01 objects (local, Apple GPU)
 └── report/
+    └── IE7615_Milestone2_Report_Group7.pdf
 ```
 
 ## What the assignment asks, and where it is
 
 | Requirement | Where |
 |---|---|
-| At least 100 multi-object images per student, made by placing single-object photos side by side | `final_pipeline/M2_Detect.ipynb` (compose step): 1,500 training grids plus validation and test grids, every validation and test photo used exactly once (`outputs/dataset/manifest.csv`) |
+| At least 100 multi-object images per student, made by placing single-object photos side by side | `final_pipeline/M2_Detect.ipynb` (compose step): 1,500 training images (1,275 grids, equal share of the five sizes, plus 225 single photos), 68 validation and 72 test grids, every validation and test photo used exactly once (`outputs/dataset/manifest.csv`) |
 | Custom-train YOLO | `final_pipeline/M2_Detect.ipynb` (train and fine-tune steps), `outputs/training/` |
 | Output the Object IDs and locations of all objects in an image | `detect` step of `M2_Detect.ipynb`, `outputs/results/predicted_detections.csv`, `outputs/figures/` |
 | Object IDs and grid sizes used | all 73 Object IDs; grids 2x2, 3x3, 4x4, 5x4, 5x5 (448x448 to 1120x1120), plus single photos |
@@ -74,14 +75,24 @@ Milestone_2/
 
 ## Experiments
 
-Each member also built a full pipeline on their own. They differ in objects used, labelling method and model, and each was tested on **its own** test set, so the numbers are not directly comparable with each other or with the final pipeline (only `experiment_2` is evaluated on the final test set).
+Each member also built a full pipeline on their own. They differ in objects used, labelling method and model. The report (Section 9) calls the final pipeline's runs **runs 1 to 5** (`experiment_2` plus the selected model) and the three alternative pipelines **runs A, B and C**.
+
+The scores in the table below are each pipeline's **own** test set, labelled automatically by that pipeline, so they are not comparable with each other or with the final pipeline (only `experiment_2` uses the final, human-checked test set).
 
 | | Who | Objects | Boxes made by | Photos left out | Model | Test mAP@0.5 | mAP@0.5:0.95 | Precision | Recall |
 |---|---|---|---|---|---|---|---|---|---|
-| [experiment_1](experiments/experiment_1/) | Tanmayi | 73 | Grounding DINO + YOLO-World, Milestone 1 ConvNeXt classifier as tie-break | 7.9% | YOLOv8s | 0.919 | 0.852 | 0.909 | 0.905 |
-| [experiment_2](experiments/experiment_2/) | Santhosh | 73 | as final pipeline | 4.5% | YOLO26-s / YOLOv8-s comparison | 0.910 to 0.932 | 0.846 to 0.863 | | |
-| [experiment_3](experiments/experiment_3/) | Praniti | 72 | YOLO-World + YOLOE | 44.6% | YOLOE-26s | 0.947 | 0.896 | 0.920 | 0.924 |
-| [experiment_4](experiments/experiment_4/) | Mukul | 38 (SECTION-01) | YOLO-World + YOLOE, name-free fallback | 20.0% | YOLO11s | 0.826 | 0.749 | 0.831 | 0.829 |
+| [experiment_1](experiments/experiment_1/) (run A) | Tanmayi | 73 | Grounding DINO + YOLO-World, Milestone 1 ConvNeXt classifier as tie-break | 7.9% (9 objects above 20%) | YOLOv8s | 0.919 | 0.852 | 0.909 | 0.905 |
+| [experiment_2](experiments/experiment_2/) (runs 1 to 4) | Santhosh | 73 | as final pipeline | 4.5% | YOLO26-s / YOLOv8-s comparison | 0.910 to 0.932 | 0.846 to 0.863 | | |
+| [experiment_3](experiments/experiment_3/) (run B) | Praniti | 72 | YOLO-World + YOLOE | 44.6% (20.9% no box or disagreement, 23.8% found by one detector only) | YOLOE-26s | 0.947 | 0.896 | 0.920 | 0.924 |
+| [experiment_4](experiments/experiment_4/) (run C) | Mukul | 38 (SECTION-01) | YOLO-World + YOLOE, name-free fallback | 20.0% (16 objects above 20%) | YOLO11s | 0.826 | 0.749 | 0.831 | 0.829 |
+
+**Cross-evaluation on the same human-checked test objects** (report, Table 14). Every alternative was scored with the same code on the final test set, after removing objects of classes it cannot predict and objects whose photo it had trained on; the selected model was scored on exactly the same objects:
+
+| Run | Objects | mAP@0.5 | mAP@0.5:0.95 | Selected model, same objects: mAP@0.5 | mAP@0.5:0.95 |
+|---|---|---|---|---|---|
+| A (experiment_1) | 1,019 | 0.883 | 0.782 | 0.944 | 0.872 |
+| B (experiment_3) | 628 | 0.779 | 0.697 | 0.923 | 0.842 |
+| C (experiment_4) | 543 | 0.819 | 0.720 | 0.949 | 0.872 |
 
 What the experiments taught us, and what went into the final pipeline:
 * **Automatic boxes are the bottleneck.** Open-vocabulary detectors miss small, thin or unusual objects (watches, rackets, perfume bottles, goggles). Experiment 3 had to leave out 45% of photos and experiment 4 first tried all 73 objects but left out 60 to 97% of some classes, then moved to the 38 SECTION-01 objects. The final pipeline adds a visual prompt, a self-trained detector and human review, and leaves out 4.5%.
