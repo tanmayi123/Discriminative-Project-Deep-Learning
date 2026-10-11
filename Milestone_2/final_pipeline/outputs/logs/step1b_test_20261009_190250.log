@@ -1,0 +1,60 @@
+
+[2026-10-09 19:02:50] ===== Step 1b: visual-prompt boxes (m2-step1b-v2) =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\step1b_test_20261009_190250.log
+Python 3.14.2 | torch 2.11.0+cu128 | transformers 5.2.0 | GPU NVIDIA GeForce RTX 5070 Laptop GPU
+
+[2026-10-09 19:03:00] ===== Inputs =====
+Photos: 6936 | text boxes: 6936 | splits: {'train': 4855, 'test': 1041, 'val': 1040}
+
+[2026-10-09 19:03:00] ===== Exemplars (training photos only) =====
+Exemplars: 213 for 71 classes | classes with fewer than 3: [] | none: ['OBJ040', 'OBJ043']
+!! Classes without any exemplar are skipped (no confident training box). Box 2-3 of their photos by hand.
+Saved exemplars.csv and ['exemplar_sheet_1.jpg', 'exemplar_sheet_2.jpg', 'exemplar_sheet_3.jpg'] (CHECK: every crop must show the right object)
+
+[2026-10-09 19:03:01] ===== Checkpoint =====
+Run fingerprint: da43fd9bd253
+!! Existing visual boxes were made with different inputs/settings -> moved to C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\_stale\20261009_190301; starting fresh
+Already done: 0 | to process now: 60
+
+[2026-10-09 19:03:01] ===== Loading google/owlv2-base-patch16-ensemble =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+The image processor of type `Owlv2ImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. 
+Fast path ON: exemplars embedded once (71 classes); one pass per photo
+  check OBJ010_020.jpg: fast score 1.000 vs original 1.000 | box IoU 0.999
+  check OBJ031_063.jpg: fast score 1.000 vs original 1.000 | box IoU 0.992
+  check OBJ034_031.jpg: fast score 1.000 vs original 1.000 | box IoU 0.998
+  check OBJ004_013.jpg: fast score 1.000 vs original 1.000 | box IoU 0.996
+  check OBJ037_011.jpg: fast score 1.000 vs original 1.000 | box IoU 1.000
+  check OBJ038_044.jpg: fast score 1.000 vs original 1.000 | box IoU 0.991
+Fast path matches the original method (box IoU >= 0.991 on 6 photos)
+
+[2026-10-09 19:03:41] ===== Searching every photo with its own object's exemplars =====
+  [2026-10-09 19:03:49] 60/60 photos | 7.2/s | failed 0 | ~0.0 min left
+
+[2026-10-09 19:03:49] ===== Combine with text boxes, summary, previews =====
+Run fingerprint: da43fd9bd253   finished 2026-10-09 19:03:49
+Complete: YES
+Photos: 60 done, 0 failed, 60 expected
+Accepted (text and visual agree, IoU >= 0.7): 32 (53.3%)   by split: {'test': 62.5, 'train': 51.2, 'val': 54.5}
+For review: 28   reasons: {'text and visual boxes disagree': 26, 'visual box too small or whole photo': 2}
+Median IoU between text and visual boxes: 1.0
+
+Classes needing the most review:
+  OBJ002: 100%
+  OBJ006: 100%
+  OBJ014: 100%
+  OBJ013: 100%
+  OBJ011: 100%
+  OBJ019: 100%
+  OBJ022: 100%
+  OBJ017: 100%
+  OBJ073: 100%
+  OBJ038: 100%
+  OBJ041: 100%
+  OBJ045: 100%
+  OBJ034: 100%
+  OBJ066: 100%
+  OBJ064: 100%
+
+Outputs in C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs
+[2026-10-09 19:03:50] DONE

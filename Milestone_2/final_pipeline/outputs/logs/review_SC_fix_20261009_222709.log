@@ -1,0 +1,5 @@
+[2026-10-09 22:27:09] Review tool | reviewer SC | mode fix | log C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\review_SC_fix_20261009_222709.log
+Dataset folder on this computer: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\Dataset - Updated | photos not found: 0
+Classes: OBJ003..OBJ068 (8) | splits: ['train', 'val'] | photos to fix: 185
+All photos in this queue are done.
+[2026-10-09 22:48:19] Session ended: 185 actions saved to C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\review\review_SC.csv

@@ -1,0 +1,10 @@
+{
+  "model": "yolo11s.pt",
+  "subset": "section1",
+  "object_ids": 38,
+  "imgsz": 1120,
+  "test_mAP50": 0.8263,
+  "test_mAP50_95": 0.7485,
+  "test_precision": 0.8312,
+  "test_recall": 0.8285
+}

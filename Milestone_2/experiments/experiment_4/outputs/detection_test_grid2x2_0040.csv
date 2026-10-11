@@ -1,0 +1,4 @@
+object_id,object_name,confidence,x1,y1,x2,y2
+OBJ031,UNO card box,0.969,322,129,349,153
+OBJ048,Wireless powerbank,0.91,271,338,372,418
+OBJ036,Pencil case,0.974,32,340,180,416

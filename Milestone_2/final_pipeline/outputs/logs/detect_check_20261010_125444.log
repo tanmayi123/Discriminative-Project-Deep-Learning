@@ -1,0 +1,27 @@
+
+[2026-10-10 12:54:44] ===== Check the composite dataset =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\detect_check_20261010_125444.log
+val: 972 of 972 usable photos placed (100.0%)
+test: 1041 of 1041 usable photos placed (100.0%)
+val_shapes: 972 of 972 usable photos placed (100.0%)
+test_shapes: 1041 of 1041 usable photos placed (100.0%)
+Label lines: 23121 | malformed: 0
+Objects per class (min/max):
+             min  max
+split                
+test          13   16
+test_shapes   13   16
+train        217  324
+val            9   16
+val_shapes     9   16
+Images per grid size:
+grid         1x1  2x2  3x3  4x4  5x4  5x5
+split                                    
+test           0   16   14   14   14   14
+test_shapes   14   14   14   15   14   13
+train        225  255  255  255  255  255
+val            0   16   13   13   13   13
+val_shapes    15   13   13   13   14   12
+
+Dataset check PASSED
+Preview grids: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\detect\figures

@@ -1,0 +1,121 @@
+
+[2026-10-09 19:22:35] ===== Step 1b: visual-prompt boxes (m2-step1b-v3) =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\step1b_20261009_192235.log
+Python 3.14.2 | torch 2.11.0+cu128 | transformers 5.2.0 | GPU NVIDIA GeForce RTX 5070 Laptop GPU
+
+[2026-10-09 19:22:45] ===== Inputs =====
+Photos: 6936 | text boxes: 6936 | splits: {'train': 4855, 'test': 1041, 'val': 1040}
+
+[2026-10-09 19:22:45] ===== Exemplars (training photos only) =====
+Hand-drawn exemplars used for: ['OBJ004', 'OBJ010', 'OBJ011', 'OBJ039', 'OBJ040', 'OBJ043', 'OBJ048']
+Exemplars: 219 for 73 classes | classes with fewer than 3: [] | none: []
+Saved exemplars.csv and ['exemplar_sheet_1.jpg', 'exemplar_sheet_2.jpg', 'exemplar_sheet_3.jpg'] (CHECK: every crop must show the right object)
+
+[2026-10-09 19:22:46] ===== Checkpoint =====
+Run fingerprint: c045a09458af
+Already done: 0 | to process now: 6936
+
+[2026-10-09 19:22:46] ===== Loading google/owlv2-base-patch16-ensemble =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+The image processor of type `Owlv2ImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. 
+Fast path ON: exemplars embedded once (73 classes); one pass per photo
+
+[2026-10-09 19:23:22] ===== Searching every photo with its own object's exemplars =====
+  [2026-10-09 19:23:36] 100/6936 photos | 6.9/s | failed 0 | ~16.4 min left
+  [2026-10-09 19:23:51] 200/6936 photos | 6.9/s | failed 0 | ~16.3 min left
+  [2026-10-09 19:24:05] 300/6936 photos | 6.9/s | failed 0 | ~16.0 min left
+  [2026-10-09 19:24:20] 400/6936 photos | 6.9/s | failed 0 | ~15.8 min left
+  [2026-10-09 19:24:34] 500/6936 photos | 6.9/s | failed 0 | ~15.5 min left
+  [2026-10-09 19:24:48] 600/6936 photos | 6.9/s | failed 0 | ~15.2 min left
+  [2026-10-09 19:25:03] 700/6936 photos | 6.9/s | failed 0 | ~15.0 min left
+  [2026-10-09 19:25:17] 800/6936 photos | 6.9/s | failed 0 | ~14.7 min left
+  [2026-10-09 19:25:31] 900/6936 photos | 7.0/s | failed 0 | ~14.5 min left
+  [2026-10-09 19:25:45] 1000/6936 photos | 7.0/s | failed 0 | ~14.2 min left
+  [2026-10-09 19:26:00] 1100/6936 photos | 6.9/s | failed 0 | ~14.0 min left
+  [2026-10-09 19:26:15] 1200/6936 photos | 6.9/s | failed 0 | ~13.8 min left
+  [2026-10-09 19:26:30] 1300/6936 photos | 6.9/s | failed 0 | ~13.6 min left
+  [2026-10-09 19:26:45] 1400/6936 photos | 6.9/s | failed 0 | ~13.4 min left
+  [2026-10-09 19:27:00] 1500/6936 photos | 6.9/s | failed 0 | ~13.2 min left
+  [2026-10-09 19:27:15] 1600/6936 photos | 6.9/s | failed 0 | ~13.0 min left
+  [2026-10-09 19:27:29] 1700/6936 photos | 6.9/s | failed 0 | ~12.7 min left
+  [2026-10-09 19:27:44] 1800/6936 photos | 6.9/s | failed 0 | ~12.5 min left
+  [2026-10-09 19:27:58] 1900/6936 photos | 6.9/s | failed 0 | ~12.2 min left
+  [2026-10-09 19:28:13] 2000/6936 photos | 6.9/s | failed 0 | ~12.0 min left
+  [2026-10-09 19:28:27] 2100/6936 photos | 6.9/s | failed 0 | ~11.7 min left
+  [2026-10-09 19:28:42] 2200/6936 photos | 6.9/s | failed 0 | ~11.5 min left
+  [2026-10-09 19:28:56] 2300/6936 photos | 6.9/s | failed 0 | ~11.2 min left
+  [2026-10-09 19:29:10] 2400/6936 photos | 6.9/s | failed 0 | ~11.0 min left
+  [2026-10-09 19:29:25] 2500/6936 photos | 6.9/s | failed 0 | ~10.7 min left
+  [2026-10-09 19:29:39] 2600/6936 photos | 6.9/s | failed 0 | ~10.5 min left
+  [2026-10-09 19:29:54] 2700/6936 photos | 6.9/s | failed 0 | ~10.2 min left
+  [2026-10-09 19:30:08] 2800/6936 photos | 6.9/s | failed 0 | ~10.0 min left
+  [2026-10-09 19:30:22] 2900/6936 photos | 6.9/s | failed 0 | ~9.8 min left
+  [2026-10-09 19:30:37] 3000/6936 photos | 6.9/s | failed 0 | ~9.5 min left
+  [2026-10-09 19:30:51] 3100/6936 photos | 6.9/s | failed 0 | ~9.3 min left
+  [2026-10-09 19:31:08] 3200/6936 photos | 6.9/s | failed 0 | ~9.1 min left
+  [2026-10-09 19:31:23] 3300/6936 photos | 6.9/s | failed 0 | ~8.8 min left
+  [2026-10-09 19:31:39] 3400/6936 photos | 6.8/s | failed 0 | ~8.6 min left
+  [2026-10-09 19:31:55] 3500/6936 photos | 6.8/s | failed 0 | ~8.4 min left
+  [2026-10-09 19:32:10] 3600/6936 photos | 6.8/s | failed 0 | ~8.2 min left
+  [2026-10-09 19:32:25] 3700/6936 photos | 6.8/s | failed 0 | ~7.9 min left
+  [2026-10-09 19:32:39] 3800/6936 photos | 6.8/s | failed 0 | ~7.7 min left
+  [2026-10-09 19:32:54] 3900/6936 photos | 6.8/s | failed 0 | ~7.4 min left
+  [2026-10-09 19:33:08] 4000/6936 photos | 6.8/s | failed 0 | ~7.2 min left
+  [2026-10-09 19:33:23] 4100/6936 photos | 6.8/s | failed 0 | ~6.9 min left
+  [2026-10-09 19:33:37] 4200/6936 photos | 6.8/s | failed 0 | ~6.7 min left
+  [2026-10-09 19:33:51] 4300/6936 photos | 6.8/s | failed 0 | ~6.4 min left
+  [2026-10-09 19:34:06] 4400/6936 photos | 6.8/s | failed 0 | ~6.2 min left
+  [2026-10-09 19:34:20] 4500/6936 photos | 6.8/s | failed 0 | ~5.9 min left
+  [2026-10-09 19:34:34] 4600/6936 photos | 6.8/s | failed 0 | ~5.7 min left
+  [2026-10-09 19:34:49] 4700/6936 photos | 6.8/s | failed 0 | ~5.4 min left
+  [2026-10-09 19:35:03] 4800/6936 photos | 6.8/s | failed 0 | ~5.2 min left
+  [2026-10-09 19:35:18] 4900/6936 photos | 6.8/s | failed 0 | ~5.0 min left
+  [2026-10-09 19:35:32] 5000/6936 photos | 6.8/s | failed 0 | ~4.7 min left
+  [2026-10-09 19:35:46] 5100/6936 photos | 6.8/s | failed 0 | ~4.5 min left
+  [2026-10-09 19:36:01] 5200/6936 photos | 6.9/s | failed 0 | ~4.2 min left
+  [2026-10-09 19:36:15] 5300/6936 photos | 6.9/s | failed 0 | ~4.0 min left
+  [2026-10-09 19:36:30] 5400/6936 photos | 6.9/s | failed 0 | ~3.7 min left
+  [2026-10-09 19:36:44] 5500/6936 photos | 6.9/s | failed 0 | ~3.5 min left
+  [2026-10-09 19:36:58] 5600/6936 photos | 6.9/s | failed 0 | ~3.2 min left
+  [2026-10-09 19:37:13] 5700/6936 photos | 6.9/s | failed 0 | ~3.0 min left
+  [2026-10-09 19:37:27] 5800/6936 photos | 6.9/s | failed 0 | ~2.8 min left
+  [2026-10-09 19:37:42] 5900/6936 photos | 6.9/s | failed 0 | ~2.5 min left
+  [2026-10-09 19:37:58] 6000/6936 photos | 6.8/s | failed 0 | ~2.3 min left
+  [2026-10-09 19:38:14] 6100/6936 photos | 6.8/s | failed 0 | ~2.0 min left
+  [2026-10-09 19:38:30] 6200/6936 photos | 6.8/s | failed 0 | ~1.8 min left
+  [2026-10-09 19:38:46] 6300/6936 photos | 6.8/s | failed 0 | ~1.6 min left
+  [2026-10-09 19:39:02] 6400/6936 photos | 6.8/s | failed 0 | ~1.3 min left
+  [2026-10-09 19:39:18] 6500/6936 photos | 6.8/s | failed 0 | ~1.1 min left
+  [2026-10-09 19:39:34] 6600/6936 photos | 6.8/s | failed 0 | ~0.8 min left
+  [2026-10-09 19:39:50] 6700/6936 photos | 6.8/s | failed 0 | ~0.6 min left
+  [2026-10-09 19:40:06] 6800/6936 photos | 6.8/s | failed 0 | ~0.3 min left
+  [2026-10-09 19:40:22] 6900/6936 photos | 6.8/s | failed 0 | ~0.1 min left
+  [2026-10-09 19:40:28] 6936/6936 photos | 6.8/s | failed 0 | ~0.0 min left
+
+[2026-10-09 19:40:28] ===== Combine with text boxes, summary, previews =====
+Run fingerprint: c045a09458af   finished 2026-10-09 19:40:28
+Complete: YES
+Photos: 6936 done, 0 failed, 6936 expected
+Accepted (text and visual agree, IoU >= 0.7): 3322 (47.9%)   by split: {'test': 48.6, 'train': 47.8, 'val': 47.6}
+For review: 3614   reasons: {'text and visual boxes disagree': 3113, 'visual box too small or whole photo': 501}
+Median IoU between text and visual boxes: 0.66
+
+Classes needing the most review:
+  OBJ004: 100%
+  OBJ014: 100%
+  OBJ059: 100%
+  OBJ038: 100%
+  OBJ036: 100%
+  OBJ017: 100%
+  OBJ016: 100%
+  OBJ012: 100%
+  OBJ009: 99%
+  OBJ010: 99%
+  OBJ011: 99%
+  OBJ072: 98%
+  OBJ040: 98%
+  OBJ073: 98%
+  OBJ063: 98%
+
+Outputs in C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs
+[2026-10-09 19:40:32] DONE

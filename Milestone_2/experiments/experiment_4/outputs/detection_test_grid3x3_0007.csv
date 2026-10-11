@@ -1,0 +1,8 @@
+object_id,object_name,confidence,x1,y1,x2,y2
+OBJ019,Plant,0.966,225,2,448,182
+OBJ040,Clutcher,0.982,484,79,569,156
+OBJ045,Wayfarer sunglasses,0.966,1,88,179,192
+OBJ004,Toy car,0.975,284,304,383,382
+OBJ030,Tennis racket,0.978,510,473,606,654
+OBJ011,Mug,0.974,265,476,343,671
+OBJ073,Bowl,0.99,67,497,188,577

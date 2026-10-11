@@ -1,0 +1,35 @@
+{
+  "sig": "4e4fd58a2b82",
+  "finished": "2026-10-09 18:48:51",
+  "complete": true,
+  "photos_expected": 6936,
+  "photos_with_box": 6936,
+  "photos_failed": 0,
+  "flagged": 1366,
+  "flagged_pct": 19.69,
+  "flag_types": {
+    "ok": 5570,
+    "low_score": 1206,
+    "too_small": 144,
+    "whole_image": 16
+  },
+  "median_score": 0.52,
+  "runtime_min_this_run": 0.0,
+  "most_flagged_classes": {
+    "OBJ043": 1.0,
+    "OBJ040": 0.937,
+    "OBJ004": 0.737,
+    "OBJ060": 0.653,
+    "OBJ064": 0.547,
+    "OBJ032": 0.516,
+    "OBJ020": 0.484,
+    "OBJ003": 0.474,
+    "OBJ042": 0.474,
+    "OBJ068": 0.453,
+    "OBJ061": 0.442,
+    "OBJ041": 0.421,
+    "OBJ037": 0.337,
+    "OBJ025": 0.33,
+    "OBJ059": 0.316
+  }
+}

@@ -1,0 +1,5 @@
+Outcome,Objects,Share
+"Correct (right ID, good box)",2404,89.4%
+Missed (no box at all),213,7.9%
+"Right ID, loose box",54,2.0%
+Wrong ID (misclassified),17,0.6%

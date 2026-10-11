@@ -1,0 +1,2 @@
+model,val_mAP50,params_M,val_robust_mean,within_0.01
+B_YOLOE26s,0.9447,10.0,0.8667,True

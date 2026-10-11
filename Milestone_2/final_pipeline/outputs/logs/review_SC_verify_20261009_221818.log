@@ -1,0 +1,15 @@
+[2026-10-09 22:18:18] Review tool | reviewer SC | mode verify | log C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\review_SC_verify_20261009_221818.log
+Dataset folder on this computer: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\Dataset - Updated | photos not found: 0
+Classes: OBJ001..OBJ073 (73) | splits: ['train'] | photos to verify: 240
+[2026-10-09 22:18:44] page 1/10 confirmed (0 flagged)
+[2026-10-09 22:19:32] page 2/10 confirmed (1 flagged)
+[2026-10-09 22:20:09] page 3/10 confirmed (1 flagged)
+[2026-10-09 22:20:26] page 4/10 confirmed (0 flagged)
+[2026-10-09 22:20:32] page 5/10 confirmed (0 flagged)
+[2026-10-09 22:20:46] page 6/10 confirmed (0 flagged)
+[2026-10-09 22:21:02] page 7/10 confirmed (1 flagged)
+[2026-10-09 22:21:37] page 8/10 confirmed (3 flagged)
+[2026-10-09 22:21:47] page 9/10 confirmed (1 flagged)
+[2026-10-09 22:21:57] page 10/10 confirmed (0 flagged)
+All pages verified.
+[2026-10-09 22:21:57] Session ended: 240 actions saved to C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\review\review_SC.csv

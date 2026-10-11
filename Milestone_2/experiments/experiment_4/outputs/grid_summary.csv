@@ -1,0 +1,8 @@
+,images,images,images,objects,objects,objects
+split,test,train,val,test,train,val
+grid,,,,,,
+2x2,60,300,60,240,1200,240
+3x3,50,250,50,450,2250,450
+4x4,30,150,30,480,2400,480
+5x4,30,150,30,600,3000,600
+5x5,20,100,20,500,2500,500

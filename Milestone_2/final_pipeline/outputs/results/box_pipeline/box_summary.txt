@@ -1,0 +1,22 @@
+Run fingerprint: 4e4fd58a2b82   finished 2026-10-09 18:48:51
+Complete: YES
+Photos expected: 6936 | with a box: 6936 | failed: 0
+Flagged: 1366 (19.69%)   types: {'ok': 5570, 'low_score': 1206, 'too_small': 144, 'whole_image': 16}
+Median confidence: 0.52
+
+Classes with the most flagged boxes:
+  OBJ043: 100%
+  OBJ040: 94%
+  OBJ004: 74%
+  OBJ060: 65%
+  OBJ064: 55%
+  OBJ032: 52%
+  OBJ020: 48%
+  OBJ003: 47%
+  OBJ042: 47%
+  OBJ068: 45%
+  OBJ061: 44%
+  OBJ041: 42%
+  OBJ037: 34%
+  OBJ025: 33%
+  OBJ059: 32%

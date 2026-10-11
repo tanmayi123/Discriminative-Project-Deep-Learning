@@ -1,0 +1,6 @@
+object_id,file,path,model_conf,iou
+OBJ037,OBJ037_078.jpg,/content/m2_work/clean_images/images_OBJ037/OBJ037_078.jpg,0.92,0.0
+OBJ048,OBJ048_047.jpg,/content/m2_work/clean_images/images_OBJ048/OBJ048_047.jpg,0.52,0.0
+OBJ063,OBJ063_066.jpg,/content/m2_work/clean_images/images_OBJ063/OBJ063_066.jpg,0.76,0.21
+OBJ045,OBJ045_067.jpg,/content/m2_work/clean_images/images_OBJ045/OBJ045_067.jpg,0.97,0.37
+OBJ052,OBJ052_013.jpg,/content/m2_work/clean_images/images_OBJ052/OBJ052_013.jpg,0.88,0.46

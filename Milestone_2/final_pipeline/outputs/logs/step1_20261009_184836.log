@@ -1,0 +1,41 @@
+
+[2026-10-09 18:48:36] ===== Step 1: automatic boxes (m2-step1-v2) =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\step1_20261009_184836.log
+Python 3.14.2 | torch 2.11.0+cu128 | transformers 5.2.0 | CUDA available True | GPU NVIDIA GeForce RTX 5070 Laptop GPU
+
+[2026-10-09 18:48:50] ===== Inputs =====
+Object names: 73 read (ID column 'OBJECT_ID ', name column 'OBJECT_NAME'), e.g. {'OBJ001': 'Basketball', 'OBJ002': 'water bottle', 'OBJ003': 'NoteBook'}
+clean_dataset.csv: 6942 photos, 73 classes
+Excluded ['OBJ004_007.jpg', 'OBJ004_014.jpg', 'OBJ004_023.jpg', 'OBJ004_030.jpg', 'OBJ004_073.jpg', 'OBJ054_017.jpg'] -> 6936 photos
+
+[2026-10-09 18:48:50] ===== Checkpoint =====
+Run fingerprint: 4e4fd58a2b82   settings: {"version": "m2-step1-v2", "model": "google/owlv2-base-patch16-ensemble", "img": 224, "clean": "7189a1837f1a17d3e72c87dcf60f597b", "names": "2000e1bc9e6e45b28447b269cc090325", "exclude": ["OBJ004_007.jpg", "OBJ004_014.jpg", "OBJ004_023.jpg", "OBJ004_030.jpg", "OBJ004_073.jpg", "OBJ054_017.jpg"], "thresholds": [0.15, 0.01, 0.97], "n": 6936, "limit": 0}
+Resuming from checkpoint: 6936 photos already done
+Already done: 6936 | to process now: 0
+
+[2026-10-09 18:48:51] ===== Summary and previews =====
+Run fingerprint: 4e4fd58a2b82   finished 2026-10-09 18:48:51
+Complete: YES
+Photos expected: 6936 | with a box: 6936 | failed: 0
+Flagged: 1366 (19.69%)   types: {'ok': 5570, 'low_score': 1206, 'too_small': 144, 'whole_image': 16}
+Median confidence: 0.52
+
+Classes with the most flagged boxes:
+  OBJ043: 100%
+  OBJ040: 94%
+  OBJ004: 74%
+  OBJ060: 65%
+  OBJ064: 55%
+  OBJ032: 52%
+  OBJ020: 48%
+  OBJ003: 47%
+  OBJ042: 47%
+  OBJ068: 45%
+  OBJ061: 44%
+  OBJ041: 42%
+  OBJ037: 34%
+  OBJ025: 33%
+  OBJ059: 32%
+
+Outputs in C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs
+[2026-10-09 18:48:53] DONE

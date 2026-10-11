@@ -1,0 +1,4 @@
+[2026-10-09 19:10:00] Review tool | reviewer SC | mode exemplar | log C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\review_SC_exemplar_20261009_191000.log
+EXEMPLAR mode: draw a tight box on 3 clear training photos per class (S = skip an unclear photo). Classes: ['OBJ004', 'OBJ010', 'OBJ011', 'OBJ039', 'OBJ040', 'OBJ043', 'OBJ048'] | photos offered: 84
+All photos in this queue are done.
+[2026-10-09 19:14:29] Saved 21 exemplar boxes to C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\exemplars_manual.csv; per class now: {'OBJ004': 3, 'OBJ010': 3, 'OBJ011': 3, 'OBJ039': 3, 'OBJ040': 3, 'OBJ043': 3, 'OBJ048': 3}

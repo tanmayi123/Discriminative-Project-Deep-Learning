@@ -1,0 +1,5 @@
+outcome,objects,share
+correct,2404,0.894
+missed,213,0.079
+"right ID, poor box",54,0.02
+wrong ID,17,0.006

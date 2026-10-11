@@ -1,0 +1,11 @@
+
+[2026-10-10 12:53:19] ===== Compose multi-object images (m2-detect-v3-shapes) =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\detect_compose_20261010_125319.log
+Usable photos: {'train': 4615, 'test': 1041, 'val': 972} | background photos: {'train': 268, 'test': 58, 'val': 57}
+Left out: 314 of 6942 photos (4.5%; course limit 20%) | classes above 20%: []
+  train: 1500 images, 19095 object boxes (74s)
+  val: 68 images, 972 object boxes (2s)
+  test: 72 images, 1041 object boxes (2s)
+  val_shapes: 80 images (single photos + the five course grids)
+  test_shapes: 84 images (single photos + the five course grids)
+Dataset ready: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\detect\dataset

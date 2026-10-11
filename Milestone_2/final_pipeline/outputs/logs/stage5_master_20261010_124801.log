@@ -1,0 +1,22 @@
+
+[2026-10-10 12:48:01] ===== Stage 5: master box file =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\stage5_master_20261010_124801.log
+Photos: 6936 | review actions (latest per photo): 1972 from 1 reviewer(s)
+Master box file built 2026-10-10 12:48:01
+Every photo checked by a person: NO
+Status counts: {'unreviewed_auto': 4660, 'verified': 1343, 'fixed': 625, 'unreviewed_none': 304, 'pending_fix': 4}
+Usable boxes (verified + fixed): 1968 of 6936
+
+Coverage by split:
+status  fixed  pending_fix  unreviewed_auto  unreviewed_none  verified
+split                                                                 
+test      156            0                0                0       885
+train     378            4             3819              236       418
+val        91            0              841               68        40
+
+Automatic-box accuracy (from the reviews): {"verify_checked": 1528, "verify_flagged_pct": 12.11, "verify_flagged_pct_by_decision": {"auto": 20.84, "review": 30.38, "review_label": 50.0, "strong": 0.29}, "verify_by_split": {"test": {"checked": 900, "flagged": 15, "correct_pct": 98.33}, "train": {"checked": 555, "flagged": 137, "correct_pct": 75.32}, "val": {"checked": 73, "flagged": 33, "correct_pct": 54.79}}, "fixed_photos": 625, "iou_auto_vs_fixed_median": 0.229, "fixed_kept_auto_box_pct": 21.5}
+
+Classes with the most photos left to review: {"OBJ017": 87, "OBJ049": 82, "OBJ058": 81, "OBJ059": 81, "OBJ005": 80, "OBJ019": 80, "OBJ030": 80, "OBJ044": 80, "OBJ055": 80, "OBJ001": 79, "OBJ021": 79, "OBJ038": 79, "OBJ050": 79, "OBJ057": 79, "OBJ063": 79, "OBJ064": 79, "OBJ073": 79, "OBJ006": 78, "OBJ009": 78, "OBJ012": 78}
+Strict-check scope: ['test'] | photos not yet checked by a person in scope: 0
+
+[2026-10-10 12:48:01] DONE: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\boxes_master.csv

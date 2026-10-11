@@ -1,0 +1,9 @@
+
+[2026-10-09 22:22:44] ===== Compose multi-object images (m2-detect-v2-grids) =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\detect_compose_quick_20261009_222244.log
+Usable photos: {'train': 4431, 'test': 1041, 'val': 914} | background photos: {'train': 268, 'test': 58, 'val': 57}
+Left out: 556 of 6942 photos (8.0%; course limit 20%) | classes above 20%: ['OBJ003', 'OBJ004', 'OBJ007', 'OBJ020', 'OBJ032', 'OBJ060', 'OBJ061', 'OBJ068']
+  train: 50 images, 740 object boxes (3s)
+  val: 64 images, 914 object boxes (2s)
+  test: 72 images, 1041 object boxes (2s)
+Dataset ready: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\detect\dataset_quick

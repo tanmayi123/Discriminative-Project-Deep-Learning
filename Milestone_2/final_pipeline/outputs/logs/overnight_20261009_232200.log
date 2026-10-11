@@ -1,0 +1,101 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261009232201
+Username: SANG14\csk23
+RunAs User: SANG14\csk23
+Configuration Name: 
+Machine: SANG14 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File .\run_overnight.ps1
+Process ID: 15920
+PSVersion: 5.1.26100.9549
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9549
+BuildVersion: 10.0.26100.9549
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+
+[12:36:02 AM] START train_yolo26s (try 1)
+jupyter : The term 'jupyter' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\run_overnight.ps1:15 
+char:5
++     jupyter nbconvert --to notebook --execute M2_Detect.ipynb --outpu ...
++     ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (jupyter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+jupyter : The term 'jupyter' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\run_overnight.ps1:15
+char:5
++     jupyter nbconvert --to notebook --execute M2_Detect.ipynb --outpu ...
++     ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (jupyter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[12:36:03 AM] DONE train_yolo26s
+[12:36:03 AM] START train_yolov8s (try 1)
+jupyter : The term 'jupyter' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\run_overnight.ps1:15 
+char:5
++     jupyter nbconvert --to notebook --execute M2_Detect.ipynb --outpu ...
++     ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (jupyter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+jupyter : The term 'jupyter' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\run_overnight.ps1:15
+char:5
++     jupyter nbconvert --to notebook --execute M2_Detect.ipynb --outpu ...
++     ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (jupyter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[12:36:03 AM] DONE train_yolov8s
+[12:36:03 AM] START evaluate (try 1)
+jupyter : The term 'jupyter' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\run_overnight.ps1:15 
+char:5
++     jupyter nbconvert --to notebook --execute M2_Detect.ipynb --outpu ...
++     ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (jupyter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+jupyter : The term 'jupyter' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\run_overnight.ps1:15
+char:5
++     jupyter nbconvert --to notebook --execute M2_Detect.ipynb --outpu ...
++     ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (jupyter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[12:36:03 AM] DONE evaluate
+[12:36:03 AM] START detect (try 1)
+jupyter : The term 'jupyter' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\run_overnight.ps1:15 
+char:5
++     jupyter nbconvert --to notebook --execute M2_Detect.ipynb --outpu ...
++     ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (jupyter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+jupyter : The term 'jupyter' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\run_overnight.ps1:15
+char:5
++     jupyter nbconvert --to notebook --execute M2_Detect.ipynb --outpu ...
++     ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (jupyter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[12:36:03 AM] DONE detect
+OVERNIGHT FINISHED: ALL STEPS OK
+**********************
+Windows PowerShell transcript end
+End time: 20261010003603
+**********************

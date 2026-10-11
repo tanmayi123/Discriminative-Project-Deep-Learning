@@ -1,0 +1,3 @@
+B_YOLOE26s
+/content/drive/MyDrive/IE7615_M2_final/runs/B_YOLOE26s/weights/best.pt
+threshold 0.15

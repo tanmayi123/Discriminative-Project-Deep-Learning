@@ -1,0 +1,132 @@
+
+[2026-10-09 17:55:08] ===== Step 1: automatic boxes (m2-step1-v2) =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\step1_20261009_175508.log
+Python 3.14.2 | torch 2.11.0+cu128 | transformers 5.2.0 | CUDA available True | GPU NVIDIA GeForce RTX 5070 Laptop GPU
+
+[2026-10-09 17:55:18] ===== Inputs =====
+Object names: 73 read (ID column 'OBJECT_ID ', name column 'OBJECT_NAME'), e.g. {'OBJ001': 'Basketball', 'OBJ002': 'water bottle', 'OBJ003': 'NoteBook'}
+clean_dataset.csv: 6942 photos, 73 classes
+Excluded ['OBJ004_007.jpg', 'OBJ004_014.jpg', 'OBJ004_023.jpg', 'OBJ004_030.jpg', 'OBJ004_073.jpg', 'OBJ054_017.jpg'] -> 6936 photos
+
+[2026-10-09 17:55:19] ===== Checkpoint =====
+Run fingerprint: 4e4fd58a2b82   settings: {"version": "m2-step1-v2", "model": "google/owlv2-base-patch16-ensemble", "img": 224, "clean": "7189a1837f1a17d3e72c87dcf60f597b", "names": "2000e1bc9e6e45b28447b269cc090325", "exclude": ["OBJ004_007.jpg", "OBJ004_014.jpg", "OBJ004_023.jpg", "OBJ004_030.jpg", "OBJ004_073.jpg", "OBJ054_017.jpg"], "thresholds": [0.15, 0.01, 0.97], "n": 6936, "limit": 0}
+!! Existing results were made with different inputs/settings -> moved to C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\_stale\20261009_175519; starting fresh
+Already done: 0 | to process now: 6936
+
+[2026-10-09 17:55:19] ===== Loading google/owlv2-base-patch16-ensemble =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+The image processor of type `Owlv2ImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. 
+
+[2026-10-09 17:55:22] ===== Detecting boxes =====
+  [2026-10-09 17:55:34] 80/6936 photos | 6.6/s | failed 0 | ~17.2 min left
+  [2026-10-09 17:55:45] 160/6936 photos | 6.8/s | failed 0 | ~16.7 min left
+  [2026-10-09 17:55:57] 240/6936 photos | 6.8/s | failed 0 | ~16.4 min left
+  [2026-10-09 17:56:09] 320/6936 photos | 6.8/s | failed 0 | ~16.2 min left
+  [2026-10-09 17:56:20] 400/6936 photos | 6.8/s | failed 0 | ~16.0 min left
+  [2026-10-09 17:56:32] 480/6936 photos | 6.8/s | failed 0 | ~15.8 min left
+  [2026-10-09 17:56:44] 560/6936 photos | 6.8/s | failed 0 | ~15.5 min left
+  [2026-10-09 17:56:55] 640/6936 photos | 6.8/s | failed 0 | ~15.3 min left
+  [2026-10-09 17:57:07] 720/6936 photos | 6.8/s | failed 0 | ~15.1 min left
+  [2026-10-09 17:57:19] 800/6936 photos | 6.8/s | failed 0 | ~14.9 min left
+  [2026-10-09 17:57:30] 880/6936 photos | 6.9/s | failed 0 | ~14.7 min left
+  [2026-10-09 17:57:42] 960/6936 photos | 6.9/s | failed 0 | ~14.5 min left
+  [2026-10-09 17:57:53] 1040/6936 photos | 6.9/s | failed 0 | ~14.3 min left
+  [2026-10-09 17:58:05] 1120/6936 photos | 6.9/s | failed 0 | ~14.1 min left
+  [2026-10-09 17:58:17] 1200/6936 photos | 6.9/s | failed 0 | ~13.9 min left
+  [2026-10-09 17:58:28] 1280/6936 photos | 6.9/s | failed 0 | ~13.7 min left
+  [2026-10-09 17:58:40] 1360/6936 photos | 6.9/s | failed 0 | ~13.5 min left
+  [2026-10-09 17:58:51] 1440/6936 photos | 6.9/s | failed 0 | ~13.3 min left
+  [2026-10-09 17:59:03] 1520/6936 photos | 6.9/s | failed 0 | ~13.1 min left
+  [2026-10-09 17:59:15] 1600/6936 photos | 6.9/s | failed 0 | ~12.9 min left
+  [2026-10-09 17:59:26] 1680/6936 photos | 6.9/s | failed 0 | ~12.8 min left
+  [2026-10-09 17:59:38] 1760/6936 photos | 6.9/s | failed 0 | ~12.6 min left
+  [2026-10-09 17:59:50] 1840/6936 photos | 6.9/s | failed 0 | ~12.4 min left
+  [2026-10-09 18:00:02] 1920/6936 photos | 6.9/s | failed 0 | ~12.2 min left
+  [2026-10-09 18:00:13] 2000/6936 photos | 6.9/s | failed 0 | ~12.0 min left
+  [2026-10-09 18:00:25] 2080/6936 photos | 6.9/s | failed 0 | ~11.8 min left
+  [2026-10-09 18:00:37] 2160/6936 photos | 6.9/s | failed 0 | ~11.6 min left
+  [2026-10-09 18:00:49] 2240/6936 photos | 6.9/s | failed 0 | ~11.4 min left
+  [2026-10-09 18:01:00] 2320/6936 photos | 6.9/s | failed 0 | ~11.2 min left
+  [2026-10-09 18:01:12] 2400/6936 photos | 6.9/s | failed 0 | ~11.0 min left
+  [2026-10-09 18:01:24] 2480/6936 photos | 6.8/s | failed 0 | ~10.8 min left
+  [2026-10-09 18:01:36] 2560/6936 photos | 6.8/s | failed 0 | ~10.6 min left
+  [2026-10-09 18:01:47] 2640/6936 photos | 6.8/s | failed 0 | ~10.5 min left
+  [2026-10-09 18:01:59] 2720/6936 photos | 6.8/s | failed 0 | ~10.3 min left
+  [2026-10-09 18:02:11] 2800/6936 photos | 6.8/s | failed 0 | ~10.1 min left
+  [2026-10-09 18:02:23] 2880/6936 photos | 6.8/s | failed 0 | ~9.9 min left
+  [2026-10-09 18:02:35] 2960/6936 photos | 6.8/s | failed 0 | ~9.7 min left
+  [2026-10-09 18:02:47] 3040/6936 photos | 6.8/s | failed 0 | ~9.5 min left
+  [2026-10-09 18:02:59] 3120/6936 photos | 6.8/s | failed 0 | ~9.3 min left
+  [2026-10-09 18:03:10] 3200/6936 photos | 6.8/s | failed 0 | ~9.1 min left
+  [2026-10-09 18:03:22] 3280/6936 photos | 6.8/s | failed 0 | ~8.9 min left
+  [2026-10-09 18:03:34] 3360/6936 photos | 6.8/s | failed 0 | ~8.7 min left
+  [2026-10-09 18:03:46] 3440/6936 photos | 6.8/s | failed 0 | ~8.5 min left
+  [2026-10-09 18:03:57] 3520/6936 photos | 6.8/s | failed 0 | ~8.3 min left
+  [2026-10-09 18:04:09] 3600/6936 photos | 6.8/s | failed 0 | ~8.1 min left
+  [2026-10-09 18:04:21] 3680/6936 photos | 6.8/s | failed 0 | ~7.9 min left
+  [2026-10-09 18:04:32] 3760/6936 photos | 6.8/s | failed 0 | ~7.7 min left
+  [2026-10-09 18:04:44] 3840/6936 photos | 6.8/s | failed 0 | ~7.6 min left
+  [2026-10-09 18:04:56] 3920/6936 photos | 6.8/s | failed 0 | ~7.4 min left
+  [2026-10-09 18:05:08] 4000/6936 photos | 6.8/s | failed 0 | ~7.2 min left
+  [2026-10-09 18:05:19] 4080/6936 photos | 6.8/s | failed 0 | ~7.0 min left
+  [2026-10-09 18:05:31] 4160/6936 photos | 6.8/s | failed 0 | ~6.8 min left
+  [2026-10-09 18:05:43] 4240/6936 photos | 6.8/s | failed 0 | ~6.6 min left
+  [2026-10-09 18:05:55] 4320/6936 photos | 6.8/s | failed 0 | ~6.4 min left
+  [2026-10-09 18:06:07] 4400/6936 photos | 6.8/s | failed 0 | ~6.2 min left
+  [2026-10-09 18:06:19] 4480/6936 photos | 6.8/s | failed 0 | ~6.0 min left
+  [2026-10-09 18:06:31] 4560/6936 photos | 6.8/s | failed 0 | ~5.8 min left
+  [2026-10-09 18:06:43] 4640/6936 photos | 6.8/s | failed 0 | ~5.6 min left
+  [2026-10-09 18:06:55] 4720/6936 photos | 6.8/s | failed 0 | ~5.4 min left
+  [2026-10-09 18:07:07] 4800/6936 photos | 6.8/s | failed 0 | ~5.2 min left
+  [2026-10-09 18:07:19] 4880/6936 photos | 6.8/s | failed 0 | ~5.0 min left
+  [2026-10-09 18:07:31] 4960/6936 photos | 6.8/s | failed 0 | ~4.8 min left
+  [2026-10-09 18:07:43] 5040/6936 photos | 6.8/s | failed 0 | ~4.6 min left
+  [2026-10-09 18:07:54] 5120/6936 photos | 6.8/s | failed 0 | ~4.4 min left
+  [2026-10-09 18:08:07] 5200/6936 photos | 6.8/s | failed 0 | ~4.3 min left
+  [2026-10-09 18:08:18] 5280/6936 photos | 6.8/s | failed 0 | ~4.1 min left
+  [2026-10-09 18:08:30] 5360/6936 photos | 6.8/s | failed 0 | ~3.9 min left
+  [2026-10-09 18:08:42] 5440/6936 photos | 6.8/s | failed 0 | ~3.7 min left
+  [2026-10-09 18:08:54] 5520/6936 photos | 6.8/s | failed 0 | ~3.5 min left
+  [2026-10-09 18:09:06] 5600/6936 photos | 6.8/s | failed 0 | ~3.3 min left
+  [2026-10-09 18:09:18] 5680/6936 photos | 6.8/s | failed 0 | ~3.1 min left
+  [2026-10-09 18:09:30] 5760/6936 photos | 6.8/s | failed 0 | ~2.9 min left
+  [2026-10-09 18:09:41] 5840/6936 photos | 6.8/s | failed 0 | ~2.7 min left
+  [2026-10-09 18:09:53] 5920/6936 photos | 6.8/s | failed 0 | ~2.5 min left
+  [2026-10-09 18:10:05] 6000/6936 photos | 6.8/s | failed 0 | ~2.3 min left
+  [2026-10-09 18:10:17] 6080/6936 photos | 6.8/s | failed 0 | ~2.1 min left
+  [2026-10-09 18:10:29] 6160/6936 photos | 6.8/s | failed 0 | ~1.9 min left
+  [2026-10-09 18:10:41] 6240/6936 photos | 6.8/s | failed 0 | ~1.7 min left
+  [2026-10-09 18:10:53] 6320/6936 photos | 6.8/s | failed 0 | ~1.5 min left
+  [2026-10-09 18:11:05] 6400/6936 photos | 6.8/s | failed 0 | ~1.3 min left
+  [2026-10-09 18:11:17] 6480/6936 photos | 6.8/s | failed 0 | ~1.1 min left
+  [2026-10-09 18:11:28] 6560/6936 photos | 6.8/s | failed 0 | ~0.9 min left
+  [2026-10-09 18:11:40] 6640/6936 photos | 6.8/s | failed 0 | ~0.7 min left
+  [2026-10-09 18:11:53] 6720/6936 photos | 6.8/s | failed 0 | ~0.5 min left
+  [2026-10-09 18:12:07] 6800/6936 photos | 6.8/s | failed 0 | ~0.3 min left
+  [2026-10-09 18:12:20] 6880/6936 photos | 6.8/s | failed 0 | ~0.1 min left
+  [2026-10-09 18:12:29] 6936/6936 photos | 6.8/s | failed 0 | ~0.0 min left
+
+[2026-10-09 18:12:29] ===== Summary and previews =====
+
+[2026-10-09 18:12:30] FAILED:
+Traceback (most recent call last):
+  File "C:\Users\csk23\AppData\Local\Temp\ipykernel_76248\2645163669.py", line 303, in main
+    total_failed = len(pd.read_csv(failed_csv)) if failed_csv.exists() else 0
+                       ~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\csk23\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\csk23\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\parsers\readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\csk23\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\parsers\readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\csk23\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\parsers\readers.py", line 1922, in _make_engine
+    return mapping[engine](f, **self.options)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csk23\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 95, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 575, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file
+
+Results up to the last completed batch are saved; fix the error and re-run the same cell to resume.

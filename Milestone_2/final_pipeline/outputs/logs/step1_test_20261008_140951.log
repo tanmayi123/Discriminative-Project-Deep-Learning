@@ -1,0 +1,18 @@
+
+[2026-10-08 14:09:51] ===== Step 1: automatic boxes (m2-step1-v2) =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\step1_test_20261008_140951.log
+Python 3.14.2 | torch 2.11.0+cu128 | transformers 5.2.0 | CUDA available True | GPU NVIDIA GeForce RTX 5070 Laptop GPU
+
+[2026-10-08 14:10:08] ===== Inputs =====
+Object names: 73 read (ID column 'OBJECT_ID ', name column 'OBJECT_NAME'), e.g. {'OBJ001': 'Basketball', 'OBJ002': 'water bottle', 'OBJ003': 'NoteBook'}
+clean_dataset.csv: 6942 photos, 73 classes
+Excluded ['OBJ054_017.jpg'] -> 6941 photos
+
+[2026-10-08 14:10:09] FAILED:
+Traceback (most recent call last):
+  File "C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\m2_propose_boxes.py", line 306, in main
+    if not_found: raise FileNotFoundError(f"{len(not_found)} photos listed but not on disk, e.g. {not_found[:3]}")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: 5 photos listed but not on disk, e.g. ['C:\\Users\\csk23\\Documents\\Zanthosh\\Northeastern\\SEMESTERs\\4th Sem\\Deep Learning\\PROJECT - 1\\Dataset - Updated\\images_OBJ004\\OBJ004_007.jpg', 'C:\\Users\\csk23\\Documents\\Zanthosh\\Northeastern\\SEMESTERs\\4th Sem\\Deep Learning\\PROJECT - 1\\Dataset - Updated\\images_OBJ004\\OBJ004_014.jpg', 'C:\\Users\\csk23\\Documents\\Zanthosh\\Northeastern\\SEMESTERs\\4th Sem\\Deep Learning\\PROJECT - 1\\Dataset - Updated\\images_OBJ004\\OBJ004_023.jpg']
+
+Results up to the last completed batch are saved; fix the error and re-run the same command to resume.

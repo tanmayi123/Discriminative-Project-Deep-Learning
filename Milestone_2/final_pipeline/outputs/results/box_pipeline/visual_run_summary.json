@@ -1,0 +1,39 @@
+{
+  "sig": "c045a09458af",
+  "finished": "2026-10-09 19:40:28",
+  "complete": true,
+  "photos_expected": 6936,
+  "photos_done": 6936,
+  "photos_failed": 0,
+  "accepted": 3322,
+  "review": 3614,
+  "accepted_pct": 47.9,
+  "accepted_pct_by_split": {
+    "test": 48.6,
+    "train": 47.8,
+    "val": 47.6
+  },
+  "review_reasons": {
+    "text and visual boxes disagree": 3113,
+    "visual box too small or whole photo": 501
+  },
+  "median_iou_text_visual": 0.66,
+  "runtime_min_this_run": 17.1,
+  "classes_needing_most_review": {
+    "OBJ004": 1.0,
+    "OBJ014": 1.0,
+    "OBJ059": 1.0,
+    "OBJ038": 1.0,
+    "OBJ036": 1.0,
+    "OBJ017": 1.0,
+    "OBJ016": 1.0,
+    "OBJ012": 1.0,
+    "OBJ009": 0.989,
+    "OBJ010": 0.989,
+    "OBJ011": 0.989,
+    "OBJ072": 0.979,
+    "OBJ040": 0.979,
+    "OBJ073": 0.979,
+    "OBJ063": 0.979
+  }
+}

@@ -1,0 +1,6 @@
+
+[2026-10-09 21:06:17] ===== Box viewing sheets (read-only) =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\sheets_20261009_210617.log
+Box sources found: ['text', 'visual', 'self-trained'] | classes: 73
+Sheets written to C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\box_sheets (73 classes, sources: ['text', 'visual', 'self-trained'])
+Classes with the most photos needing attention: OBJ043 (74), OBJ040 (67), OBJ020 (33), OBJ061 (32), OBJ032 (30), OBJ060 (27), OBJ007 (26), OBJ034 (25), OBJ004 (24), OBJ003 (23), OBJ059 (23), OBJ068 (22), OBJ044 (21), OBJ013 (20), OBJ014 (20)

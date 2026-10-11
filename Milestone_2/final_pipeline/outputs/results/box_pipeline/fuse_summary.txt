@@ -1,0 +1,24 @@
+Run fingerprint: e74db9ac6639   finished 2026-10-09 20:48:42
+Photos: 6936 | usable text labels (training split used to train the self-trained model): 5568
+Decisions: strong 3172 (45.7%), auto 2935 (42.3%), review 794 (11.4%), review_label 35 (0.5%)
+By split (%): {"test": {"auto": 39.3, "review": 15.4, "review_label": 0.8, "strong": 44.6}, "train": {"auto": 43.2, "review": 10.2, "review_label": 0.4, "strong": 46.2}, "val": {"auto": 41.4, "review": 13.5, "review_label": 0.6, "strong": 44.5}}
+
+strong = text, visual and self-trained boxes all agree; auto = two agree; review = no agreement;
+review_label = the self-trained model sees a different Object ID, not this one.
+
+Classes needing the most review:
+  OBJ043: 78%
+  OBJ040: 71%
+  OBJ020: 35%
+  OBJ061: 34%
+  OBJ032: 32%
+  OBJ060: 28%
+  OBJ007: 27%
+  OBJ034: 26%
+  OBJ004: 25%
+  OBJ003: 24%
+  OBJ059: 24%
+  OBJ068: 23%
+  OBJ044: 22%
+  OBJ014: 22%
+  OBJ069: 22%

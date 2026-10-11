@@ -1,0 +1,23 @@
+Run fingerprint: c045a09458af   finished 2026-10-09 19:40:28
+Complete: YES
+Photos: 6936 done, 0 failed, 6936 expected
+Accepted (text and visual agree, IoU >= 0.7): 3322 (47.9%)   by split: {'test': 48.6, 'train': 47.8, 'val': 47.6}
+For review: 3614   reasons: {'text and visual boxes disagree': 3113, 'visual box too small or whole photo': 501}
+Median IoU between text and visual boxes: 0.66
+
+Classes needing the most review:
+  OBJ004: 100%
+  OBJ014: 100%
+  OBJ059: 100%
+  OBJ038: 100%
+  OBJ036: 100%
+  OBJ017: 100%
+  OBJ016: 100%
+  OBJ012: 100%
+  OBJ009: 99%
+  OBJ010: 99%
+  OBJ011: 99%
+  OBJ072: 98%
+  OBJ040: 98%
+  OBJ073: 98%
+  OBJ063: 98%

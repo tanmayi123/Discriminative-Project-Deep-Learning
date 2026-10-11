@@ -1,0 +1,30 @@
+
+[2026-10-09 21:23:17] ===== Stage 5: master box file =====
+Log file: C:\Users\csk23\Documents\Zanthosh\Northeastern\SEMESTERs\4th Sem\Deep Learning\PROJECT - 1\milestone2_outputs\logs\stage5_master_20261009_212317.log
+Photos: 6936 | review actions (latest per photo): 0 from 0 reviewer(s)
+Master box file built 2026-10-09 21:23:17
+Every photo checked by a person: NO
+Status counts: {'unreviewed_auto': 6107, 'unreviewed_none': 829}
+Usable boxes (verified + fixed): 0 of 6936
+
+Coverage by split:
+status  unreviewed_auto  unreviewed_none
+split                                   
+test                873              168
+train              4340              515
+val                 894              146
+
+Automatic-box accuracy (from the reviews): {}
+
+Classes with the most photos left to review: {"OBJ017": 106, "OBJ051": 105, "OBJ005": 99, "OBJ049": 99, "OBJ001": 95, "OBJ002": 95, "OBJ003": 95, "OBJ004": 95, "OBJ006": 95, "OBJ007": 95, "OBJ008": 95, "OBJ009": 95, "OBJ010": 95, "OBJ012": 95, "OBJ015": 95, "OBJ016": 95, "OBJ018": 95, "OBJ019": 95, "OBJ020": 95, "OBJ021": 95}
+Strict-check scope: ['test'] | photos not yet checked by a person in scope: 1041
+
+STRICT CHECK FAILED: 1041 photos in ['test'] are not yet verified, fixed or excluded.
+
+[2026-10-09 21:23:17] FAILED:
+Traceback (most recent call last):
+  File "C:\Users\csk23\AppData\Local\Temp\ipykernel_33280\2886543960.py", line 94, in main
+    print(f"\nSTRICT CHECK FAILED: {left} photos in {chk or 'all splits'} are not yet verified, fixed or excluded."); raise RuntimeError("STRICT CHECK FAILED")
+                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: STRICT CHECK FAILED
+
