@@ -117,13 +117,29 @@ python app/launch_eye.py                            # The EYE v3 at http://127.0
 
 ## Live demo
 
+**The EYE v3 (full app): https://leaves-ladies-reminder-becoming.trycloudflare.com**
+
+The complete EYE v3 runs on our laptop with its GPU and is shared through a Cloudflare quick tunnel (report
+Section 10.1). It has every feature: uploads, random grids, rotated grids, scattered and cut-out scenes, right/wrong
+scoring, the stress test and the inspect panels. The link works while the app and the tunnel are running; a quick
+tunnel's address changes each time it is restarted, so the current address is kept here.
+
+**Towards permanent hosting on Hugging Face.** In future we plan to host the entire EYE on Hugging Face. As a first
+step we deployed an upload-only version there:
 **https://huggingface.co/spaces/TanmayiShurpali/the-eye**
 
-An upload-only version of The EYE runs on Hugging Face (free ZeroGPU). Anyone can upload an image and see every
-detected Object ID with its box and confidence, using the selected model and the same validated rules as The EYE v3.
-The full EYE (random grids, scenes, stress test, right/wrong scoring) stays local, because those features need the
-course photos, which we do not publish (report Section 10.2). The code is in `live_demo/`; the model weights are
-uploaded to the Space only.
+It runs on Hugging Face's free ZeroGPU with the selected model and the same validated rules as The EYE v3 (grids:
+threshold 0.10, one box per 224-px cell; scenes: threshold 0.35 with duplicate removal). Anyone can upload an image
+and see every detected Object ID with its box and confidence. What this exploration showed, and what full hosting
+still needs:
+* **Hosting type.** Free GPU hosting on Hugging Face supports Gradio apps only; The EYE v3 is its own web server, so
+  the full app needs a Docker Space, which requires a paid plan and runs on CPU (slower detections).
+* **Privacy.** The EYE's grids, scenes, stress test and scoring use the course photos. Publishing them permanently
+  needs the permission of every student who contributed photos (report Section 10.2).
+* **Ready to move.** A self-contained bundle for a Docker Space was prepared (`make_space_bundle.py`, report
+  Section 10.2), so the full app can follow once both conditions are met.
+
+The upload-only app's code is in `live_demo/`; its model weights are uploaded to the Space only.
 
 ## Not included in this repository
 
