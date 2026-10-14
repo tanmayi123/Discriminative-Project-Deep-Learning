@@ -1,0 +1,88 @@
+{
+  "finished": "2026-10-10 12:48:01",
+  "photos": 6936,
+  "complete_human_checked": false,
+  "status_counts": {
+    "unreviewed_auto": 4660,
+    "verified": 1343,
+    "fixed": 625,
+    "unreviewed_none": 304,
+    "pending_fix": 4
+  },
+  "coverage_by_split": {
+    "test": {
+      "fixed": 156,
+      "pending_fix": 0,
+      "unreviewed_auto": 0,
+      "unreviewed_none": 0,
+      "verified": 885
+    },
+    "train": {
+      "fixed": 378,
+      "pending_fix": 4,
+      "unreviewed_auto": 3819,
+      "unreviewed_none": 236,
+      "verified": 418
+    },
+    "val": {
+      "fixed": 91,
+      "pending_fix": 0,
+      "unreviewed_auto": 841,
+      "unreviewed_none": 68,
+      "verified": 40
+    }
+  },
+  "classes_with_most_left": {
+    "OBJ017": 87,
+    "OBJ049": 82,
+    "OBJ058": 81,
+    "OBJ059": 81,
+    "OBJ005": 80,
+    "OBJ019": 80,
+    "OBJ030": 80,
+    "OBJ044": 80,
+    "OBJ055": 80,
+    "OBJ001": 79,
+    "OBJ021": 79,
+    "OBJ038": 79,
+    "OBJ050": 79,
+    "OBJ057": 79,
+    "OBJ063": 79,
+    "OBJ064": 79,
+    "OBJ073": 79,
+    "OBJ006": 78,
+    "OBJ009": 78,
+    "OBJ012": 78
+  },
+  "usable_boxes": 1968,
+  "auto_accuracy": {
+    "verify_checked": 1528,
+    "verify_flagged_pct": 12.11,
+    "verify_flagged_pct_by_decision": {
+      "auto": 20.84,
+      "review": 30.38,
+      "review_label": 50.0,
+      "strong": 0.29
+    },
+    "verify_by_split": {
+      "test": {
+        "checked": 900,
+        "flagged": 15,
+        "correct_pct": 98.33
+      },
+      "train": {
+        "checked": 555,
+        "flagged": 137,
+        "correct_pct": 75.32
+      },
+      "val": {
+        "checked": 73,
+        "flagged": 33,
+        "correct_pct": 54.79
+      }
+    },
+    "fixed_photos": 625,
+    "iou_auto_vs_fixed_median": 0.229,
+    "fixed_kept_auto_box_pct": 21.5
+  }
+}

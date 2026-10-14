@@ -1092,7 +1092,7 @@ html.light #jy{--page:#e7e3da;--page2:#dcd7cb;--ink:#1d232b;--ink2:#4b5560;--lin
 #jy .road::after{content:"";position:absolute;left:0;right:0;top:28px;height:2px;background:repeating-linear-gradient(90deg,var(--roadline) 0 18px,transparent 18px 34px)}
 #jy .post{position:absolute;left:calc(min(380px,82vw) / 2 - 14px);top:-6px;width:28px;height:28px;border-radius:50%;background:var(--hivis);color:var(--hivis-ink);
   font-family:var(--stencil);font-size:13px;display:grid;place-items:center;z-index:2;box-shadow:0 0 0 3px var(--page)}
-#jy .truck{position:absolute;top:10px;left:0;width:64px;height:38px;z-index:3;transition:transform .9s cubic-bezier(.4,.1,.2,1);pointer-events:none}
+#jy .truck{position:absolute;top:10px;left:0;width:64px;height:38px;z-index:3;filter:drop-shadow(0 0 8px var(--glow));transition:transform .9s cubic-bezier(.4,.1,.2,1);pointer-events:none}
 #jy .nav{display:flex;align-items:center;gap:12px;margin-top:14px}
 #jy .nbtn{width:46px;height:46px;border-radius:50%;border:2px solid var(--ink);background:transparent;cursor:pointer;display:grid;place-items:center}
 #jy .nbtn:hover{background:var(--hivis);border-color:var(--hivis);color:var(--hivis-ink)}
@@ -1135,6 +1135,63 @@ body.calm #jy .jyeye{opacity:1;transform:none;animation:none}
 #jy h1{font-size:clamp(26px,3.2vw,42px);line-height:1.12;max-width:34ch}
 .howbtn{justify-self:start;border:1px solid var(--line2);background:var(--tile);color:var(--acc);border-radius:999px;padding:8px 14px;font:600 11px var(--mono);letter-spacing:.18em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(6px)}
 .howbtn:hover{border-color:var(--acc);box-shadow:0 0 16px rgba(57,255,136,.25)}
+
+/* ================= the journey, re-skinned in The EYE's design language (overrides) ================= */
+#jy{--sans:Inter,system-ui,"Segoe UI",Roboto,sans-serif;--cond:Inter,system-ui,"Segoe UI",Roboto,sans-serif;--stencil:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --ink:var(--txt);--ink2:var(--dim);--line:rgba(57,255,136,.18);--page:#04070a;
+  --bp:#07130e;--bpline:rgba(57,255,136,.075);--chalk:#bff7d6;--hivis:#39ff88;--hivis-ink:#02130a;
+  --kraft:#08140f;--kraft2:rgba(57,255,136,.07);--kraft-ink:#dcfff0;--kraft-dim:#7fa594;
+  --road:#07110c;--roadline:#39ff88;--truckline:#02130a;--glow:rgba(57,255,136,.55);--shadow:0 18px 44px rgba(0,0,0,.5)}
+html.light #jy{--ink:#10261c;--ink2:#4b695b;--line:rgba(10,110,64,.22);--page:#d7ebdf;
+  --bp:#ffffff;--bpline:rgba(11,110,64,.07);--chalk:#0b6a3e;--hivis:#0b9e56;--hivis-ink:#ffffff;
+  --kraft:#ffffff;--kraft2:rgba(11,158,86,.08);--kraft-ink:#10261c;--kraft-dim:#4b695b;
+  --road:#cfe3d7;--roadline:#0b9e56;--truckline:#ffffff;--glow:rgba(11,158,86,.0);--shadow:inset 0 1px 0 rgba(255,255,255,.95),0 2px 6px rgba(20,70,45,.08),0 12px 30px rgba(20,70,45,.14)}
+#jy h1{font:600 clamp(22px,2.6vw,34px)/1.18 var(--sans);letter-spacing:-.01em;color:var(--ink)}
+#jy .sub{color:var(--ink2);font-size:14px}
+#jy .tbtn{border:1px solid var(--line2);background:var(--tile);color:var(--acc);font:600 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;backdrop-filter:blur(6px)}
+#jy .tbtn:hover{border-color:var(--acc);box-shadow:0 0 16px var(--glow)}
+#jy .mdot{border:1px solid var(--line2);background:var(--tile2);color:var(--ink2);font:600 12px var(--mono)}
+#jy .mdot:hover{border-color:var(--acc);color:var(--acc)}
+#jy .mdot.on{background:var(--acc);border-color:var(--acc);color:var(--hivis-ink);box-shadow:0 0 16px var(--glow)}
+#jy .mdot.done{border-color:var(--acc);color:var(--acc)}
+#jy .mline{background:repeating-linear-gradient(90deg,var(--line2) 0 6px,transparent 6px 12px);opacity:1}
+#jy .mname{font:600 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+#jy .face{border:1px solid var(--line)}
+#jy .front{color:var(--chalk)}
+#jy .front .tape{height:3px;background:linear-gradient(90deg,transparent,var(--hivis) 20%,var(--hivis) 80%,transparent);box-shadow:0 0 14px var(--glow)}
+#jy .front .num{font:700 50px/1 var(--stencil);color:var(--hivis);text-shadow:0 0 18px var(--glow);margin:20px 22px 0}
+#jy .front h2{font:600 24px/1.15 var(--sans);letter-spacing:-.01em;color:var(--kraft-ink)}
+#jy .front .line{color:var(--kraft-dim);font-size:15px}
+#jy .front .hint{font:600 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--hivis)}
+#jy .sc .t{font-family:var(--sans);font-weight:600;font-size:12px}
+#jy .sc .ty{font-family:var(--sans);font-weight:700;font-size:12px}
+#jy .sc .faint{stroke:var(--bpline);stroke-width:2}
+#jy .back{background:var(--kraft);background-image:repeating-linear-gradient(0deg,transparent 0 27px,var(--bpline) 27px 28px);color:var(--kraft-ink)}
+#jy .back .bhead{border-bottom:1px solid var(--line2)}
+#jy .back .bnum{font:700 26px var(--stencil);color:var(--hivis);text-shadow:0 0 12px var(--glow)}
+#jy .back h3{font:600 19px/1.2 var(--sans)}
+#jy .back ul{font-size:13.5px}
+#jy .back li::marker{color:var(--hivis)}
+#jy .back .stamp{color:var(--hivis);border:1px solid var(--hivis);font:600 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+#jy .back .fig{background:var(--kraft2);border:1px solid var(--line)}
+#jy .back .fig b{font:700 18px var(--mono);color:var(--hivis)}
+#jy .back .fig span{color:var(--kraft-dim)}
+#jy .back .why{color:var(--kraft-dim)}
+#jy .back a{color:var(--hivis)} #jy .back a:hover{color:var(--ink)}
+#jy .more{border-top:1px dashed var(--line2)}
+#jy .mt th{border-bottom:1px solid var(--line2);font:600 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--hivis)}
+#jy .mt td{border-bottom:1px solid var(--line)}
+#jy .mt tr.win td{background:var(--kraft2);color:var(--hivis)}
+#jy .road::before{background:var(--road);border:1px solid var(--line)}
+#jy .road::after{background:repeating-linear-gradient(90deg,var(--roadline) 0 18px,transparent 18px 34px);filter:drop-shadow(0 0 4px var(--glow))}
+#jy .post{background:var(--hivis);color:var(--hivis-ink);font:700 12px var(--mono);box-shadow:0 0 0 3px var(--page),0 0 14px var(--glow)}
+#jy .nbtn{border:1px solid var(--line2);color:var(--acc);background:var(--tile)}
+#jy .nbtn:hover{background:var(--acc);border-color:var(--acc);color:var(--hivis-ink);box-shadow:0 0 16px var(--glow)}
+#jy .count{font:600 13px var(--mono);letter-spacing:.08em;color:var(--ink)}
+#jy .keys{font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+#jy footer{border-top:1px solid var(--line);font-size:13px}
+#jy .card:focus-visible{outline:2px solid var(--acc);outline-offset:4px;border-radius:14px}
+
 body.intro #jy,body.intro .howbtn{opacity:0;pointer-events:none} #jy,.howbtn{transition:opacity .7s ease}
 </style>
 </head>
@@ -1206,7 +1263,7 @@ body.intro #jy,body.intro .howbtn{opacity:0;pointer-events:none} #jy,.howbtn{tra
         <g class="mlid u"><rect x="0" y="-60" width="200" height="115"/></g><g class="mlid l"><rect x="0" y="55" width="200" height="115"/></g></g>
       <path class="mout" d="M2 55 C46 -10,154 -10,198 55 C154 120,46 120,2 55 Z"/></svg></div>
     <div class="titles">
-      <h1>&ldquo;For simplicity, and also since you don&rsquo;t know much biology and human anatomy, I will tell you how I was built like I am a building.&rdquo;</h1>
+      <h1>&ldquo;For simplicity, and since you don&rsquo;t know much biology and human anatomy, I will tell you how I was built as if I were a building.&rdquo;</h1>
       <p class="sub">Milestone 2, Group 7: from 7,343 raw files to a detector for 73 everyday objects. Ten stations, left to right. Flip any card for the full site report.</p>
     </div>
     <div class="hdr-tools">
@@ -2087,10 +2144,10 @@ const S = [
 
 /* ---------- build ---------- */
 const track = document.getElementById("jy-track"), map = document.getElementById("jy-map");
-const truckSVG = `<svg class="truck" id="jy-truck" viewBox="0 0 64 38" aria-hidden="true"><rect x="2" y="8" width="38" height="20" rx="2" fill="#f4c430" stroke="#1b1b1b" stroke-width="1.5"/>
-  <path d="M40 14 H52 L60 22 V28 H40 Z" fill="#f4c430" stroke="#1b1b1b" stroke-width="1.5"/><rect x="44" y="16" width="8" height="6" fill="#173a63"/>
-  <path d="M6 12 L36 12" stroke="#1b1b1b" stroke-width="1" stroke-dasharray="3 3"/><circle cx="14" cy="30" r="5" fill="#1b1b1b"/><circle cx="50" cy="30" r="5" fill="#1b1b1b"/>
-  <circle cx="14" cy="30" r="2" fill="#f4c430"/><circle cx="50" cy="30" r="2" fill="#f4c430"/></svg>`;
+const truckSVG = `<svg class="truck" id="jy-truck" viewBox="0 0 64 38" aria-hidden="true"><rect x="2" y="8" width="38" height="20" rx="2" style="fill:var(--hivis);stroke:var(--truckline)" stroke-width="1.5"/>
+  <path d="M40 14 H52 L60 22 V28 H40 Z" style="fill:var(--hivis);stroke:var(--truckline)" stroke-width="1.5"/><rect x="44" y="16" width="8" height="6" style="fill:var(--bp)"/>
+  <path d="M6 12 L36 12" style="stroke:var(--truckline)" stroke-width="1" stroke-dasharray="3 3"/><circle cx="14" cy="30" r="5" style="fill:var(--truckline)"/><circle cx="50" cy="30" r="5" style="fill:var(--truckline)"/>
+  <circle cx="14" cy="30" r="2" style="fill:var(--hivis)"/><circle cx="50" cy="30" r="2" style="fill:var(--hivis)"/></svg>`;
 S.forEach((s, i) => {
   const stop = document.createElement("div"); stop.className = "stop"; stop.dataset.i = i;
   stop.innerHTML = `<div class="card" role="button" tabindex="0" aria-label="Station ${i + 1}: ${s.t}. Press to flip for the full report." aria-pressed="false">

@@ -1,0 +1,17 @@
+{
+  "photos": 6936,
+  "human_checked_boxes": 6881,
+  "still_unchecked_auto": 0,
+  "still_without_box": 0,
+  "excluded_by_person": 14,
+  "near_duplicates_removed": 41,
+  "decisions": {
+    "ok": 5087,
+    "fix": 423,
+    "exclude": 14,
+    "flag": 0,
+    "duplicates_removed": 41
+  },
+  "second_object_boxes": 16,
+  "every_usable_box_checked": true
+}

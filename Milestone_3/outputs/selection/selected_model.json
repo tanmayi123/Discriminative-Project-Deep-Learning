@@ -1,0 +1,13 @@
+{
+  "name": "yolo26s_boost",
+  "dir": "boost",
+  "weights": "C:\\Users\\csk23\\Documents\\Zanthosh\\Northeastern\\SEMESTERs\\4th Sem\\Deep Learning\\PROJECT - 1\\M2 extra\\boost\\runs\\boost\\weights\\best.pt",
+  "imgsz": 1280,
+  "threshold_grid": 0.1,
+  "threshold_scene": 0.35,
+  "scene_nms": 0.5,
+  "fill_empty_cells": null,
+  "tta": false,
+  "chosen_on": "validation",
+  "selection": "C:\\Users\\csk23\\Documents\\Zanthosh\\Northeastern\\SEMESTERs\\4th Sem\\Deep Learning\\PROJECT - 1\\M2 extra\\selection\\selection.json"
+}

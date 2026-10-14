@@ -1,0 +1,346 @@
+================================================================
+  MILESTONE 3 — EXTENSION
+  Deep Learning Project 1 | Group 7
+  Full narrative: what was done, why, and what it produced
+================================================================
+
+----------------------------------------------------------------
+  WHERE WE LEFT OFF (END OF MILESTONE 2)
+----------------------------------------------------------------
+
+Milestone 2 delivered a working object detector for 73 household
+objects. The final selected model was yolo26s_ft2 — a YOLO26-s
+network fine-tuned twice on the dataset. It was evaluated at
+imgsz=1120, confidence threshold 0.10. Key Milestone 2 numbers
+(normal test set, 72 images, 1048 objects):
+
+  Recall:    0.912
+  Precision: 0.950
+  mAP@0.5:   0.947
+  mAP@0.5:0.95: 0.873
+  Wrong IDs: 16
+  Fully correct scenes: 34.7%
+  Small-object recall: 0.750
+
+The detector was demonstrated through The EYE (m2_eye_app.py),
+a local web app that runs inference on uploaded images and shows
+visual results, scores, and per-object breakdowns.
+
+Milestone 3 set out to improve on this in every dimension:
+cleaner labels, a stronger model, and a better demo tool.
+
+
+----------------------------------------------------------------
+  STEP 1 — LABEL REVIEW (PASS 2)
+----------------------------------------------------------------
+
+Script: m2_label_check.py
+
+After Milestone 2, the annotation pipeline had processed 6,936
+photos. But not all boxes were human-verified: many had been
+produced automatically by the initial detector and only spot-
+checked. The master box file (boxes_master.csv) showed:
+
+  Verified by human:     1,343 photos
+  Fixed by human:          625 photos
+  Unreviewed (auto box): 4,660 photos
+  Usable total:          1,968 photos  (verified + fixed)
+
+Automatic-box accuracy from reviews: 98.3% on the test split,
+but only 75.3% on train and 54.8% on val — meaning the training
+and validation labels still had meaningful noise.
+
+Pass 2 label review ran m2_label_check.py against the existing
+boxes. For each photo, the script showed the model's predicted
+box alongside the stored box and recorded the reviewer's
+decision: keep, fix, or exclude. Near-duplicates were detected
+and removed from the training pool. The output was
+boxes_master_checked.csv — the cleaned label file used for all
+extension training. This is the "pass-2 labels" referred to
+throughout all extension files.
+
+The pass-2 validation set used for model selection contains
+292 images, 3,465 objects — all human-reviewed.
+
+
+----------------------------------------------------------------
+  STEP 2 — BOOST TRAINING (FIRST IMPROVED MODEL)
+----------------------------------------------------------------
+
+Script: m2_boost.py
+Output: M2 extra/boost/runs/boost/weights/best.pt
+
+With cleaner labels in hand, the first improved model was
+trained. The decision was to keep YOLO26-s as the architecture
+(already proven best in M2) but fine-tune from the yolo26s_ft2
+checkpoint with:
+
+  Starting weights:  yolo26s_ft2 best.pt  (M2 winner)
+  Image size:        1280 px  (up from 1120 in M2)
+  Batch size:        4
+  Epochs:            30
+  Optimizer:         auto (AdamW via Ultralytics)
+  Augmentations:     standard + mosaic=0, close_mosaic=0
+                     (no mosaic — objects are already composed
+                      into grids; mosaic would break the layout)
+  GPU:               NVIDIA RTX 5070 Laptop  (8151 MiB)
+
+Training completed successfully at approximately 20-25 minutes
+per epoch. The resulting model is referred to as yolo26s_boost
+throughout all result files.
+
+On the pass-2 validation set (292 images):
+  mAP@0.5:     0.960
+  mAP@0.5:0.95: 0.886
+
+This was already a significant improvement over yolo26s_ft2.
+
+
+----------------------------------------------------------------
+  STEP 3 — BOOST2 TRAINING (HIGHER RESOLUTION ATTEMPT)
+----------------------------------------------------------------
+
+Script: m2_boost.py (same script, different config)
+Output: M2 extra/boost2/runs/boost/weights/best.pt
+Log:    M2 extra/boost2/train_bs2.log
+
+The next hypothesis: higher input resolution (1600 px) might
+improve detection further, especially for small objects.
+
+FIRST ATTEMPT — ABORTED:
+  imgsz=1600, batch=4
+  GPU memory in epoch 1: 9.42 GB
+  RTX 5070 Laptop VRAM: 8.15 GB
+  Result: out-of-memory crash at ~65 min/epoch. Aborted.
+  (recorded in boost2/restart_note.txt)
+
+No weights were saved from the aborted run; no results existed.
+
+SECOND ATTEMPT — COMPLETED:
+  imgsz=1600, batch=2  (halved to fit in VRAM)
+  Starting weights: same yolo26s_ft2 checkpoint as boost
+  Epochs: 30
+  GPU memory during training: ~6.2-6.4 GB  (nvidia-smi)
+  Runtime: approx 2.9 hours total
+
+The reduced batch size increased gradient noise but the model
+trained stably to 30 epochs. This model is yolo26s_boost2.
+
+On the pass-2 validation set (292 images):
+  mAP@0.5:     0.952
+  mAP@0.5:0.95: 0.878
+
+
+----------------------------------------------------------------
+  STEP 4 — MODEL SELECTION (PRE-FIXED RULE)
+----------------------------------------------------------------
+
+Script: m2_boost_val.py
+Output: selection/selection.md, selection/selection.json,
+        boost2/evaluation.md, selected_model.json
+
+A critical design decision: the model selection rule was written
+down and SHA-256 hashed BEFORE boost2 training began. This
+prevents any post-hoc cherry-picking of results.
+
+Selection rule (SHA-256 C6A67BD9...FDC4EF8C0, on file in
+boost2/selection_rule.txt and boost2/selection_rule_sha256.txt):
+
+  "boost2 replaces boost if its mAP@0.5:0.95 on the boost2
+   validation set (292 images, pass-2 labels) is higher than
+   boost's on the same set, each at its own imgsz. Otherwise
+   boost stays. Thresholds and post-processing are chosen on
+   validation only. Test sets do not influence the choice."
+
+Results when m2_boost_val.py ran after training completed:
+
+  Model            imgsz  mAP@0.5  mAP@0.5:0.95
+  yolo26s_boost    1280   0.960    0.886  <-- WINNER
+  yolo26s_boost2   1600   0.952    0.878
+
+  Difference (boost2 - boost): -0.0080
+  Paired bootstrap (1000 resamples, 95% CI): [-0.0142, -0.0024]
+  boost2 higher in: 0% of resamples
+
+RESULT: boost selected. Boost2 is strictly worse on the
+validation set. Higher resolution with half the batch size
+did not pay off — the gradient noise from batch=2 outweighed
+any resolution gain.
+
+The script wrote selected_model.json pointing to the boost
+weights as the authoritative model for all downstream use.
+
+
+----------------------------------------------------------------
+  STEP 5 — THRESHOLD OPTIMISATION
+----------------------------------------------------------------
+
+Handled inside m2_boost_val.py, on the same validation set.
+
+M2 used a single confidence threshold for all image types.
+The extension tested a two-threshold strategy: one for grid
+images (objects cleanly placed in cells) and a lower one for
+scene images (objects overlapping, occluded, or scattered).
+Scene duplicate removal (class-agnostic NMS at IoU 0.5) was
+also evaluated.
+
+Results on the pass-2 validation set (136 grids + 156 scenes):
+
+  Strategy                              Recall  Precision  F1
+  One threshold (0.4)                   0.929   0.963    0.946
+  Grid 0.10 + scene 0.35 + NMS IoU 0.5 0.937   0.965    0.951
+
+F1 gain: +0.0049  (above the 0.003 threshold to adopt)
+Recall with two thresholds is not lower than with one.
+
+ADOPTED: grid threshold = 0.10, scene threshold = 0.35,
+         scene NMS IoU = 0.50
+
+These thresholds are stored in selected_model.json and used
+as the defaults in The EYE v3.
+
+
+----------------------------------------------------------------
+  STEP 6 — TEST SET EVALUATION (ONE LOOK)
+----------------------------------------------------------------
+
+Test sets are looked at exactly once, after all decisions are
+fixed. Results with the adopted thresholds:
+
+  Normal test set (72 images, 1048 objects, threshold 0.10):
+    Recall:    0.949       (was 0.912 in M2)
+    Precision: 0.970       (was 0.950)
+    Wrong IDs: 10          (was 16)
+    Fully correct: 47.2%   (was 34.7%)
+    Small-object recall: 0.896  (was 0.750)
+    mAP@0.5:   0.972       (was 0.947)
+    mAP@0.5:0.95: 0.900    (was 0.873)
+
+  Rotated (216 images, 3144 objects, threshold 0.10):
+    Recall:    0.922   Precision: 0.947   Wrong IDs: 58
+    mAP@0.5:0.95: 0.858  (was 0.714 in M2)
+
+  Scattered (104 images, 1039 objects, threshold 0.35):
+    Recall:    0.897   Precision: 0.943   Wrong IDs: 17
+    mAP@0.5:0.95: 0.794  (was 0.635 in M2)
+
+  Cut-outs (104 images, 1014 objects, threshold 0.35):
+    Recall:    0.881   Precision: 0.914   Wrong IDs: 61
+    mAP@0.5:0.95: 0.873  (was 0.527 in M2)
+
+  Singles (1040 images, 1048 objects, threshold 0.10):
+    Recall:    0.951   Precision: 0.968   Wrong IDs: 11
+    mAP@0.5:0.95: 0.891  (was 0.865 in M2)
+
+The improvement is consistent across all five test conditions.
+The most dramatic gains are on cut-outs (+0.346 mAP@0.5:0.95)
+and rotated (+0.144), the hardest layout types.
+
+For context vs boost2 (same test truth):
+  boost vs boost2 are extremely close on normal/rotated/
+  scattered; boost wins on cut-outs (0.887 vs 0.873 mAP95)
+  and ties on singles. The validation-set decision holds.
+
+
+----------------------------------------------------------------
+  STEP 7 — THE EYE v3 (m2_eye_app_v3.py)
+----------------------------------------------------------------
+
+The EYE was rebuilt from v2 to include every trained model and
+all evaluation data from the extension.
+
+Key changes in v3:
+  - All 7 models available in the dropdown:
+      yolo26s, yolov8s (M2 baselines)
+      yolo26s_ft, yolov8s_ft (M2 fine-tuned pass 1)
+      yolo26s_ft2 (M2 final, pass 2)
+      yolo26s_boost (Extension, selected — DEFAULT)
+      yolo26s_boost2 (Extension, higher-res run)
+
+  - Default model: yolo26s_boost with its validated thresholds
+    (grid 0.10 / scene 0.35) loaded automatically from
+    selected_model.json
+
+  - Two-threshold mode: grid images and scene images use
+    separate confidence thresholds; scene duplicate removal
+    (NMS IoU 0.5) applied automatically
+
+  - Model selection panel: shows the validation-set comparison,
+    bootstrap confidence interval, and the adopted thresholds
+
+  - Extended layout support: Grid, Rotated, Scattered, Cut-outs
+    (stress-test scenes from boost2/tests/)
+
+  - Finds project root automatically by looking for
+    milestone2_outputs/ in parent directories; can be
+    overridden with the M2_PROJECT_DIR environment variable
+
+The EYE reads everything (models, labels, results) but writes
+nothing — original files are never modified.
+
+
+----------------------------------------------------------------
+  STEP 8 — INTEGRITY AND REPRODUCIBILITY TRACKING
+----------------------------------------------------------------
+
+To ensure the extension is fully reproducible and that no
+results influenced the method:
+
+  1. selection_rule.txt was written and SHA-256 hashed before
+     any boost2 training started. The hash appears in
+     selection.md so anyone can verify the rule was fixed.
+
+  2. m2_boost_val.py and m2_eye_app_v3.py were each SHA-256
+     hashed at the time of use. Hashes stored in
+     boost_val_sha256.txt with timestamps. Two entries exist:
+     the original scripts (before any boost2 result) and the
+     updated m2_eye_app_v3.py (v3 update after results).
+     m2_boost_val.py hash is identical in both entries —
+     the evaluation script was not changed after results.
+
+  3. Four Milestone 2 protected files were hash-checked before
+     and after all extension work to confirm nothing was
+     touched: best.pt, results.json, boxes_master.csv,
+     m2_eye_app.py. All hashes matched.
+
+
+----------------------------------------------------------------
+  FINAL DELIVERABLES SUMMARY
+----------------------------------------------------------------
+
+Selected model:    yolo26s_boost
+Weights:           M2 extra/boost/runs/boost/weights/best.pt
+Image size:        1280 px
+Grid threshold:    0.10
+Scene threshold:   0.35
+Scene NMS IoU:     0.50
+
+Key scripts (in RUN_EYE/):
+  m2_eye_app_v3.py   The demo app (run via launch_eye.py)
+  m2_boost_val.py    Model selection + threshold evaluation
+  m2_boost.py        Training script (boost and boost2)
+  m2_label_check.py  Label review pass 2
+  m2_diagnose.py     Diagnostic utilities
+
+Result files (in 03_results/):
+  selection/selection.md     Model selection narrative + tables
+  boost2/evaluation.md       Before/after comparison, all test sets
+  boost2/train_bs2.log       Full training log (30 epochs)
+  master_report.txt          Label coverage and quality summary
+
+Grid images (in 05_grid_images/):
+  Group7_grid_2x2.jpg   through   Group7_grid_5x5.jpg
+  Five grids, 74 unique object photos, no repeats across grids,
+  EXIF-corrected, 224 px per cell.
+
+
+================================================================
+  HOW TO RUN THE EYE
+================================================================
+
+See RUN_EYE/README.txt for full setup instructions.
+Short version:
+  1.  pip install -r RUN_EYE/requirements.txt
+  2.  python RUN_EYE/launch_eye.py
+  Opens at http://127.0.0.1:7862
+================================================================

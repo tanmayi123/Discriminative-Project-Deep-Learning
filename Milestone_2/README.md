@@ -24,8 +24,10 @@ Milestone_2/
 ├── final_pipeline/                          # the submitted pipeline (all results in the report)
 │   ├── M2_Boxes.ipynb                       # bounding boxes: text prompt, visual prompt, self-trained detector, vote, human review
 │   ├── M2_Detect.ipynb                      # grids, leakage checks, YOLO training and fine-tuning, evaluation, detect()
-│   ├── README.md, RUN_HISTORY.md, requirements.txt, scripts/run_step.ps1
-│   ├── app/m2_eye_app.py                    # "The EYE": local demo app (not hosted)
+│   ├── README.md, RUN_HISTORY.md, requirements.txt
+│   ├── scripts/run_step.ps1                 # runs any notebook step headlessly (Windows)
+│   ├── scripts/m2_cross_eval.py             # cross-evaluation of all pipelines on one human-checked test set (report Table 14)
+│   ├── app/m2_eye_app.py                    # "The EYE": local demo app (not hosted); app/earlier_demos/ holds two earlier versions
 │   └── outputs/
 │       ├── results/                         # results.json, results_summary.md, per-class AP, task metrics, left out per Object ID
 │       ├── labels/                          # every box file, incl. review/review_SC.csv (the human review, irreplaceable)

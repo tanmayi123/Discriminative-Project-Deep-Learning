@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The EYE user manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5f7f3; --sheet:#ffffff; --ink:#15213b; --soft:#4d5a73; --rule:#d6dccf; --tint:#eaf3ec;
+  --green:#23905a; --iris:#06140d;
+  --v-correct:#39ff88; --v-off:#ffb020; --v-wrong:#ff4fd8; --v-missed:#22e4ff; --v-extra:#8b97a8;
+  --key-bg:#eef1ea;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,"Courier New",monospace;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0f1726;--sheet:#152036;--ink:#e8ece3;--soft:#a6b0c2;--rule:#2a3750;--tint:#16302a;--green:#4cd88a;--key-bg:#1d2a44;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#0f1726;--sheet:#152036;--ink:#e8ece3;--soft:#a6b0c2;--rule:#2a3750;--tint:#16302a;--green:#4cd88a;--key-bg:#1d2a44;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(16px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16.5px/1.62 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:4px}
+p,li{max-width:70ch}
+p{margin:0 0 .85em}
+code,kbd{font-family:var(--mono);font-size:.84em}
+code{background:var(--key-bg);padding:.08em .35em;border-radius:4px}
+kbd{display:inline-block;min-width:1.9em;padding:.05em .45em;border:1px solid var(--rule);border-bottom-width:3px;border-radius:6px;background:var(--key-bg);text-align:center;font-weight:700}
+h1{font:900 clamp(36px,5vw,58px)/1 var(--display);font-stretch:118%;letter-spacing:-.015em;margin:0 0 .35em}
+h2{font:800 clamp(25px,3vw,32px)/1.12 var(--display);font-stretch:112%;margin:0 0 .55em;display:flex;gap:.5em;align-items:baseline}
+h2 .n{font-size:.6em;color:var(--green);font-stretch:100%;min-width:1.6em}
+h3{font:800 18px/1.3 var(--display);font-stretch:104%;margin:1.5em 0 .4em}
+h3:first-child{margin-top:0}
+
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:48px;max-width:1180px;margin:0 auto;padding:0 24px}
+.toc{position:sticky;top:20px;align-self:start;padding:28px 0;max-height:calc(100vh - 40px);overflow:auto}
+.toc b{display:block;font:800 15px var(--display);margin-bottom:10px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+.toc li{counter-increment:t;margin:0}
+.toc a{display:grid;grid-template-columns:26px 1fr;padding:5px 0;text-decoration:none;color:var(--soft);font-size:14.5px;line-height:1.35}
+.toc a::before{content:counter(t);color:var(--green);font:700 13px var(--mono)}
+.toc a:hover{color:var(--ink)}
+main{min-width:0;padding:28px 0 80px}
+section{padding:40px 0;border-top:1px solid var(--rule)}
+.top{padding:24px 0 34px}
+.lede{font-size:19px;color:var(--soft);max-width:60ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font-size:15px;color:var(--soft)}
+.facts b{color:var(--ink)}
+
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--sheet);margin:12px 0 16px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:9px 13px;border-bottom:1px solid var(--rule)}
+th{font:700 13px var(--body);color:var(--soft);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td:first-child{white-space:nowrap;font-weight:700}
+td.w{white-space:normal}
+
+.tip{border-left:4px solid var(--green);background:var(--tint);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0 18px;max-width:72ch}
+.tip p{margin:0}
+.tip b:first-child{color:var(--green)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:10px 0 16px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:8px;padding:8px 0;border-top:1px dashed var(--rule)}
+.steps li:first-child{border-top:0}
+.steps li::before{content:counter(s);font:800 20px/1.25 var(--display);color:var(--green)}
+.cmd{display:block;margin-top:5px;padding:8px 11px;background:var(--sheet);border:1px solid var(--rule);border-radius:6px;font:500 14px var(--mono);overflow-x:auto;white-space:nowrap}
+
+/* swatches drawn like the app draws them, on the dark iris */
+.sw{display:inline-block;vertical-align:-5px;width:36px;height:22px;border-radius:3px;background:var(--iris);position:relative;margin-right:4px}
+.sw::after{content:"";position:absolute;inset:4px 6px;border:2.5px solid var(--c)}
+.sw.dash::after{border-style:dashed}
+.sw.dot::after{border-style:dotted}
+.seg{display:inline-block;width:30px;height:9px;border-radius:2px;background:var(--c);vertical-align:1px;margin-right:6px}
+
+.diagram{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:12px;overflow-x:auto;margin:14px 0}
+.diagram svg{display:block;width:100%;height:auto;min-width:520px}
+.diagram text{font-family:var(--body);fill:var(--ink)}
+.diagram text.num{fill:var(--paper);font-weight:800;font-size:12px}
+.diagram .sm{font-size:10.5px;fill:var(--soft)}
+.ring{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;margin:16px 0}
+.ring svg{width:150px;height:150px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}
+.theme{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;font:700 13px var(--body);padding:8px 12px;border-radius:999px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);cursor:pointer}
+@media (max-width:960px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:0}
+  .toc{position:static;max-height:none;padding:22px 0 0}
+  .toc ol{columns:2;column-gap:18px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .toc ol{columns:1}
+  .ring,.cols{grid-template-columns:minmax(0,1fr)}
+  td:first-child{white-space:normal}
+}
+@media print{.toc,.theme{display:none}.layout{display:block}section{break-inside:avoid-page}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" aria-label="Contents">
+  <b>Contents</b>
+  <ol>
+    <li><a href="#start">Start and stop</a></li>
+    <li><a href="#screen">The screen</a></li>
+    <li><a href="#image">Make a test image</a></li>
+    <li><a href="#detect">Model, threshold, detect</a></li>
+    <li><a href="#read">Read the image</a></li>
+    <li><a href="#review">Read the review panels</a></li>
+    <li><a href="#large">Large view</a></li>
+    <li><a href="#stress">Stress test</a></li>
+    <li><a href="#files">Files and snapshots</a></li>
+    <li><a href="#more">About, the journey, display</a></li>
+    <li><a href="#keys">Keyboard and mouse</a></li>
+    <li><a href="#words">Words you will see</a></li>
+    <li><a href="#trouble">Troubleshooting</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top">
+  <h1>The EYE user manual</h1>
+  <p class="lede">The EYE (Explainable YOLO Explorer) is our detector's front end. It builds a test image from photos the model never trained on, finds our 73 objects in it, and explains every box in plain sentences. This manual covers every control, every colour and every number on the screen.</p>
+  <div class="facts"><span>Version <b>EYE v3</b></span><span>Address <b>127.0.0.1:7862</b></span><span>Default model <b>yolo26s_boost</b></span><span>Thresholds <b>0.10 grids, 0.35 scenes</b></span></div>
+</header>
+
+<section id="start">
+  <h2><span class="n">1</span>Start and stop</h2>
+  <p>The EYE runs on the laptop that holds the project and its GPU. Nothing is uploaded anywhere; your browser talks to a small server on your own machine.</p>
+  <ol class="steps">
+    <li><div>Open a terminal in the project folder <code>PROJECT - 1\M2 extra</code>. Close anything else using the GPU, such as a training run or a second EYE.</div></li>
+    <li><div>Start the server:<span class="cmd">python m2_eye_app_v3.py</span></div></li>
+    <li><div>Your browser opens <a href="http://127.0.0.1:7862">http://127.0.0.1:7862</a>. If it does not, type the address yourself.</div></li>
+    <li><div>Wait for the intro animation and the status line under the eye to say <i>model ready</i>.</div></li>
+    <li><div>To stop, press <kbd>Ctrl</kbd>+<kbd>C</kbd> in the terminal, or close it.</div></li>
+  </ol>
+  <div class="tbl"><table>
+    <tr><th>Version</th><th>Start with</th><th>Address</th><th>Use it for</th></tr>
+    <tr><td>EYE v3</td><td class="w"><code>python m2_eye_app_v3.py</code> in <code>M2 extra</code></td><td>:7862</td><td class="w">Everything. The final version.</td></tr>
+    <tr><td>EYE v2</td><td class="w"><code>python m2_eye_app_v2.py</code> in <code>M2 extra</code></td><td>:7861</td><td class="w">Fallback with the first improved model.</td></tr>
+    <tr><td>Original</td><td class="w"><code>python m2_eye_app.py</code> in <code>MILESTONE 2</code></td><td>:7860</td><td class="w">Fallback with the Milestone 2 model only.</td></tr>
+  </table></div>
+  <div class="tip"><p><b>Good to know.</b> The first DETECT after starting takes a few seconds because the model loads then. After that, an image takes well under a second.</p></div>
+</section>
+
+<section id="screen">
+  <h2><span class="n">2</span>The screen</h2>
+  <p>Everything sits on one eye. You set up a test on the brow, the image appears in the pupil, the iris ring is both the DETECT button and the scoreboard, and four review panels sit below.</p>
+  <div class="diagram">
+    <svg viewBox="0 0 560 400" role="img" aria-label="Map of the screen with six numbered areas">
+      <defs><style>.o{fill:none;stroke:var(--ink);stroke-width:2}.f{fill:var(--paper);stroke:var(--rule);stroke-width:1.5}.m{fill:var(--ink)}</style></defs>
+      <path class="f" d="M70 104 Q280 18 490 104 L470 130 Q280 52 90 130 Z"/>
+      <g class="sm"><text x="112" y="104" class="sm">Grid</text><text x="170" y="84" class="sm">Mix</text><text x="222" y="72" class="sm">Conditions</text><text x="300" y="70" class="sm">Seed</text><text x="352" y="76" class="sm">Model</text><text x="408" y="92" class="sm">Threshold</text></g>
+      <path class="o" d="M90 230 Q280 120 470 230 Q280 340 90 230 Z"/>
+      <circle cx="280" cy="230" r="78" class="o"/>
+      <circle cx="280" cy="230" r="60" fill="none" stroke-dasharray="14 5" style="stroke:var(--green);stroke-width:12;opacity:.85"/>
+      <rect x="246" y="196" width="68" height="68" rx="3" class="f"/>
+      <g fill="var(--soft)"><rect x="252" y="202" width="17" height="17"/><rect x="273" y="202" width="17" height="17"/><rect x="294" y="202" width="14" height="17"/><rect x="252" y="223" width="17" height="17"/><rect x="273" y="223" width="17" height="17"/><rect x="294" y="223" width="14" height="17"/><rect x="252" y="244" width="17" height="14"/><rect x="273" y="244" width="17" height="14"/><rect x="294" y="244" width="14" height="14"/></g>
+      <rect x="257" y="296" width="46" height="14" rx="7" fill="#d6fbe4"/><text x="280" y="306.5" text-anchor="middle" style="font-size:8.5px;font-weight:700;letter-spacing:.2em;fill:#04381f">DETECT</text>
+      <rect x="14" y="170" width="38" height="120" rx="8" class="f"/><rect x="508" y="160" width="38" height="140" rx="8" class="f"/>
+      <g class="m"><circle cx="33" cy="190" r="4"/><circle cx="33" cy="215" r="4"/><circle cx="33" cy="240" r="4"/><circle cx="33" cy="265" r="4"/><circle cx="527" cy="180" r="4"/><circle cx="527" cy="205" r="4"/><circle cx="527" cy="230" r="4"/><circle cx="527" cy="255" r="4"/><circle cx="527" cy="280" r="4"/></g>
+      <g class="f"><rect x="40" y="340" width="112" height="48" rx="6"/><rect x="164" y="340" width="112" height="48" rx="6"/><rect x="288" y="340" width="112" height="48" rx="6"/><rect x="412" y="340" width="112" height="48" rx="6"/></g>
+      <g><text x="50" y="360" class="sm">Score</text><text x="174" y="360" class="sm">Results</text><text x="298" y="360" class="sm">Inspect</text><text x="422" y="360" class="sm">Sweep / tightness</text></g>
+      <circle cx="280" cy="30" r="11" class="m"/><text x="280" y="34" text-anchor="middle" class="num">1</text>
+      <circle cx="33" cy="150" r="11" class="m"/><text x="33" y="154" text-anchor="middle" class="num">2</text>
+      <circle cx="214" cy="160" r="11" class="m"/><text x="214" y="164" text-anchor="middle" class="num">3</text>
+      <circle cx="372" cy="296" r="11" class="m"/><text x="372" y="300" text-anchor="middle" class="num">4</text>
+      <circle cx="527" cy="140" r="11" class="m"/><text x="527" y="144" text-anchor="middle" class="num">5</text>
+      <circle cx="28" cy="364" r="11" class="m"/><text x="28" y="368" text-anchor="middle" class="num">6</text>
+    </svg>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Area</th><th>What it holds</th><th>Details</th></tr>
+    <tr><td>1 Brow</td><td class="w">Six setup panels: Grid, Mix, Conditions, Seed, Model, Threshold</td><td class="w">Sections <a href="#image">3</a> and <a href="#detect">4</a></td></tr>
+    <tr><td>2 Left dock</td><td class="w">Upload, Random, Stress, About</td><td class="w">Sections <a href="#image">3</a>, <a href="#stress">8</a>, <a href="#more">10</a></td></tr>
+    <tr><td>3 Pupil</td><td class="w">The test image with its boxes</td><td class="w">Section <a href="#read">5</a></td></tr>
+    <tr><td>4 Iris ring</td><td class="w">The DETECT button, then one coloured segment per object</td><td class="w">Sections <a href="#detect">4</a> and <a href="#read">5</a></td></tr>
+    <tr><td>5 Right dock</td><td class="w">Files, Snapshot, Titles, Light/Dark, Calm</td><td class="w">Sections <a href="#files">9</a> and <a href="#more">10</a></td></tr>
+    <tr><td>6 Review panels</td><td class="w">Score, Results, Inspect, Threshold sweep / Box tightness</td><td class="w">Section <a href="#review">6</a></td></tr>
+  </table></div>
+  <p>Top right, three counts describe the dataset: <b>objects</b> (73), <b>photos</b> and <b>photos with boxes</b>. Hover them for the breakdown, for example how many photos were left out and why. Top left, <b>How was I built?</b> opens the project story.</p>
+</section>
+
+<section id="image">
+  <h2><span class="n">3</span>Make a test image</h2>
+  <p>There are three ways to get an image into the pupil: <b>Random</b> builds one from the brow settings, <b>Upload</b> takes your own photo, and you can <b>drag a photo onto the page</b>. Random images use only held-out test photos whose boxes were checked by a person, so the EYE can mark every box right or wrong.</p>
+
+  <h3>Grid</h3>
+  <p>How many photos go into a grid image, one object per photo.</p>
+  <div class="tbl"><table>
+    <tr><th>Choice</th><th>Objects</th><th>Image size</th></tr>
+    <tr><td>1x1</td><td>1</td><td class="w">224 × 224 px, a single photo</td></tr>
+    <tr><td>2x2</td><td>4</td><td class="w">448 × 448 px</td></tr>
+    <tr><td>3x3</td><td>9</td><td class="w">672 × 672 px (the default)</td></tr>
+    <tr><td>4x4</td><td>16</td><td class="w">896 × 896 px</td></tr>
+    <tr><td>5x4</td><td>20</td><td class="w">1,120 × 896 px</td></tr>
+    <tr><td>5x5</td><td>25</td><td class="w">1,120 × 1,120 px</td></tr>
+  </table></div>
+
+  <h3>Mix</h3>
+  <p>The Mix panel has three rows of choices. If it does not fit, it scrolls.</p>
+  <div class="tbl"><table>
+    <tr><th>Row</th><th>Choice</th><th>Effect</th></tr>
+    <tr><td>Sections</td><td class="w">One chip per section of the object list</td><td class="w">Only objects from the selected sections go into grids.</td></tr>
+    <tr><td>Selection</td><td>random</td><td class="w">Objects picked at random, each at most once per grid.</td></tr>
+    <tr><td></td><td>look-alikes</td><td class="w">Whole look-alike groups placed together (watches, wallets, power banks, rackets, sunglasses and goggles, brush and comb, bottles, projectors, plush toys, notebook and keyboard). The hardest test of naming.</td></tr>
+    <tr><td>Layout</td><td>grid</td><td class="w">Upright photos in rows and columns.</td></tr>
+    <tr><td></td><td>rotated</td><td class="w">The same grid turned 90°, 180° or 270° (the seed decides which).</td></tr>
+    <tr><td></td><td>scattered</td><td class="w">A prepared test scene: photos scattered at any angle on a real background the model has never seen.</td></tr>
+    <tr><td></td><td>cut-outs</td><td class="w">A prepared test scene: objects cut out of their photos and placed on an unseen background.</td></tr>
+  </table></div>
+  <div class="tip"><p><b>Scenes are prepared, not built.</b> Scattered and cut-out images come from the evaluation's own test scenes (104 of each). Grid size, sections and selection do not apply to them; the seed picks which scene you get.</p></div>
+
+  <h3>Conditions</h3>
+  <p>Damage the image before detection to test robustness. Conditions apply to any image, uploads included.</p>
+  <div class="tbl"><table>
+    <tr><th>Choice</th><th>What it does</th></tr>
+    <tr><td>none</td><td class="w">The image as it is.</td></tr>
+    <tr><td>blur</td><td class="w">Softens the whole image.</td></tr>
+    <tr><td>low-res</td><td class="w">Shrinks and re-enlarges it, losing detail.</td></tr>
+    <tr><td>dark</td><td class="w">Darkens it, like a dim room.</td></tr>
+    <tr><td>jpeg</td><td class="w">Heavy JPEG compression with blocky artefacts.</td></tr>
+    <tr><td>all</td><td class="w">All four at once: the low-quality test from our report.</td></tr>
+  </table></div>
+
+  <h3>Seed</h3>
+  <p>A seed is the number behind a random image. The same seed with the same settings gives exactly the same image, every time and on every laptop.</p>
+  <ul>
+    <li><b>Empty box</b>: every Random gives a new image.</li>
+    <li><b>Type a number</b>: Random rebuilds that exact image.</li>
+    <li><b>random</b>: clears the box, so the next Random is a new image.</li>
+    <li><b>keep last</b>: copies the seed of the image on screen, so you can change one setting and compare.</li>
+    <li>The panel always shows the <b>last seed</b> used. Write good ones down for demos.</li>
+  </ul>
+
+  <h3>Upload and drag and drop</h3>
+  <p>Press <b>Upload</b> or <kbd>U</kbd> to pick a photo, or drag an image file anywhere onto the page. While you drag, the eye's outline turns into a moving dashed ring and says <i>drop the image into the eye</i>. Other file types are refused, and if you drop several files, only the first is used. Photos larger than 3,000 px are scaled down first.</p>
+  <div class="tip"><p><b>Uploads cannot be scored.</b> The EYE has no true boxes for your photo, so it shows what it found but cannot say whether it is right. If the photo's width and height are multiples of 224 px, the EYE treats it as a grid (one-box-per-cell rule and the grid threshold); otherwise it treats it as a scene.</p></div>
+</section>
+
+<section id="detect">
+  <h2><span class="n">4</span>Model, threshold, detect</h2>
+  <h3>Model</h3>
+  <p>The dropdown lists every model whose weights are on this laptop: the Milestone 2 runs and the two improved models. The line under it shows the model's test mAP@0.5 and a label.</p>
+  <div class="tbl"><table>
+    <tr><th>Label</th><th>Meaning</th></tr>
+    <tr><td>· selected</td><td class="w">The model chosen on validation for the final results: <b>yolo26s_boost</b>. It is the default.</td></tr>
+    <tr><td>· M2 pick</td><td class="w">The model chosen in Milestone 2: <b>yolo26s_ft2</b>. Switch to it to show the "before".</td></tr>
+  </table></div>
+
+  <h3>Threshold</h3>
+  <p>The model gives every box a confidence between 0 and 1. The threshold is the cut-off: boxes below it are dropped. The slider runs from 0.05 to 0.90 in steps of 0.05.</p>
+  <ul>
+    <li><b>Lower</b> finds more objects but lets more wrong boxes through. <b>Higher</b> is stricter but misses more.</li>
+    <li>Every model has <b>validated</b> values, chosen on the validation set. For the selected model they are <b>0.10 on grids</b> and <b>0.35 on scenes</b>; most other models use one value for everything.</li>
+    <li>While you leave the slider alone, the EYE switches by itself to the right value for the image on screen. The note under the button says which one it uses, for example <i>validated: grids 0.10 · scenes 0.35 · using grids</i>.</li>
+    <li>Move the slider and your value is kept for every image (the note says <i>set by hand</i>) until you press <b>reset to validated</b>.</li>
+  </ul>
+  <h3>One box per cell</h3>
+  <p>On grid images each 224-px cell holds exactly one object, so the EYE keeps only the most confident box per cell. This removes most extra boxes. It is on by default and only acts on grids; scenes instead get the selected model's duplicate rule, which keeps one box where boxes of any name overlap heavily.</p>
+  <h3>Detect</h3>
+  <p>Press the <b>DETECT</b> plate at the bottom of the iris ring, press <kbd>D</kbd>, or focus the ring and press <kbd>Enter</kbd>. The ring spins while the model works.</p>
+</section>
+
+<section id="read">
+  <h2><span class="n">5</span>Read the image</h2>
+  <p>Every true object and every kept box ends up with exactly one result. The colours are the same in the pupil, on the ring, in the lists and in every chart.</p>
+  <div class="tbl"><table>
+    <tr><th>Result</th><th>Drawn as</th><th>Meaning</th></tr>
+    <tr><td><span class="sw" style="--c:var(--v-correct)"></span>correct</td><td>solid green box</td><td class="w">Right object, and the box overlaps the true box by at least half (IoU 0.50 or more).</td></tr>
+    <tr><td><span class="sw dash" style="--c:var(--v-off)"></span>box off</td><td>dashed amber box</td><td class="w">Right object, but the box overlaps by less than half.</td></tr>
+    <tr><td><span class="sw" style="--c:var(--v-wrong)"></span>wrong ID</td><td>solid magenta box</td><td class="w">The box is on the object but names a different one. Look-alikes are flagged.</td></tr>
+    <tr><td><span class="sw dash" style="--c:var(--v-missed)"></span>missed</td><td>dashed cyan box at the true position</td><td class="w">No box for a real object. The reason says whether it was seen below the threshold, seen weakly as something else, or very small.</td></tr>
+    <tr><td><span class="sw dot" style="--c:var(--v-extra)"></span>extra</td><td>dotted grey box</td><td class="w">A box that matches no object: a second box, part of an object, background, or an unlabelled thing in the photo.</td></tr>
+    <tr><td><span class="sw dash" style="--c:rgba(255,255,255,.7)"></span>true box</td><td>thin dashed white</td><td class="w">Where the object really is, as checked by a person.</td></tr>
+  </table></div>
+  <p>Each box carries a label with the object ID and its confidence, for example <code>OBJ042 0.97</code>. <b>Hover</b> a box for its name, section, class AP, look-alike group and, if it is an error, the reason. <b>Click</b> a box to select its object everywhere.</p>
+
+  <h3>The iris ring</h3>
+  <div class="ring">
+    <svg viewBox="0 0 150 150" aria-hidden="true">
+      <circle cx="75" cy="75" r="73" fill="#06140d"/><circle cx="75" cy="75" r="48" fill="#000"/>
+      <g fill="none" stroke-width="13">
+        <path d="M 35.1 122.5 A 62 62 0 0 1 21 46" stroke="var(--v-correct)"/><path d="M 25 39 A 62 62 0 0 1 52 17" stroke="var(--v-missed)"/>
+        <path d="M 60 14 A 62 62 0 0 1 106 21" stroke="var(--v-correct)"/><path d="M 113 26 A 62 62 0 0 1 133 58" stroke="var(--v-off)"/>
+        <path d="M 135 67 A 62 62 0 0 1 114.9 122.5" stroke="var(--v-correct)"/><path d="M 110.6 125.8 A 62 62 0 0 1 39.4 125.8" stroke="#d6fbe4"/>
+      </g>
+      <text x="75" y="139.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="#04381f" letter-spacing="1.5">DETECT</text>
+    </svg>
+    <div><p>After detection, the ring shows one segment per object in the result colours, starting at the left of the DETECT plate and running clockwise. Mostly green is a good image; a cyan or magenta patch tells you there is something to look at in the Results list. Before detection it shows faint ticks; while working, it spins.</p>
+      <p style="margin:0">Under the eye, the <b>status line</b> says what to do next, for example <i>grid ready · press DETECT or D</i>.</p></div>
+  </div>
+</section>
+
+<section id="review">
+  <h2><span class="n">6</span>Read the review panels</h2>
+  <h3>Panel 1, Score</h3>
+  <ul>
+    <li><b>The big number</b>: objects correct out of all objects, with a bar.</li>
+    <li><b>Verdict</b>: <i>FULLY CORRECT</i> when every object is found with the right name and a good box; otherwise <i>k/n NAMED CORRECTLY</i>, which counts right names even when the box is off.</li>
+    <li><b>Counts</b>: box off, wrong ID, missed and extra, then correct per section.</li>
+    <li><b>Time</b> (top right of the panel): milliseconds for this detection; the first one says <i>incl. model loading</i>.</li>
+    <li>For uploads it shows how many objects were <i>found</i>, since nothing can be judged.</li>
+  </ul>
+  <h3>Panel 2, Results</h3>
+  <p>One plain sentence per object, for example <i>OBJ025 was called OBJ046, a look-alike.</i> Switch between <b>errors</b> (default) and <b>all</b>.</p>
+  <ul>
+    <li><b>Click a line</b>: the pupil zooms onto that object and Inspect shows it. Click again, or press <kbd>Esc</kbd>, to zoom out.</li>
+    <li><b>Press +</b>: the full record of the object.</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>Field in +</th><th>Meaning</th></tr>
+    <tr><td>result, reason</td><td class="w">The verdict and why.</td></tr>
+    <tr><td>true object, predicted</td><td class="w">What it is and what the model said, with names.</td></tr>
+    <tr><td>section, look-alike group</td><td class="w">Where it sits in the object list and its look-alikes, if any.</td></tr>
+    <tr><td>class AP (test)</td><td class="w">How well the model handles this object in general, from the Milestone 2 test set (1.0 is perfect).</td></tr>
+    <tr><td>confidence</td><td class="w">How sure the model was about its box.</td></tr>
+    <tr><td>IoU with true box</td><td class="w">Overlap between its box and the true box, 0 to 1.</td></tr>
+    <tr><td>predicted box, true box</td><td class="w">Pixel corners, left-top to right-bottom.</td></tr>
+  </table></div>
+  <h3>Panel 3, Inspect</h3>
+  <p>Shows the selected object cut from the image next to training photos of the class the model predicted and, for errors, of the true class. That is how you see <i>why</i> a watch was mistaken for another watch. Step through all objects with <b>‹ ›</b>; the enlarge button makes it bigger.</p>
+  <h3>Panel 4, Threshold sweep</h3>
+  <p>What would have happened at every threshold from 0.05 to 0.90 on this same image, without detecting again. Four lines: <span class="seg" style="--c:var(--v-correct)"></span>correct, <span class="seg" style="--c:var(--v-missed)"></span>missed (dashed), <span class="seg" style="--c:var(--v-extra)"></span>extra (dashed) and <span class="seg" style="--c:var(--v-wrong)"></span>wrong ID. The dashed vertical line is the current threshold.</p>
+  <div class="tip"><p><b>How to use it.</b> If the missed line drops sharply just left of the current threshold, a slightly lower threshold would find those objects. If the extra line climbs there, it would also add wrong boxes.</p></div>
+  <h3>Panel 4, Box tightness</h3>
+  <p>Switch the panel's tab to <b>tightness</b>. One dot per object the model boxed: across is the IoU with the true box (further right is tighter), up is the confidence. Faint lines mark 0.50, 0.75 and 0.95. The footer counts correct objects past each line and gives the median IoU, for example <i>IoU ≥0.50 24/25 · ≥0.75 21/25 · ≥0.95 7/25 · median 0.89</i>.</p>
+  <p>This is mAP@0.5:0.95 on one image: a box counts as correct from 0.50, but the stricter metric also asks for 0.55 up to 0.95. Few boxes pass 0.95 because even the true boxes are only about 0.97 exact. Enlarge the panel for a big version with an explanation.</p>
+</section>
+
+<section id="large">
+  <h2><span class="n">7</span>Large view</h2>
+  <p>Click the pupil to open the image full screen. Along the top you can change the grid size, seed, model and threshold, then press <b>Random</b> or <b>Detect</b> without leaving the view. On the side: the colour legend (hover each entry for its definition), a short summary, the object list with <b>all / errors</b>, and download buttons. Click an object to highlight it. <kbd>Esc</kbd> closes the view.</p>
+</section>
+
+<section id="stress">
+  <h2><span class="n">8</span>Stress test</h2>
+  <p>One image can be lucky or unlucky. The stress test runs many random grids with the current brow settings (grid size, sections, selection, conditions, model, threshold) and reports the totals.</p>
+  <ol class="steps">
+    <li><div>Set up the brow, then press <b>Stress</b> in the left dock.</div></li>
+    <li><div>Choose 10 to 300 grids with the slider (100 by default) and press <b>Run</b>. A bar shows progress.</div></li>
+  </ol>
+  <div class="tbl"><table>
+    <tr><th>Output</th><th>Meaning</th></tr>
+    <tr><td>objects correct</td><td class="w">Share of all objects across all grids that were correct.</td></tr>
+    <tr><td>fully correct grids</td><td class="w">Share of grids with no error at all, with a 95% confidence interval.</td></tr>
+    <tr><td>named correctly</td><td class="w">Share with the right name, box off included, plus the time per grid.</td></tr>
+    <tr><td>totals line</td><td class="w">Number and size of grids, settings, and counts of box off, wrong ID, missed, extra.</td></tr>
+    <tr><td>three tables</td><td class="w">Objects most often missed or wrong, the most common confusions (A called B), and the failure reasons.</td></tr>
+  </table></div>
+  <div class="tip"><p><b>Repeatable by design.</b> Grids use seeds 1000, 1001, 1002 and so on, so the same settings give the same result. The stress test always builds grids; layouts do not apply.</p></div>
+</section>
+
+<section id="files">
+  <h2><span class="n">9</span>Files and snapshots</h2>
+  <p>Both need a detection first.</p>
+  <div class="tbl"><table>
+    <tr><th>Button</th><th>File</th><th>Contents</th></tr>
+    <tr><td>Files</td><td>png</td><td class="w">The image with all boxes drawn.</td></tr>
+    <tr><td></td><td>csv, json</td><td class="w">One row per object: result, reason, predicted and true object with names, section, class AP, confidence, IoU. For uploads: one row per box with object ID, name, section, class AP, look-alike group, confidence and pixel corners.</td></tr>
+    <tr><td>Snapshot</td><td>png</td><td class="w">A report-ready picture: the annotated image beside the score, the counts and every error in words, with the model and conditions in the title. Made for slides and the report.</td></tr>
+  </table></div>
+</section>
+
+<section id="more">
+  <h2><span class="n">10</span>About, the journey, display</h2>
+  <h3>About</h3>
+  <p>Every number in one place: the meaning of each result; what the extension changed; <b>Before vs after</b> on every test set (M2 model → first improved model → second improved model, the selected one in bold, with the selection rule and its thresholds); the <b>Models</b> table with validation and test scores; and the Milestone 2 model's results <b>by input type</b>.</p>
+  <h3>How was I built?</h3>
+  <p>The whole project as 12 stations on a construction site, from 7,343 raw files to this screen. Click a station's dot or use <kbd>←</kbd> <kbd>→</kbd> to move, click a card (or press <kbd>Enter</kbd>) to flip it for the full site report, or use <b>flip all</b>. Stations 10 and 11 cover the extension: every box checked by a person, then rotation, scenes and the improved models.</p>
+  <h3>Right dock</h3>
+  <div class="tbl"><table>
+    <tr><th>Button</th><th>Does</th></tr>
+    <tr><td>Titles</td><td class="w">Turns hover hints on or off.</td></tr>
+    <tr><td>Light / dark</td><td class="w">Switches the theme. The iris stays dark in both, so result colours look the same.</td></tr>
+    <tr><td>Calm</td><td class="w">Stops all motion: no scanning, glows or count-ups. Useful while you explain something.</td></tr>
+  </table></div>
+</section>
+
+<section id="keys">
+  <h2><span class="n">11</span>Keyboard and mouse</h2>
+  <div class="cols">
+    <div class="tbl"><table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>N</kbd></td><td class="w">New random image</td></tr>
+      <tr><td><kbd>D</kbd></td><td class="w">Detect</td></tr>
+      <tr><td><kbd>U</kbd></td><td class="w">Upload</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td class="w">Close a window, or zoom out and clear the selection</td></tr>
+      <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td class="w">Move between journey stations</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td class="w">On the ring: detect. On a journey card: flip</td></tr>
+    </table></div>
+    <div class="tbl"><table>
+      <tr><th>Mouse</th><th>Action</th></tr>
+      <tr><td>Click the pupil</td><td class="w">Large view</td></tr>
+      <tr><td>Hover a box</td><td class="w">Name, section, class AP, error reason</td></tr>
+      <tr><td>Click a box or line</td><td class="w">Select it everywhere; zoom the pupil</td></tr>
+      <tr><td>Drag a photo in</td><td class="w">Upload it</td></tr>
+      <tr><td>⤢ on a panel</td><td class="w">Enlarge it</td></tr>
+    </table></div>
+  </div>
+  <p>Keys do nothing while you are typing in a box, such as the seed; press <kbd>Esc</kbd> to leave it.</p>
+</section>
+
+<section id="words">
+  <h2><span class="n">12</span>Words you will see</h2>
+  <div class="tbl"><table>
+    <tr><th>Word</th><th>Plain meaning</th></tr>
+    <tr><td>IoU</td><td class="w">Intersection over Union: the overlap of two boxes divided by their combined area. 1.0 is a perfect fit, 0.5 is "roughly on it".</td></tr>
+    <tr><td>Confidence</td><td class="w">How sure the model is about one box, 0 to 1.</td></tr>
+    <tr><td>Threshold</td><td class="w">The confidence below which boxes are dropped.</td></tr>
+    <tr><td>Validated</td><td class="w">Chosen on the validation set, never on the test sets.</td></tr>
+    <tr><td>Recall</td><td class="w">Share of real objects the model found correctly.</td></tr>
+    <tr><td>Precision</td><td class="w">Share of the model's boxes that are correct.</td></tr>
+    <tr><td>mAP@0.5</td><td class="w">Average precision over all 73 objects, a box counting from IoU 0.50: "found and named?"</td></tr>
+    <tr><td>mAP@0.5:0.95</td><td class="w">The same at ten IoU cut-offs from 0.50 to 0.95: "found, named and tightly boxed?"</td></tr>
+    <tr><td>Class AP</td><td class="w">That score for one object only.</td></tr>
+    <tr><td>Look-alike group</td><td class="w">Objects that look alike, such as our three watches. Errors between them are flagged.</td></tr>
+    <tr><td>Held-out test photo</td><td class="w">A photo the model never saw in training or validation.</td></tr>
+    <tr><td>Scene</td><td class="w">A scattered or cut-out image, as opposed to a grid.</td></tr>
+  </table></div>
+</section>
+
+<section id="trouble">
+  <h2><span class="n">13</span>Troubleshooting</h2>
+  <div class="tbl"><table>
+    <tr><th>You see</th><th>Do this</th></tr>
+    <tr><td class="w">The page does not open</td><td class="w">Check the terminal for errors. If the port is busy, an older copy is running: close its terminal and start again.</td></tr>
+    <tr><td class="w">The first DETECT is slow</td><td class="w">Normal: the model loads then. Later detections are fast.</td></tr>
+    <tr><td class="w">Every detection is slow</td><td class="w">Something else is using the GPU, often a second EYE or a training run. Close it.</td></tr>
+    <tr><td class="w"><i>No scattered scenes yet</i></td><td class="w">The scene test sets are missing from <code>M2 extra</code>; the grid layouts still work.</td></tr>
+    <tr><td class="w">An upload shows no score</td><td class="w">Expected: uploads have no true boxes.</td></tr>
+    <tr><td class="w">Nothing detected on an upload</td><td class="w">Try a lower threshold, or a photo where the object is upright and fills more of the frame.</td></tr>
+    <tr><td class="w">Look-alikes refuses a big grid</td><td class="w">There are fewer look-alike objects in your sections than cells; pick a smaller grid or more sections.</td></tr>
+    <tr><td class="w">Hard to read on a projector</td><td class="w">Zoom the browser to 125–150%, try the light theme, and turn on Calm while you talk.</td></tr>
+  </table></div>
+  <p style="margin-top:22px;color:var(--soft)">IE7615 Deep Learning, Group 7. Found something odd? Take a Snapshot and post it in the group chat with the seed.</p>
+</section>
+</main>
+</div>
+<button class="theme" id="theme" type="button" aria-label="Switch light or dark theme">Light / dark</button>
+<script>
+(() => {
+  const b = document.getElementById("theme"), r = document.documentElement;
+  try { const t = localStorage.getItem("eyemanual-theme"); if (t) r.dataset.theme = t; } catch (e) {}
+  b.addEventListener("click", () => {
+    const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    r.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("eyemanual-theme", r.dataset.theme); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>

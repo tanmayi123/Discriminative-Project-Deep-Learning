@@ -1,0 +1,280 @@
+{
+  "before": {
+    "model": "yolo26s_ft2",
+    "imgsz": 1120,
+    "conf": 0.1
+  },
+  "after": {
+    "model": "boost",
+    "imgsz": 1600
+  },
+  "chosen_on_validation": {
+    "threshold": 0.4,
+    "fill_empty_cells": null,
+    "tta": false,
+    "thresholds": {
+      "0.05": {
+        "recall": 0.9457,
+        "precision": 0.8676,
+        "wrong_ids": 95,
+        "missed": 93,
+        "fully_correct": 0.3493,
+        "small_recall": 0.8305,
+        "objects": 3465,
+        "images": 292
+      },
+      "0.1": {
+        "recall": 0.9434,
+        "precision": 0.9055,
+        "wrong_ids": 86,
+        "missed": 110,
+        "fully_correct": 0.3904,
+        "small_recall": 0.8249,
+        "objects": 3465,
+        "images": 292
+      },
+      "0.15": {
+        "recall": 0.9411,
+        "precision": 0.9217,
+        "wrong_ids": 82,
+        "missed": 122,
+        "fully_correct": 0.3938,
+        "small_recall": 0.8192,
+        "objects": 3465,
+        "images": 292
+      },
+      "0.2": {
+        "recall": 0.9365,
+        "precision": 0.9322,
+        "wrong_ids": 77,
+        "missed": 143,
+        "fully_correct": 0.4007,
+        "small_recall": 0.8051,
+        "objects": 3465,
+        "images": 292
+      },
+      "0.25": {
+        "recall": 0.9351,
+        "precision": 0.9402,
+        "wrong_ids": 69,
+        "missed": 156,
+        "fully_correct": 0.4075,
+        "small_recall": 0.7994,
+        "objects": 3465,
+        "images": 292
+      },
+      "0.3": {
+        "recall": 0.9325,
+        "precision": 0.9472,
+        "wrong_ids": 62,
+        "missed": 172,
+        "fully_correct": 0.4075,
+        "small_recall": 0.791,
+        "objects": 3465,
+        "images": 292
+      },
+      "0.4": {
+        "recall": 0.929,
+        "precision": 0.9595,
+        "wrong_ids": 50,
+        "missed": 196,
+        "fully_correct": 0.4007,
+        "small_recall": 0.7797,
+        "objects": 3465,
+        "images": 292
+      }
+    }
+  },
+  "tests": {
+    "normal": {
+      "before": {
+        "recall": 0.9122,
+        "precision": 0.9503,
+        "wrong_ids": 16,
+        "missed": 76,
+        "fully_correct": 0.3472,
+        "small_recall": 0.75,
+        "objects": 1048,
+        "images": 72,
+        "mAP50": 0.9473,
+        "mAP50_95": 0.8732
+      },
+      "after": {
+        "recall": 0.9466,
+        "precision": 0.9764,
+        "wrong_ids": 9,
+        "missed": 47,
+        "fully_correct": 0.4583,
+        "small_recall": 0.8438,
+        "objects": 1048,
+        "images": 72,
+        "mAP50": 0.9719,
+        "mAP50_95": 0.8967
+      },
+      "previous": {
+        "recall": 0.9418,
+        "precision": 0.9772,
+        "wrong_ids": 7,
+        "missed": 54,
+        "fully_correct": 0.4444,
+        "small_recall": 0.875,
+        "objects": 1048,
+        "images": 72,
+        "mAP50": 0.9706,
+        "mAP50_95": 0.8998
+      }
+    },
+    "rotated": {
+      "before": {
+        "recall": 0.756,
+        "precision": 0.845,
+        "wrong_ids": 230,
+        "missed": 537,
+        "fully_correct": 0.0926,
+        "small_recall": 0.4583,
+        "objects": 3144,
+        "images": 216,
+        "mAP50": 0.8129,
+        "mAP50_95": 0.7138
+      },
+      "after": {
+        "recall": 0.9116,
+        "precision": 0.9634,
+        "wrong_ids": 31,
+        "missed": 247,
+        "fully_correct": 0.3056,
+        "small_recall": 0.7118,
+        "objects": 3144,
+        "images": 216,
+        "mAP50": 0.9526,
+        "mAP50_95": 0.8584
+      },
+      "previous": {
+        "recall": 0.9087,
+        "precision": 0.9636,
+        "wrong_ids": 38,
+        "missed": 249,
+        "fully_correct": 0.3148,
+        "small_recall": 0.7014,
+        "objects": 3144,
+        "images": 216,
+        "mAP50": 0.9529,
+        "mAP50_95": 0.8625
+      }
+    },
+    "scattered": {
+      "before": {
+        "recall": 0.7671,
+        "precision": 0.8302,
+        "wrong_ids": 33,
+        "missed": 209,
+        "fully_correct": 0.0865,
+        "small_recall": 0.4113,
+        "objects": 1039,
+        "images": 104,
+        "mAP50": 0.8029,
+        "mAP50_95": 0.6355
+      },
+      "after": {
+        "recall": 0.8961,
+        "precision": 0.9357,
+        "wrong_ids": 14,
+        "missed": 94,
+        "fully_correct": 0.2788,
+        "small_recall": 0.6809,
+        "objects": 1039,
+        "images": 104,
+        "mAP50": 0.9423,
+        "mAP50_95": 0.7938
+      },
+      "previous": {
+        "recall": 0.8893,
+        "precision": 0.9438,
+        "wrong_ids": 14,
+        "missed": 101,
+        "fully_correct": 0.25,
+        "small_recall": 0.6525,
+        "objects": 1039,
+        "images": 104,
+        "mAP50": 0.9365,
+        "mAP50_95": 0.8029
+      }
+    },
+    "cutout": {
+      "before": {
+        "recall": 0.4517,
+        "precision": 0.7993,
+        "wrong_ids": 70,
+        "missed": 486,
+        "fully_correct": 0.0,
+        "small_recall": 0.1566,
+        "objects": 1014,
+        "images": 104,
+        "mAP50": 0.5588,
+        "mAP50_95": 0.5268
+      },
+      "after": {
+        "recall": 0.8708,
+        "precision": 0.8964,
+        "wrong_ids": 53,
+        "missed": 78,
+        "fully_correct": 0.1827,
+        "small_recall": 0.6024,
+        "objects": 1014,
+        "images": 104,
+        "mAP50": 0.9036,
+        "mAP50_95": 0.8734
+      },
+      "previous": {
+        "recall": 0.8757,
+        "precision": 0.8979,
+        "wrong_ids": 54,
+        "missed": 72,
+        "fully_correct": 0.2404,
+        "small_recall": 0.5663,
+        "objects": 1014,
+        "images": 104,
+        "mAP50": 0.9123,
+        "mAP50_95": 0.8873
+      }
+    },
+    "singles": {
+      "before": {
+        "recall": 0.9055,
+        "precision": 0.9538,
+        "wrong_ids": 12,
+        "missed": 87,
+        "fully_correct": 0.9038,
+        "small_recall": 0.6979,
+        "objects": 1048,
+        "images": 1040,
+        "mAP50": 0.9406,
+        "mAP50_95": 0.8653
+      },
+      "after": {
+        "recall": 0.9399,
+        "precision": 0.9772,
+        "wrong_ids": 6,
+        "missed": 57,
+        "fully_correct": 0.9404,
+        "small_recall": 0.8438,
+        "objects": 1048,
+        "images": 1040,
+        "mAP50": 0.9662,
+        "mAP50_95": 0.8915
+      },
+      "previous": {
+        "recall": 0.9399,
+        "precision": 0.9762,
+        "wrong_ids": 8,
+        "missed": 55,
+        "fully_correct": 0.9394,
+        "small_recall": 0.8646,
+        "objects": 1048,
+        "images": 1040,
+        "mAP50": 0.9699,
+        "mAP50_95": 0.8936
+      }
+    }
+  }
+}

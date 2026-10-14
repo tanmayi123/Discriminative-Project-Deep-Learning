@@ -14,9 +14,11 @@ Full method and results: the Milestone 2 report.
 | `M2_Boxes.ipynb` | **Bounding boxes.** Text prompt (OWLv2), visual prompt (OWLv2 image-guided), self-trained YOLO26-s, consensus vote, the review tool (verify / fix / exemplar modes), box viewing sheets, and the master box file |
 | `M2_Detect.ipynb` | **Detection.** Grid generation and leakage checks, YOLO training and fine-tuning, evaluation (chosen on validation, tested once), and the `detect` step that outputs Object IDs and boxes |
 | `scripts/run_step.ps1` | Runs any step headlessly on Windows (also opens the review window when needed) |
+| `scripts/m2_cross_eval.py` | Scores every teammate model and ours on the same human-checked test objects, masking each model's own training photos (report Table 14); writes `detect/cross_eval/` |
 | `requirements.txt` | Python packages and the versions used |
 | `RUN_HISTORY.md` | The exact sequence of steps that produced the reported results |
 | `app/m2_eye_app.py` | **The EYE**, a local demo app for the final detector (see `app/README.md`; not hosted) |
+| `app/earlier_demos/` | Two earlier demo apps for the same detector: `m2_demo_app.py` (Gradio) and `m2_matrix_app.py` |
 | `outputs/` | Results, box files (including the human review files), training history, evaluation curves, example detections, dataset descriptors and logs of the reported run (no images, no weights) |
 
 Both notebooks are self-contained (no extra `.py` files). Every step writes a log to

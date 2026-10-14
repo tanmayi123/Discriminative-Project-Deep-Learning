@@ -1,0 +1,7 @@
+{
+  "imgsz": 1280,
+  "batch": 4,
+  "epochs": 30,
+  "weights": "C:\\Users\\csk23\\Documents\\Zanthosh\\Northeastern\\SEMESTERs\\4th Sem\\Deep Learning\\PROJECT - 1\\M2 extra\\boost\\runs\\boost\\weights\\best.pt",
+  "start": "C:\\Users\\csk23\\Documents\\Zanthosh\\Northeastern\\SEMESTERs\\4th Sem\\Deep Learning\\PROJECT - 1\\M2 extra\\boost\\start_weights.pt"
+}

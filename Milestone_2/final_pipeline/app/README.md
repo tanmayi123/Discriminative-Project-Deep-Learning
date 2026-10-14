@@ -22,3 +22,12 @@ the model weights) and the course dataset, neither of which is in this repositor
 Optional: `M2_PORT` (default 7860).
 
 Keys: N random grid, D detect, U upload, Esc close or zoom out.
+
+This is the protected version of the file (SHA-256 `863FB939…F072`, as recorded in the Milestone 3 report, Table 13).
+The improved versions, The EYE v2 and v3, are in [`../../../Milestone_3/app/`](../../../Milestone_3/app/).
+
+## Earlier demos
+
+`earlier_demos/` holds two earlier front ends for the same detector, kept for reference:
+* `m2_demo_app.py`: a Gradio app (`pip install gradio`, then `python m2_demo_app.py`; port 7860). Set `M2_PROJECT_DIR`.
+* `m2_matrix_app.py`: "Detection Matrix", a tile-based layout using only the standard-library web server (port 7860).
